@@ -5,28 +5,8 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
 
-    public int XTilePos
-    {
-        get
-        {
-            return XTilePos;
-        }
-        set
-        {
-            XTilePos = value;
-        }
-    }
-    public int YTilePos
-    {
-        get
-        {
-            return YTilePos;
-        }
-        set
-        {
-            YTilePos = value;
-        }
-    }
+    public int XTilePos;
+    public int YTilePos;
 
     // Start is called before the first frame update
     void Start()
