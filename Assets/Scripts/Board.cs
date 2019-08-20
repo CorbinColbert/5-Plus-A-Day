@@ -17,14 +17,14 @@ public class Board : MonoBehaviour
         //create the board
         for (int length = 1; length <= BoardLenght; length++)
         {
-            for (int hight = 1; hight <= BoardHight; hight++)
+            for (int height = 1; height <= BoardHight; height++)
             {
-                TempObject = (GameObject)Instantiate(TilePrefab, new Vector3((length * 1.1f)-(BoardLenght/2.0f), 0, hight * 1.1f), Quaternion.identity);
+                TempObject = (GameObject)Instantiate(TilePrefab, new Vector3((length * 1.1f)-(BoardLenght/2.0f), 0, height * 1.1f), Quaternion.identity);
                 TempObject.GetComponent<Tile>().XTilePos = length;
-                TempObject.GetComponent<Tile>().YTilePos = hight;
+                TempObject.GetComponent<Tile>().YTilePos = height;
                 TempObject.transform.parent = this.transform;
-                TempObject.name = "Tile_" + length + "_"+hight;
-                BoardArray[length - 1, hight - 1] = TempObject;
+                TempObject.name = "Tile_" + length + "_"+height;
+                BoardArray[length - 1, height - 1] = TempObject;
             }
         }
     }
