@@ -8,7 +8,6 @@ public class Tile : MonoBehaviour
     public int xTilePos;
     public int yTilePos;
     private Material tileMaterial;
-    
 
 
     // Start is called before the first frame update
