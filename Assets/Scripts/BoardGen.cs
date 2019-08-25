@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Board : MonoBehaviour
+
+public class BoardGen : MonoBehaviour
 {
     public GameObject TilePrefab;
     public int BoardLength;
@@ -26,7 +27,7 @@ public class Board : MonoBehaviour
                 TempObject.GetComponent<Tile>().yTilePos = height + 1;
                 TempObject.transform.parent = this.transform;
                 TempObject.name = "Tile_" + (length + 1) + "_" + (height + 1);
-                BoardArray[length , height] = TempObject;
+                BoardArray[length, height] = TempObject;
 
                 if (boardColourIndex % 2 == 0)
                 {
@@ -46,6 +47,6 @@ public class Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
