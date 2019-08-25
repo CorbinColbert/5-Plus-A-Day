@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
 
     public int xTilePos;
     public int yTilePos;
-    private Material tileMaterial;
+    public Material tileMaterial;
     public Material selectedTile;
 
 
