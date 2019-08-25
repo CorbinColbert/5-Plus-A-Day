@@ -17,6 +17,8 @@ public class PremadeBoard : MonoBehaviour
             for (int j = 0; j < 12; j++)
             {
                 Board2DArray[i, j] = BoardArray[index];
+                Board2DArray[i, j].GetComponent<Tile>().xTilePos = j + 1;
+                Board2DArray[i, j].GetComponent<Tile>().yTilePos = i + 1;
                 index++;
             }
         }

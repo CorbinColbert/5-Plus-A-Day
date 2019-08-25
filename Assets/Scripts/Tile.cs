@@ -8,9 +8,9 @@ public class Tile : MonoBehaviour
     public int xTilePos;
     public int yTilePos;
     public bool isLight;
-    public GameObject lightTile;
-    public GameObject darkTile;
-    public GameObject selectedTile;
+    public Material lightTile;
+    public Material darkTile;
+    public Material selectedTile;
 
 
     // Start is called before the first frame update
