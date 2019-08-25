@@ -6,6 +6,7 @@ public class TileSelect : MonoBehaviour
 {
     private RaycastHit hit;
     private Ray ray;
+    public Material selectedTile;
 
     // Start is called before the first frame update
     void Start()
@@ -13,14 +14,12 @@ public class TileSelect : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-    
-        //if (Physics.Raycast(ray, out hit))
-        //{
-        //    hit.collider.gameObject.GetComponent<Renderer>().material = hit.collider.gameObject.GetComponent<Tile>().selectedTile;
-        //}
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     }
+    
+    //while ray is hitting a tile collider
+    //change its material to selected tile
+    //when ray stops hitting the tile collider set back to original material
 }

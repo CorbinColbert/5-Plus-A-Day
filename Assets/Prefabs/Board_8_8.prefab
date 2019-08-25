@@ -107,8 +107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057865964529505
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866004277745
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,8 +321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866030349805
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +428,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866077523651
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,8 +535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866078692182
 GameObject:
   m_ObjectHideFlags: 0
@@ -652,8 +642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866080937700
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,8 +749,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866125818973
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,8 +856,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866132002844
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,8 +963,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866141616417
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,8 +1070,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866193348269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1275,8 +1255,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866297522142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1462,8 +1440,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866383034807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,8 +1547,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866386318415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,8 +1654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866473200237
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,8 +1761,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866474331285
 GameObject:
   m_ObjectHideFlags: 0
@@ -1898,8 +1868,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866483019370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,8 +1975,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866500267169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2116,8 +2082,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866552751215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2225,8 +2189,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866603915409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,8 +2296,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866662235378
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,8 +2403,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866668114151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,8 +2510,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866698158272
 GameObject:
   m_ObjectHideFlags: 0
@@ -2661,8 +2617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866822634584
 GameObject:
   m_ObjectHideFlags: 0
@@ -2770,8 +2724,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866838753132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2879,8 +2831,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866859348204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,8 +2938,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866869267578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,8 +3045,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866889084166
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,8 +3152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866899110248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3315,8 +3259,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866953987155
 GameObject:
   m_ObjectHideFlags: 0
@@ -3424,8 +3366,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866968302313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3533,8 +3473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057866987366640
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,8 +3580,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867022933326
 GameObject:
   m_ObjectHideFlags: 0
@@ -3751,8 +3687,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867033994985
 GameObject:
   m_ObjectHideFlags: 0
@@ -3938,8 +3872,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867108117770
 GameObject:
   m_ObjectHideFlags: 0
@@ -4125,8 +4057,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867153443073
 GameObject:
   m_ObjectHideFlags: 0
@@ -4234,8 +4164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867167713318
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,8 +4271,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867186097747
 GameObject:
   m_ObjectHideFlags: 0
@@ -4452,8 +4378,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867206086784
 GameObject:
   m_ObjectHideFlags: 0
@@ -4561,8 +4485,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867224223979
 GameObject:
   m_ObjectHideFlags: 0
@@ -4670,8 +4592,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 3
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867297151833
 GameObject:
   m_ObjectHideFlags: 0
@@ -4779,8 +4699,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867306736919
 GameObject:
   m_ObjectHideFlags: 0
@@ -4888,8 +4806,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867345184528
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,8 +4913,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867362351720
 GameObject:
   m_ObjectHideFlags: 0
@@ -5106,8 +5020,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867381226910
 GameObject:
   m_ObjectHideFlags: 0
@@ -5215,8 +5127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867405236222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5324,8 +5234,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867424999258
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,8 +5341,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867441727562
 GameObject:
   m_ObjectHideFlags: 0
@@ -5542,8 +5448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867452126101
 GameObject:
   m_ObjectHideFlags: 0
@@ -5651,8 +5555,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 7
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867506540551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,8 +5662,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867524697586
 GameObject:
   m_ObjectHideFlags: 0
@@ -5869,8 +5769,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867533788487
 GameObject:
   m_ObjectHideFlags: 0
@@ -6060,6 +5958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3342e11bc77312f488b4989768c09b46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867545867552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,8 +6066,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867616122314
 GameObject:
   m_ObjectHideFlags: 0
@@ -6276,8 +6173,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867678163784
 GameObject:
   m_ObjectHideFlags: 0
@@ -6385,8 +6280,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 1
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867744063064
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,8 +6387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867758060149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6603,8 +6494,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 6
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867789710646
 GameObject:
   m_ObjectHideFlags: 0
@@ -6712,8 +6601,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 6
   yTilePos: 1
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867837749409
 GameObject:
   m_ObjectHideFlags: 0
@@ -6821,8 +6708,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 2
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867846193988
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,8 +6815,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 5
   yTilePos: 5
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867871383929
 GameObject:
   m_ObjectHideFlags: 0
@@ -7039,8 +6922,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 7
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867891172666
 GameObject:
   m_ObjectHideFlags: 0
@@ -7148,8 +7029,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 3
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867916282306
 GameObject:
   m_ObjectHideFlags: 0
@@ -7257,8 +7136,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 8
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867917746505
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,8 +7243,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 4
   yTilePos: 2
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
 --- !u!1 &2402057867963799504
 GameObject:
   m_ObjectHideFlags: 0
@@ -7475,5 +7350,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xTilePos: 8
   yTilePos: 4
-  tileMaterial: {fileID: 0}
-  selectedTile: {fileID: 2100000, guid: d94c5db67498a664587bde267fea28a0, type: 2}
