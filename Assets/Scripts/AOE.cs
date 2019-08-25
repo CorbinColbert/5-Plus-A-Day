@@ -38,8 +38,8 @@ public enum AOE_TYPE {
 }
 
 public static class AOE_Factory {
-    public static AOE getSuperWhirl() {
-        AOE areaOfEffect = new AOE();
+    public static SpecialAttack getSuperWhirl() {
+        SpecialAttack areaOfEffect = new SpecialAttack();
 
         areaOfEffect.addOrdinate(-1, 0);
         areaOfEffect.addOrdinate( 1, 0);
@@ -48,8 +48,8 @@ public static class AOE_Factory {
 
         return areaOfEffect;
     }
-    public static AOE getWhirl() {
-        AOE areaOfEffect = new AOE();
+    public static SpecialAttack getWhirl() {
+        SpecialAttack areaOfEffect = new SpecialAttack();
 
         areaOfEffect.addOrdinate(-1, 1);
         areaOfEffect.addOrdinate(-1, 0);
@@ -62,16 +62,16 @@ public static class AOE_Factory {
 
         return areaOfEffect;
     }
-    public static AOE getStab() {
-        AOE areaOfEffect = new AOE();
+    public static SpecialAttack getStab() {
+        SpecialAttack areaOfEffect = new SpecialAttack();
 
         areaOfEffect.addOrdinate( 0, 1);
         areaOfEffect.addOrdinate( 0, 2);
 
         return areaOfEffect;
     }
-    public static AOE getSlash() {
-        AOE areaOfEffect = new AOE();
+    public static SpecialAttack getSlash() {
+        SpecialAttack areaOfEffect = new SpecialAttack();
 
         areaOfEffect.addOrdinate( 0, 1);
         areaOfEffect.addOrdinate( 1, 1);
@@ -79,8 +79,8 @@ public static class AOE_Factory {
 
         return areaOfEffect;
     }
-    public static AOE getBash() {
-        AOE areaOfEffect = new AOE();
+    public static SpecialAttack getBash() {
+        SpecialAttack areaOfEffect = new SpecialAttack();
 
         areaOfEffect.addOrdinate( 0, 1);
 
@@ -88,7 +88,7 @@ public static class AOE_Factory {
     }
 }
 
-public class AOE {
+public class SpecialAttack {
     private List<Pair> ordinates;
 
     public void addOrdinate(int relativeX, int relativeY) {

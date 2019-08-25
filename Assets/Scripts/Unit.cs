@@ -4,51 +4,46 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
+    [SerializeField]                    
+    protected int healthPointsMax;      //Maxiumum HP
+    protected int healthPoints;         //Current HP
+
+    [SerializeField]                    
+    protected int abilityMeterMax;      //Maximum charge required to perform the ability
+    protected int abilityMeter;         //Current charge
+    protected bool hasAbility;          //Some units suck, and wont even have abilities
+    protected bool abilityReady;        //Indicates if the unit can perform the special attack on the next frame
+
+    [SerializeField]                    
+    protected AOE_TYPE abilityAOE;          //Enum AOE linked to a static class specifying the area of the attack
+    protected SpecialAttack areaOfEffect;   //The special attack and data related to it
+
+    [SerializeField]                   
+    protected int attackFrequency;      //How often this unit will perform a basic attack (e.g a value of 30 means once per 30 frames)
+    private int attackFrameCounter;     //A basic attack deals the basicAttackDamage to the target
+    private bool attackReady;           //Indicates availability
+
+    [SerializeField]
+    protected int basicAttackDamage = 10;   //How much damage a unit will do per attack
+    [SerializeField]
+    protected int basicAttackRange = 1;     //How far a unit can attack, TO DISCUSS DIAGONAL ATTACKS
+
     public Board board;
     public Pair position;
 
-    [SerializeField]                    
-    protected int healthPointsMax;  
-    protected int healthPoints; 
-
-    [SerializeField]                    //Basic attacks will charge the ability
-    protected int abilityMeterMax;      //Performing an ability should have priority over a basic attack
-    protected int abilityMeter;         //When the meter is full the unit should 
-    protected bool hasAbility;          //Some units suck, and wont even have abilities
-    protected bool abilityReady;
-
-    [SerializeField]                    //Enum AOE linked to a static class specifying the area of the attack
-    protected AOE_TYPE abilityType;     //[0,0] is the tile this unit is standing on, [-1,0] is one left, [0, 1] is one up etc.
-    protected AOE areaOfEffect;         
-
-    [SerializeField]                    //How often this unit will perform a basic attack (e.g a value of 30 means once per 30 frames)
-    protected int attackFrequency;      //A basic attack deals the basicAttackDamage to the target
-    private int attackFrameCounter;     
-    private bool attackReady;
-
-    [SerializeField]
-    protected int basicAttackDamage = 10;   
-    [SerializeField]
-    protected int basicAttackRange = 1; 
-
-    protected Unit target;
+    protected Unit target;          
 
     protected Item heldItem;        //If null, the unit is not holding an item
-    protected int level = 0;        //How many battles the unit has survived
+    protected int level = 0;        //How many battles the unit has survived / won  TO DISCUSS
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //Start the unit on full health!
-        this.healthPoints = this.healthPointsMax;
-        
-        //If the max ability meter is 0, the unit doesnt have one
-        this.hasAbility = (abilityMeterMax != 0);
+    void Start() {
+        this.healthPoints = this.healthPointsMax;   //Start the unit on full health!
+
+        this.hasAbility = (abilityMeterMax != 0);   //If the max ability meter is 0, the unit doesnt have one
         this.abilityMeter = 0;
 
-        //Link the AOE enum to an actual area of effect object with information about the position of the speical attack
-        if (this.hasAbility) {
-            switch (abilityType) {
+        if (this.hasAbility) {  //Link the AOE enum to an actual special attack object with information about the position of the speical attack
+            switch (abilityAOE) {
                 case AOE_TYPE.BASH:
                     areaOfEffect = AOE_Factory.getBash();
                     break;
@@ -71,11 +66,12 @@ public abstract class Unit : MonoBehaviour
         this.attackFrameCounter = attackFrequency;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    //Called once per frame
+    void Update() {
         if (this.isAlive()) {
             tryAttackTarget();
+        } else {
+            //die?
         }
     }
 
@@ -86,18 +82,29 @@ public abstract class Unit : MonoBehaviour
     }
 
     protected void tryAttackTarget() {
-        if (hasTarget()) {
-            if (targetIsInRange()) {
-                if (abilityReady) {
-                    performAbility();
-                } else if (attackReady) {
-                    performAttack();
-                } else {
-                    incrementBasicAttackCounter();
+        if (hasTarget())
+        {   if (targetIsInRange())
+            {   if (abilityReady)
+                {
+                    performAbility(); 
                 }
-            } else {
-                walkTo(target.getBoardPosition());
+                else if (attackReady)
+                {   
+                    performAttack();      
+                }
+                else
+                {   
+                    incrementBasicAttackCounter();              
+                }
             }
+            else
+            {   
+                walkTo(target.getBoardPosition());    
+            }
+        }
+        else
+        {   
+            findTarget();         
         }
     }
 
@@ -109,8 +116,9 @@ public abstract class Unit : MonoBehaviour
         return (target != null);
     }
 
+    //TODO
     public bool targetIsInRange() {
-
+        return false;
     }
 
     //May return a null
@@ -124,7 +132,7 @@ public abstract class Unit : MonoBehaviour
 
     //Method to be called from inside this script only
     protected void walkTo(Pair tileCoordinate) {
-        //walk to the tile specified by coordinate
+        //walk closer to the tile specified by coordinate
         //update current coordinate
     }
 
@@ -206,6 +214,10 @@ public abstract class Unit : MonoBehaviour
     //Removes any benefits or drawbacks of the item to this unit
     //Basically reverses changes made in equipItem()
     private void unequipItem(Item item) {
+        if (item == null) {
+            return;
+        }
+
         //Health
         this.healthPoints -= item.getHealthModifier();
         this.healthPointsMax -= item.getHealthModifier();
@@ -228,13 +240,8 @@ public abstract class Unit : MonoBehaviour
     //Returns the old item the unit was using
     //This can return null if no item was attatched before
     public Item attatchItem(Item item) {
-        //First, take the current item off
         unequipItem(heldItem);
-
-        //Second, store it in removedItem
         Item removedItem = heldItem;
-
-        //Third, put the new item on
         equipItem(item);
 
         //Finally, return the item we stored in step 2

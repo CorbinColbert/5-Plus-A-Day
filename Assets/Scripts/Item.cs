@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Item {
-    string itemName;
+    [SerializeField]
+    private string itemName;
     [SerializeField]
     public int damageModifier;          //Adds to the damage of the unit's basic attacks
     [SerializeField]
@@ -27,6 +28,10 @@ public class Item {
 
     public int getAttackFrequencyModifier() {
         return attackFrequencyModifier;
+    }
+
+    public string getName() {
+        return itemName;
     }
 }
 
