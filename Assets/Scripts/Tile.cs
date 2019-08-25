@@ -5,8 +5,13 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
 
-    public int XTilePos;
-    public int YTilePos;
+    public int xTilePos;
+    public int yTilePos;
+    public bool isLight;
+    public GameObject lightTile;
+    public GameObject darkTile;
+    public GameObject selectedTile;
+
 
     // Start is called before the first frame update
     void Start()
