@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//[ExecuteInEditMode]
 public class Board : MonoBehaviour
 {
     public GameObject TilePrefab;
@@ -9,6 +8,9 @@ public class Board : MonoBehaviour
     public int BoardHeight;
     GameObject TempObject;
     public GameObject[,] BoardArray;
+    private int boardColourIndex = 0;
+    public Material lightTile;
+    public Material darkTile;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,19 @@ public class Board : MonoBehaviour
                 TempObject.transform.parent = this.transform;
                 TempObject.name = "Tile_" + (length + 1) + "_" + (height + 1);
                 BoardArray[length , height] = TempObject;
+
+                if (boardColourIndex % 2 == 0)
+                {
+                    TempObject.GetComponent<Renderer>().material = darkTile;
+                }
+                else
+                {
+                    TempObject.GetComponent<Renderer>().material = lightTile;
+                }
+
+                boardColourIndex++;
             }
+            boardColourIndex++;
         }
     }
 
