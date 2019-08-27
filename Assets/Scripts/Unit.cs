@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    public GameObject body;
+    public int attack = 10;
+    public int health = 100;
+    public int specialAttackCharge;
+    public SpecialAttack specialAttack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,4 +21,6 @@ public class Unit : MonoBehaviour
     {
         
     }
+
+
 }

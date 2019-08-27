@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialAttack : MonoBehaviour
+public class SpecialAttack
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    Vector2Int[] relativeAOE;
+    int spellDamage;
+    private int spellCost{get;set;}
+
+    public SpecialAttack(int damage) {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
