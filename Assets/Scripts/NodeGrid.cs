@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grid : MonoBehaviour
+public class NodeGrid : MonoBehaviour
 {
     public LayerMask unwalkableMasks;
     public Vector2 gridSize;
     public float nodeRadius;
     Node[,] grid;
-
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
 
