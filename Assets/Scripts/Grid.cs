@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Grid : MonoBehaviour
 {
+    public LayerMask unwalkableMasks;
     public Vector2 gridSize;
     public float nodeRadius;
     Node[,] grid;
@@ -29,7 +30,7 @@ public class Grid : MonoBehaviour
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-                bool isNodeWalkable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius));
+                bool isNodeWalkable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius,unwalkableMasks));
                 grid[x, y] = new Node(isNodeWalkable, nodePlacementPoint);
             }
         }
