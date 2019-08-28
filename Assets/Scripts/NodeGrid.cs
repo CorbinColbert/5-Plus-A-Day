@@ -30,7 +30,7 @@ public class NodeGrid : MonoBehaviour
             {
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool isNodeWalkable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius,unwalkableMasks));
-                grid[x, y] = new Node(isNodeWalkable, nodePlacementPoint);
+                grid[x, y] = new Node(isNodeWalkable, nodePlacementPoint, x, y);
             }
         }
     }
@@ -44,6 +44,30 @@ public class NodeGrid : MonoBehaviour
         int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
         return grid[x,y];
     }
+    public List<Node> getAjacentNodes(Node node)
+    {
+        List<Node> ajacentNodes = new List<Node>();
+        for (int x = -1; x <= 1; x++)
+        {
+            for (int y = -1; y <= 1; y++)
+            {
+                if (x == 0 && y == 0)
+                {
+                    continue;
+                }
+
+                int inBoundsX = node.gridX + x;
+                int inBoundsY = node.gridY + y;
+
+                if (inBoundsX >= 0 && inBoundsX < gridSizeX && inBoundsY >= 0 && inBoundsY < gridSizeY)
+                {
+                    ajacentNodes.Add(grid[inBoundsX, inBoundsY]);
+                }
+            }
+        }
+        return ajacentNodes;
+    }
+    public List<Node> path; // debug draw path with gizmos
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x,1,gridSize.y));
@@ -52,8 +76,17 @@ public class NodeGrid : MonoBehaviour
             foreach (Node node in grid)
             {
                 Gizmos.color = (node.walkable) ? Color.white : Color.red;
+                if (path != null)
+                {
+                    if (path.Contains(node))
+                    {
+                        Gizmos.color = Color.yellow;
+                    }
+                }
                 Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
     }
+
+    
 }
