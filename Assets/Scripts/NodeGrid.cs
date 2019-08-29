@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class NodeGrid : MonoBehaviour
-{
+{ 
+    public bool displayPathOnly;
     public LayerMask unwalkableMasks;
     public Vector2 gridSize;
     public float nodeRadius;
     Node[,] grid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
-
-
+    public List<Node> path;
     private void Start()
     {
         nodeDiameter = nodeRadius * 2;
         gridSizeX = Mathf.RoundToInt(gridSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridSize.y / nodeDiameter);
         CreateGrid();
+    }
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
     }
     void CreateGrid()
     {
@@ -67,23 +74,36 @@ public class NodeGrid : MonoBehaviour
         }
         return ajacentNodes;
     }
-    public List<Node> path; // debug draw path with gizmos
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x,1,gridSize.y));
-        if (grid != null)
+        if (displayPathOnly)
         {
-            foreach (Node node in grid)
+            if (path != null)
             {
-                Gizmos.color = (node.walkable) ? Color.white : Color.red;
-                if (path != null)
+                foreach (Node node in path)
                 {
-                    if (path.Contains(node))
-                    {
-                        Gizmos.color = Color.yellow;
-                    }
+                    Gizmos.color = Color.yellow;
+                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
                 }
-                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+            }
+        }
+        else
+        {
+            if (grid != null)
+            {
+                foreach (Node node in grid)
+                {
+                    Gizmos.color = (node.walkable) ? Color.white : Color.red;
+                    if (path != null)
+                    {
+                        if (path.Contains(node))
+                        {
+                            Gizmos.color = Color.yellow;
+                        }
+                    }
+                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                }
             }
         }
     }

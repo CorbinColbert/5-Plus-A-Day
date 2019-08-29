@@ -326,11 +326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbb4bd4027ec8e4dba77446084d4ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  displayPathOnly: 1
   unwalkableMasks:
     serializedVersion: 2
     m_Bits: 256
   gridSize: {x: 30, y: 30}
-  nodeRadius: 0.5
+  nodeRadius: 0.1
 --- !u!114 &853632568
 MonoBehaviour:
   m_ObjectHideFlags: 0
