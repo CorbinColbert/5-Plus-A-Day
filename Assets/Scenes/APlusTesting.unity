@@ -307,6 +307,7 @@ GameObject:
   - component: {fileID: 853632569}
   - component: {fileID: 853632568}
   - component: {fileID: 853632567}
+  - component: {fileID: 853632570}
   m_Layer: 0
   m_Name: APlusPathfinding
   m_TagString: Untagged
@@ -331,7 +332,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   gridSize: {x: 30, y: 30}
-  nodeRadius: 0.1
+  nodeRadius: 0.5
 --- !u!114 &853632568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +340,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853632566}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fab2af3b40c48ad4dbfdec46458752b4, type: 3}
   m_Name: 
@@ -360,6 +361,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853632570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853632566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a7419bb19669f46a0fbe24bf4b59ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seeker: {fileID: 519775176}
+  target: {fileID: 1598951881}
 --- !u!1 &913113238
 GameObject:
   m_ObjectHideFlags: 0
