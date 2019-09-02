@@ -9,9 +9,12 @@ public class NodeGrid : MonoBehaviour
     public Vector2 gridSize;
     public float nodeRadius;
     Node[,] grid;
+    //GameObject[,] worldGrid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
     public List<Node> path;
+    public GameObject nodePrefab;
+    public int MaxSize{ get{return gridSizeX * gridSizeY;} }
     private void Start()
     {
         nodeDiameter = nodeRadius * 2;
@@ -19,16 +22,10 @@ public class NodeGrid : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(gridSize.y / nodeDiameter);
         CreateGrid();
     }
-    public int MaxSize
-    {
-        get
-        {
-            return gridSizeX * gridSizeY;
-        }
-    }
     void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
+        //worldGrid = new GameObject[gridSizeX, gridSizeY];
         Vector3 gridBottomLeft = transform.position - Vector3.right * gridSize.x / 2 - Vector3.forward * gridSize.y / 2;
 
         for (int x = 0; x < gridSizeX; x++)
@@ -38,6 +35,8 @@ public class NodeGrid : MonoBehaviour
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool isNodeWalkable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius,unwalkableMasks));
                 grid[x, y] = new Node(isNodeWalkable, nodePlacementPoint, x, y);
+
+                //worldGrid[x,y] = (GameObject)Instantiate(nodePrefab, nodePlacementPoint, Quaternion.identity);
             }
         }
     }
@@ -103,6 +102,7 @@ public class NodeGrid : MonoBehaviour
                         }
                     }
                     Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+                    //Gizmos.DrawSphere(node.worldPosition, 0.05f);
                 }
             }
         }
