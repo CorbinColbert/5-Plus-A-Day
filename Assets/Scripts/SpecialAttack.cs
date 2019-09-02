@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 
-public enum AOE_TYPE {
+public enum SP_TYPE {
     // [] is a space on the board
     // ## is the caster of the ability
 
@@ -37,7 +37,7 @@ public enum AOE_TYPE {
 
 }
 
-public static class AOE_Factory {
+public static class SP_Factory {
     public static SpecialAttack getSuperWhirl() {
         SpecialAttack areaOfEffect = new SpecialAttack();
 
@@ -86,6 +86,24 @@ public static class AOE_Factory {
 
         return areaOfEffect;
     }
+    
+    public static SpecialAttack getSpecialAttack(SP_TYPE type) {
+        switch (type) {
+            case SP_TYPE.BASH:
+                return SP_Factory.getBash();
+            case SP_TYPE.SLASH:
+                return  SP_Factory.getSlash();
+            case SP_TYPE.STAB:
+                return SP_Factory.getStab();
+            case SP_TYPE.SUPER_WHIRL:
+                return SP_Factory.getSuperWhirl();
+            case SP_TYPE.WHIRL:
+                return SP_Factory.getWhirl();
+            default:
+                return null;
+        }
+        }
+    }
 }
 
 public class SpecialAttack {
@@ -98,22 +116,10 @@ public class SpecialAttack {
     public List<Pair> getAOE() {
         return ordinates;
     }
+
+
+
 }
 
-public class Pair {
-    private int x;
-    private int y;
 
-    public Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
-}
