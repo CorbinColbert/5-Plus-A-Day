@@ -23,14 +23,6 @@ public class Unit : MonoBehaviour
         return this.position;
     }
 
-    public bool hasTarget() {
-        return (target != null);
-    }
-
-    public bool targetIsInRange() {
-        return false;
-    }
-
     public Item getItem() {
         return itemSlot.getItem();
     }
