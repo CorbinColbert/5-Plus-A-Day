@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Tile[,] tile;
+    public int xMax, yMax; //0 Based
+    public float unitHoverDistance;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public bool IsInbounds(int x, int y) {
+        bool xInbounds = (x >= 0 && x <= xMax);
+        bool yInbounds = (y >= 0 && y <= yMax);
+
+        return xInbounds && yInbounds;
     }
 }

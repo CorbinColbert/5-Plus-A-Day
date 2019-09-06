@@ -3,19 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pair {
-    private int x;
-    private int y;
+    public int x;
+    public int y;
 
     public Pair(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+    public Pair Add(int x, int y) {
+        return new Pair(this.x + x, this.y + y);
     }
 }
