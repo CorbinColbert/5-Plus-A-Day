@@ -12,8 +12,7 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 tilePos = gameObject.transform.position;
-        unitPos = new Vector3(tilePos.x, tilePos.y, tilePos.z + board.unitHoverDistance);
+        print("I am a tile!");
     }
 
     // Update is called once per frame

@@ -9,9 +9,10 @@ public class Unit : MonoBehaviour
     protected Board board;
     protected ItemSlot itemSlot;
     public Unit target;
-
+        
     void Start() {
         stats = new Stats(100, 100);
+        print("hi");
     }
 
     //Called once per frame
