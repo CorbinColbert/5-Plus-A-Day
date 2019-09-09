@@ -6,7 +6,7 @@ public class Unit : MonoBehaviour
 {
     public Stats stats;
     protected Pair position;
-    protected Board board;
+    //protected Board board;
     protected ItemSlot itemSlot;
     public Unit target;
 
@@ -27,8 +27,8 @@ public class Unit : MonoBehaviour
         return itemSlot.getItem();
     }
 
-    public void placeOnBoard(Board board, Pair position) {
-        this.board = board;
-        this.position = position;
-    }
+    //public void placeOnBoard(Board board, Pair position) {
+    //    this.board = board;
+    //    this.position = position;
+    //}
 }
