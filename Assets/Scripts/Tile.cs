@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    private Board board;
-    private int xPos, yPos; //Position on the grid, 0 based
-    private Unit unit;
-    private Vector3 unitPos;
+    public Board board;
+    public Unit unit;
+    public int xPos; //Position on the grid, 0 based
+    public int zPos; //Position on the grid, 0 based
 
     // Start is called before the first frame update
     void Start()
     {
-        print("I am a tile!");
+        print("Tile Initialised");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public bool HasUnit() {
+        return unit != null;
     }
 
     public Tile[] GetAffectedTiles(SpecialAttack sp) {
@@ -27,7 +31,7 @@ public class Tile : MonoBehaviour
         Tile[] involved = new Tile[relative.Count];
         int i = 0;
         foreach (Pair pair in relative) {
-            Pair absolute = pair.Add(this.xPos, this.yPos);
+            Pair absolute = pair.Add(this.xPos, this.zPos);
             if (board.IsInbounds(absolute.x, absolute.y))
                 involved[i++] = board.tile[absolute.x, absolute.y];
         }
@@ -37,51 +41,36 @@ public class Tile : MonoBehaviour
 
     public bool IsNeighbour(int xOther, int yOther) {
         int absDeltaX = Mathf.Abs(xOther - xPos);
-        int absDeltaY = Mathf.Abs(yOther - yPos);
-
+        int absDeltaY = Mathf.Abs(yOther - zPos);
+ 
+        print("Call to IsNeighbour: "+((absDeltaX <= 1) && (absDeltaY <= 1)));
+    
         return (absDeltaX <= 1) && (absDeltaY <= 1);
     }
 
     public Tile GetNeighbour(Direction direction) {
         switch (direction) {
             case Direction.NORTH:
-                if (board.IsInbounds(xPos, yPos + 1)) {
-                    return board.tile[xPos, yPos + 1];
+                if (board.IsInbounds(xPos, zPos + 1)) {
+                    return board.tile[xPos, zPos + 1];
                 }
             break;
             case Direction.EAST:
-                if (board.IsInbounds(xPos + 1, yPos)) {
-                    return board.tile[xPos + 1, yPos];
+                if (board.IsInbounds(xPos + 1, zPos)) {
+                    return board.tile[xPos + 1, zPos];
                 }
             break;
             case Direction.SOUTH:
-                if (board.IsInbounds(xPos, yPos - 1)) {
-                    return board.tile[xPos, yPos - 1];
+                if (board.IsInbounds(xPos, zPos - 1)) {
+                    return board.tile[xPos, zPos - 1];
                 }
             break;
             case Direction.WEST:
-                if (board.IsInbounds(xPos - 1, yPos)) {
-                    return board.tile[xPos - 1, yPos];
+                if (board.IsInbounds(xPos - 1, zPos)) {
+                    return board.tile[xPos - 1, zPos];
                 }
             break;
         }
         return null;
-    }
-
-    public bool HasUnit() {
-        return this.unit != null;
-    }
-
-    public bool SetUnit(Unit unit) {
-        if (this.unit == null) {
-            return false;
-        } else {
-            this.unit = unit;
-            return true;
-        }
-    }
-
-    public Unit GetUnit() {
-        return unit;
     }
 }
