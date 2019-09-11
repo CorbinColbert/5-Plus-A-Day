@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Node : IHeapItem<Node>
 {
-    public bool walkable;
+    public bool viableNode;
     public Vector3 worldPosition;
     public int gridX;
     public int gridY;
@@ -20,9 +20,9 @@ public class Node : IHeapItem<Node>
             return hCost + gCost;
         }
     }
-    public Node(bool walkable, Vector3 worldPosition, int gridX, int gridY)
+    public Node(bool viableNode, Vector3 worldPosition, int gridX, int gridY)
     {
-        this.walkable = walkable;
+        this.viableNode = viableNode;
         this.worldPosition = worldPosition;
         this.gridX = gridX;
         this.gridY = gridY;

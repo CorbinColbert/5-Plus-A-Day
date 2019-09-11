@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class APlusPathing : MonoBehaviour
 {
-    public Transform seeker, target;
+    public Transform pathingUnit, target;
 
     NodeGrid grid;
 
@@ -15,7 +15,7 @@ public class APlusPathing : MonoBehaviour
 
     private void Update()
     {
-        FindPath(seeker.position, target.position);
+        FindPath(pathingUnit.position, target.position);
     }
 
     void FindPath(Vector3 start, Vector3 target)
@@ -51,7 +51,7 @@ public class APlusPathing : MonoBehaviour
 
             foreach (Node ajacentNode in grid.getAjacentNodes(currentNode))
             {
-                if (!ajacentNode.walkable || closedSet.Contains(ajacentNode))
+                if (!ajacentNode.viableNode || closedSet.Contains(ajacentNode))
                 {
                     continue;
                 }
