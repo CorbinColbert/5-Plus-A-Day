@@ -11,13 +11,14 @@ public class APlusPathHeap : MonoBehaviour
     private void Awake()
     {
         grid = GetComponent<NodeGrid>();
+        pathingUnit.gameObject.GetComponent<UnitPathing>().moveAlongPath();
     }
 
     private void Update()
     {
         FindPath(pathingUnit.position, target.position);
+        
     }
-
     void FindPath(Vector3 start, Vector3 target)
     {
         Node startNode = grid.getNodeFromWorld(start);
@@ -75,7 +76,10 @@ public class APlusPathHeap : MonoBehaviour
 
         path.Remove(endNode);
 
+        //pathingUnit.gameObject.GetComponent<UnitPathing>().path = path;
+
         grid.path = path;
+        pathingUnit.gameObject.GetComponent<UnitPathing>().path = path;
     }
 
     int getDistance(Node nodeA, Node nodeB)
