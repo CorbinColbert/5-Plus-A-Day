@@ -159,6 +159,8 @@ MonoBehaviour:
     m_Bits: 512
   gridSize: {x: 8, y: 8}
   nodeRadius: 0.5
+  playerTroopsOnGrid: []
+  enemyTroopsOnGrid: []
 --- !u!114 &522501072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,9 +202,10 @@ GameObject:
   - component: {fileID: 659603174}
   - component: {fileID: 659603173}
   - component: {fileID: 659603172}
+  - component: {fileID: 659603177}
   m_Layer: 9
-  m_Name: TestUnit
-  m_TagString: Untagged
+  m_Name: PlayerTroop1
+  m_TagString: PlayerTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,7 +254,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 63e55428e6cd74d4883a43ea16cf27e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -294,6 +297,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &659603177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659603171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf499dcc7e3007478ec6de2f15c4d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 522501070}
 --- !u!1 &671744218
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,8 +324,8 @@ GameObject:
   - component: {fileID: 671744220}
   - component: {fileID: 671744219}
   m_Layer: 9
-  m_Name: TestUnit (1)
-  m_TagString: Untagged
+  m_Name: EnemyTroop1
+  m_TagString: EnemyTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -358,7 +374,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 960f274fed04f494d9330688829f5049, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -399,7 +415,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787103836
 GameObject:
@@ -588,9 +604,9 @@ GameObject:
   - component: {fileID: 1520516379}
   - component: {fileID: 1520516378}
   - component: {fileID: 1520516377}
-  m_Layer: 8
-  m_Name: TestUnit (2)
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: EnemyTroop2
+  m_TagString: EnemyTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -639,7 +655,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 960f274fed04f494d9330688829f5049, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -680,7 +696,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697086194
 GameObject:
@@ -695,9 +711,9 @@ GameObject:
   - component: {fileID: 1697086197}
   - component: {fileID: 1697086196}
   - component: {fileID: 1697086195}
-  m_Layer: 8
-  m_Name: TestUnit (3)
-  m_TagString: Untagged
+  m_Layer: 9
+  m_Name: PlayerTroop2
+  m_TagString: PlayerTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -746,7 +762,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 63e55428e6cd74d4883a43ea16cf27e1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -787,7 +803,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1835734518
 PrefabInstance:

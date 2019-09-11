@@ -12,8 +12,12 @@ public class NodeGrid : MonoBehaviour
     Node[,] grid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
-    public List<Node> path;
+    public List<Node> path;// only for visual debuging
     public int MaxSize{ get{return gridSizeX * gridSizeY;} }
+    public List<GameObject> playerTroopsOnGrid;
+    public List<GameObject> enemyTroopsOnGrid;
+
+
     private void Start()
     {
         nodeDiameter = nodeRadius * 2;

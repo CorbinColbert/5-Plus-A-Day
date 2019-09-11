@@ -5,12 +5,24 @@ using UnityEngine;
 public class UnitPathing : MonoBehaviour
 {
     public List<Node> path;
+    public GameObject grid;
+    private Node nodeUnitOnTopOf;
 
-    public void moveAlongPath()
+    public void OnEnable()
+    {
+        nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
+    }
+
+    private void snapToGrid()
+    {
+
+    }
+    
+    private void moveAlongPath()
     {
         foreach (Node node in path)
         {
-            gameObject.transform.position = Vector3.Lerp(node.worldPosition, node.parent.worldPosition, 10);
+            
         }
     }
 }

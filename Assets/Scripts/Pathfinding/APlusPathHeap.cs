@@ -15,8 +15,7 @@ public class APlusPathHeap : MonoBehaviour
 
     private void Update()
     {
-        FindPath(pathingUnit.position, target.position);
-        
+        //FindPath(pathingUnit.position, target.position);
     }
     void FindPath(Vector3 start, Vector3 target)
     {
