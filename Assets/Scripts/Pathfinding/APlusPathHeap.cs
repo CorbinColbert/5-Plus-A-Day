@@ -11,7 +11,6 @@ public class APlusPathHeap : MonoBehaviour
     private void Awake()
     {
         grid = GetComponent<NodeGrid>();
-        pathingUnit.gameObject.GetComponent<UnitPathing>().moveAlongPath();
     }
 
     private void Update()
