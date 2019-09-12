@@ -39,7 +39,7 @@ public class Pathfinding : MonoBehaviour
 
             foreach (Node ajacentNode in grid.getAjacentNodes(currentNode))
             {
-                if(!ajacentNode.viableNode || !ajacentNode.unitOnTop || closedSet.Contains(ajacentNode))
+                if (!ajacentNode.viableNode || !ajacentNode.unitOnTop || closedSet.Contains(ajacentNode))
                 {
                     if (ajacentNode != startNode && ajacentNode != targetNode)
                     {
@@ -75,7 +75,7 @@ public class Pathfinding : MonoBehaviour
             currentNode = currentNode.parent;
         }
         path.Reverse();
-        path.Remove(endNode); // so we dont get the node directly below the target
+        path.Remove(endNode); // so we dont get the node directly under the target
 
         return path;
     }
