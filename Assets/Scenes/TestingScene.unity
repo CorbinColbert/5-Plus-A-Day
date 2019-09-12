@@ -772,7 +772,6 @@ GameObject:
   - component: {fileID: 1767166716}
   - component: {fileID: 1767166715}
   - component: {fileID: 1767166714}
-  - component: {fileID: 1767166717}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -845,18 +844,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 57.225002, y: 270, z: 0}
---- !u!114 &1767166717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1767166713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f0d456de37b90e479235c3e92a3f9ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1786566453 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2829708082619234239, guid: 5f73d691b26ad144b83d3780c4774edb,
@@ -875,3 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0d456de37b90e479235c3e92a3f9ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alliedUnitPrefab: {fileID: 498109051483516601, guid: 5b1c3e6991dac2940aa3e196301a92b9,
+    type: 3}
+  enemyUnitPrefab: {fileID: 7664216688747582168, guid: 0eedf322b6c833846911807501323f15,
+    type: 3}

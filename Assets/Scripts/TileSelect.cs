@@ -36,23 +36,23 @@ public class TileSelect : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+        if (Input.GetMouseButtonDown(1)) {
             if (selectedTile != null) {
-                GameObject unit = Instantiate(allidUnitPrefab, selectedTile.transform.position, selectedTile.transform.rotation);
-                Vector3 pos = new Vector3(unit.transform.position.x, unit.transform.position.y + (Tile.hoverDistance), unit.transform.position.z);
-                unit.transform.position = pos;
-                unit.GetComponent<Unit>().placeOnBoard(selectedTile);
+                selectedTile.SetSelected(false);
+                selectedTile = null;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Alpha2)) {
             if (selectedTile != null) {
-                GameObject unit = Instantiate(enemyUnitPrefab, selectedTile.transform.position, selectedTile.transform.rotation);
-                Vector3 pos = new Vector3(unit.transform.position.x, unit.transform.position.y + (Tile.hoverDistance), unit.transform.position.z);
-                unit.transform.position = pos;
-                unit.GetComponent<Unit>().placeOnBoard(selectedTile);
+                if (selectedTile.HasUnit() == false) {
+                    GameObject unitPrefab = (Input.GetKeyDown(KeyCode.Alpha1)) ? alliedUnitPrefab: enemyUnitPrefab;
+                    GameObject unit = Instantiate(unitPrefab, selectedTile.transform.position, selectedTile.transform.rotation);
+                    Vector3 pos = new Vector3(unit.transform.position.x, unit.transform.position.y + (Tile.hoverDistance), unit.transform.position.z);
+                    unit.transform.position = pos;
+                    unit.GetComponent<Unit>().placeOnBoard(selectedTile);
+                }                
             }
         }
-
     }
 }

@@ -43,6 +43,10 @@ public class Tile : MonoBehaviour
         this.unit = unit;
     }
 
+    public bool HasUnit() {
+        return unit != null;
+    }
+
     public void selectedHelper()
     {
 
