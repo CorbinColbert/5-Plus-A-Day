@@ -23,24 +23,26 @@ public class BoardGen : MonoBehaviour
             for (int length = 0; length < BoardLength; length++)
             {
                 TempObject = (GameObject)Instantiate(TilePrefab, new Vector3((length * 1) - ((BoardLength / 2) - 0.5f), 0, (height * 1) - ((BoardHeight / 2) - 0.5f)), Quaternion.identity);
-                TempObject.GetComponent<Tile>().xTilePos = length + 1;
-                TempObject.GetComponent<Tile>().yTilePos = height + 1;
+                //TempObject.GetComponent<Tile>().xTilePos = length + 1;
+                //TempObject.GetComponent<Tile>().yTilePos = height + 1;
                 TempObject.transform.parent = this.transform;
-                TempObject.name = "Tile_" + (length + 1) + "_" + (height + 1);
-                BoardArray[length, height] = TempObject;
+                TempObject.name = "SnapPoint_" + (length + 1) + "_" + (height + 1);
+                //TempObject.name = "Tile_" + (length + 1) + "_" + (height + 1);
 
-                if (boardColourIndex % 2 == 0)
-                {
-                    TempObject.GetComponent<Renderer>().material = darkTile;
-                }
-                else
-                {
-                    TempObject.GetComponent<Renderer>().material = lightTile;
-                }
+                //BoardArray[length, height] = TempObject;
 
-                boardColourIndex++;
+                //if (boardColourIndex % 2 == 0)
+                //{
+                //    TempObject.GetComponent<Renderer>().material = darkTile;
+                //}
+                //else
+                //{
+                //    TempObject.GetComponent<Renderer>().material = lightTile;
+                //}
+
+                //boardColourIndex++;
             }
-            boardColourIndex++;
+            //boardColourIndex++;
         }
     }
 
