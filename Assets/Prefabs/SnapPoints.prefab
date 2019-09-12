@@ -3129,7 +3129,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6173980094447778432}
-  - component: {fileID: 6173980094447778433}
   m_Layer: 0
   m_Name: SnapPoints
   m_TagString: Untagged
@@ -3215,24 +3214,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6173980094447778433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6173980094447778438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67e2957536434764ba7b395737f686aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TilePrefab: {fileID: 82719867808918330, guid: 641c168b4c2e00540a13bd9073c0dc26,
-    type: 3}
-  BoardLength: 8
-  BoardHeight: 8
-  lightTile: {fileID: 0}
-  darkTile: {fileID: 0}
 --- !u!1 &6214857365558712509
 GameObject:
   m_ObjectHideFlags: 0
