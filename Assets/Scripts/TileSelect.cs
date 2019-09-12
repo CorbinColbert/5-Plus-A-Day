@@ -5,7 +5,13 @@ using UnityEngine;
 //Attatch this to the camera in the scene
 public class TileSelect : MonoBehaviour
 {
-    Tile currentlySelected = null;
+    Tile selectedTile = null;
+    public GameObject alliedUnitPrefab = null;
+    public GameObject enemyUnitPrefab = null;
+
+    void Start() {
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,14 +26,33 @@ public class TileSelect : MonoBehaviour
                     Tile other = null;
                     hit.transform.gameObject.TryGetComponent<Tile>(out other);
                     if (other != null) {
-                        if (currentlySelected != null) {
-                            currentlySelected.SetSelected(false);
+                        if (selectedTile != null) {
+                            selectedTile.SetSelected(false);
                         }
-                        currentlySelected = other;
-                        currentlySelected.SetSelected(true);
+                        selectedTile = other;
+                        selectedTile.SetSelected(true);
                     }
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1)) {
+            if (selectedTile != null) {
+                GameObject unit = Instantiate(allidUnitPrefab, selectedTile.transform.position, selectedTile.transform.rotation);
+                Vector3 pos = new Vector3(unit.transform.position.x, unit.transform.position.y + (Tile.hoverDistance), unit.transform.position.z);
+                unit.transform.position = pos;
+                unit.GetComponent<Unit>().placeOnBoard(selectedTile);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2)) {
+            if (selectedTile != null) {
+                GameObject unit = Instantiate(enemyUnitPrefab, selectedTile.transform.position, selectedTile.transform.rotation);
+                Vector3 pos = new Vector3(unit.transform.position.x, unit.transform.position.y + (Tile.hoverDistance), unit.transform.position.z);
+                unit.transform.position = pos;
+                unit.GetComponent<Unit>().placeOnBoard(selectedTile);
+            }
+        }
+
     }
 }

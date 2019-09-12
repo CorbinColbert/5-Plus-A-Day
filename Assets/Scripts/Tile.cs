@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public static float hoverDistance = 0.6f;
+    private bool selectable;
+
     public int xTilePos;
     public int yTilePos;
     
@@ -12,6 +15,7 @@ public class Tile : MonoBehaviour
     private Material selectedTileMaterial;
 
     private bool selected;
+    public Unit unit;
 
     // Start is called before the first frame update
     void Start()
@@ -23,12 +27,10 @@ public class Tile : MonoBehaviour
     void Update()
     {
         
-    }
+    }   
 
     public void SetSelected(bool state) {
         selected = state;
-
-        print("state changed");
 
         if (selected) {
             gameObject.GetComponent<Renderer>().material = selectedTileMaterial;
@@ -37,9 +39,21 @@ public class Tile : MonoBehaviour
         }
     }
 
+    public void SetUnit(Unit unit) {
+        this.unit = unit;
+    }
+
     public void selectedHelper()
     {
 
+    }
+
+    public bool IsSelectable() {
+        return selectable;
+    }
+
+    public void SetSelectable(bool selectable) {
+       this.selectable = selectable;
     }
 
     //private void OnMouseEnter()
