@@ -46,15 +46,7 @@ public class Unit : MonoBehaviour
     public void RecieveAttack(Attack attack) {
         currentHP -= attack.calculateDamage();
         if (currentHP <= 0) {
-            Unit unit = null;
-            UnitPathing pathing = null;
-            attack.attacker.TryGetComponent<Unit>(out unit);
-            gameObject.TryGetComponent<UnitPathing>(out pathing);
-            Destroy(pathing, 0.0f);
-            if (unit != null) {
-                unit.RemoveTarget();
-            }
-            Destroy(gameObject, 0.0f);
+            OnDeath(attack);
         }
     }
 
@@ -77,6 +69,30 @@ public class Unit : MonoBehaviour
     public void placeOnBoard(Tile tile) {
         this.tile = tile;
         tile.SetUnit(this);
+    }
+
+    private void OnDeath(Attack finalBlow) {
+        Unit unit = null;
+        UnitPathing pathing = null;
+        finalBlow.attacker.TryGetComponent<Unit>(out unit);
+
+        gameObject.TryGetComponent<UnitPathing>(out pathing);
+        if (pathing != null) {
+            print("Destroying pathing from "+name);
+            Destroy(pathing, 0.0f);
+        }
+
+        if (unit != null) {
+            unit.RemoveTarget();
+        }
+
+        Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
+        rigidBody.AddForce(new Vector3(Random.Range(-100.0f, 100.0f), Random.Range(100.0f, 200.0f), Random.Range(-100.0f, 100.0f)));
+        Collider collider;
+        if (gameObject.TryGetComponent<Collider>(out collider)) {
+            Destroy(collider, 2.0f);
+        }
+        Destroy(this, 0.0f);
     }
 }
 

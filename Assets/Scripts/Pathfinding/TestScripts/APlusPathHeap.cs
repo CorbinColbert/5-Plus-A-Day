@@ -84,7 +84,12 @@ public class APlusPathHeap : MonoBehaviour
         //pathingUnit.gameObject.GetComponent<UnitPathing>().path = path;
 
         grid.path = path;
-        pathingUnit.gameObject.GetComponent<UnitPathing>().path = path;
+        if (gameObject != null) {
+            UnitPathing temp;
+            if (pathingUnit.gameObject.TryGetComponent<UnitPathing>(out temp)) {
+                path = temp.path;
+            }
+        }
     }
 
     int getDistance(Node nodeA, Node nodeB)
