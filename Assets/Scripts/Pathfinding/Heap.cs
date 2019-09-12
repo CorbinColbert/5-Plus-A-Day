@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+//this class is a generic implementation of aw heap data structure
+//this class was used with permision from Sebastian Lague under the MIT licence
 public class Heap<T> where T : IHeapItem<T>
 {
     T[] items;

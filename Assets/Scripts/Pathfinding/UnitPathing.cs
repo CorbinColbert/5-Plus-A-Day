@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class manages individual units pathfinding and placement
 public class UnitPathing : MonoBehaviour
 {
     public List<Node> path;
     public GameObject grid;
     private Node nodeUnitOnTopOf;
     private Node tempNode;
-
-    public void Start()
-    {
-        //nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-    }
 
     private void Update()
     {
@@ -51,11 +47,11 @@ public class UnitPathing : MonoBehaviour
 
     void getClosestTargrt()
     {
-
+        //TODO: 
     }
 
     private void moveAlongPath()
     {
-
+        //TODO: 
     }
 }

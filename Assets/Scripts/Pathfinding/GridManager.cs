@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//This class is here to keep track of the different troops on the grid
 public class GridManager : MonoBehaviour
 {
     //TODO: make sure troops dont go over their maximum

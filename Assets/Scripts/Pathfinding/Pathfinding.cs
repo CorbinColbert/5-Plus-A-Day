@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class is for the creation af a path from one location to another
+//this class is a modified version of Sebastian Lague pathfinding class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
 public class Pathfinding : MonoBehaviour
 {
     //public Transform pathingUnit, target;

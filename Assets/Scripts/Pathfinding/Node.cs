@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class represents nodes that will be used to form a grid
+//this class is a modified version of Sebastian Lague Node class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
 public class Node : IHeapItem<Node>
 {
     public bool viableNode;
