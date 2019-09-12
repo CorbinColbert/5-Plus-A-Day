@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class PathManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //main aim is to give paths out 1 bye 1 to troops so that there are no overlaps in placement
+    // troops ask the path manager for a path
+    // implement a queue for troops asking
+    //
 }

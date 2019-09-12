@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    //make sure troops dont go over their maximum
+    //keep track of troops
+    //
     GameObject[] playerTroops;
     GameObject[] enemyTroops;
 
