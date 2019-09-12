@@ -35,16 +35,9 @@ public class NodeGrid : MonoBehaviour
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-                bool isNodeViable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius, viabilityMask)); //refactor to include occupiedMask to see if a troop is standing on this node
-                //if (!(Physics.CheckSphere(nodePlacementPoint, nodeRadius, viabilityMask)) || !(Physics.CheckSphere(nodePlacementPoint, nodeRadius, occupiedMask)))
-                //{
-                //    isNodeViable = true;
-                //}
-                //else
-                //{
-                //    isNodeViable = false;
-                //}
-                grid[x, y] = new Node(isNodeViable, nodePlacementPoint, x, y);
+                bool isNodeViable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius, viabilityMask)); 
+                bool isUnitOnTop = !(Physics.CheckSphere(nodePlacementPoint, nodeRadius, occupiedMask));
+                grid[x, y] = new Node(isNodeViable, isUnitOnTop, nodePlacementPoint, x, y);
             }
         }
     }
@@ -102,6 +95,7 @@ public class NodeGrid : MonoBehaviour
                 foreach (Node node in grid)
                 {
                     Gizmos.color = (node.viableNode) ? Color.white : Color.red;
+                    Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
                     if (path != null)
                     {
                         if (path.Contains(node))

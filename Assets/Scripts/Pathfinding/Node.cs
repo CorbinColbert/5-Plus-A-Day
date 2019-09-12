@@ -5,6 +5,7 @@ using UnityEngine;
 public class Node : IHeapItem<Node>
 {
     public bool viableNode;
+    public bool unitOnTop;
     public Vector3 worldPosition;
     public int gridX;
     public int gridY;
@@ -20,9 +21,10 @@ public class Node : IHeapItem<Node>
             return hCost + gCost;
         }
     }
-    public Node(bool viableNode, Vector3 worldPosition, int gridX, int gridY)
+    public Node(bool viableNode, bool unitOnTop, Vector3 worldPosition, int gridX, int gridY)
     {
         this.viableNode = viableNode;
+        this.unitOnTop = unitOnTop;
         this.worldPosition = worldPosition;
         this.gridX = gridX;
         this.gridY = gridY;

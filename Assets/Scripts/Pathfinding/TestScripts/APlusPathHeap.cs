@@ -15,7 +15,7 @@ public class APlusPathHeap : MonoBehaviour
 
     private void Update()
     {
-        //FindPath(pathingUnit.position, target.position);
+        FindPath(pathingUnit.position, target.position);
     }
     void FindPath(Vector3 start, Vector3 target)
     {
@@ -39,9 +39,12 @@ public class APlusPathHeap : MonoBehaviour
 
             foreach (Node ajacentNode in grid.getAjacentNodes(currentNode))
             {
-                if (!ajacentNode.viableNode || closedSet.Contains(ajacentNode))
+                if (!ajacentNode.viableNode || !ajacentNode.unitOnTop ||closedSet.Contains(ajacentNode))
                 {
-                    continue;
+                    if (ajacentNode != startNode && ajacentNode != targetNode)
+                    {
+                        continue;
+                    }
                 }
 
                 int newMovementCostToAjacentNode = currentNode.gCost + getDistance(currentNode, ajacentNode);
