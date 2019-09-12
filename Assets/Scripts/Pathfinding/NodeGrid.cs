@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class creates a grid from Nodes
+//this class is a modified version of Sebastian Lague Grid class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
 public class NodeGrid : MonoBehaviour
 { 
     public bool displayPathOnly;

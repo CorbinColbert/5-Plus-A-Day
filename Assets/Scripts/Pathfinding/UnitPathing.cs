@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//this class manages individual units pathfinding and placement
 public class UnitPathing : MonoBehaviour
 {
     public List<Node> path;
     public GameObject grid;
     private Node nodeUnitOnTopOf;
     private Node tempNode;
-
-    public void Start()
-    {
-        //nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-    }
+    int movementPoints;
 
     private void Update()
     {
@@ -41,7 +38,20 @@ public class UnitPathing : MonoBehaviour
 
     private void snapToGrid()
     {
-        //TODO: ?
+        //TODO: ?   
+
+        //GRID
+        // [-3.5, +3.5] [-2.5, +3.5] [-1.5, +3.5] [-0.5, +3.5] [+0.5, +3.5] [+1.5, +3.5] [+2.5, +3.5] [+3.5, +3.5]
+        // [-3.5, +2.5] [-2.5, +2.5] [-1.5, +2.5] [-0.5, +2.5] [+0.5, +2.5] [+1.5, +2.5] [+2.5, +2.5] [+3.5, +2.5]
+        // [-3.5, +1.5] [-2.5, +1.5] [-1.5, +1.5] [-0.5, +1.5] [+0.5, +1.5] [+1.5, +1.5] [+2.5, +1.5] [+3.5, +1.5]
+        // [-3.5, +0.5] [-2.5, +0.5] [-1.5, +0.5] [-0.5, +0.5] [+0.5, +0.5] [+1.5, +0.5] [+2.5, +0.5] [+3.5, +0.5]
+        // [-3.5, -0.5] [-2.5, -0.5] [-1.5, -0.5] [-0.5, -0.5] [+0.5, -0.5] [+1.5, -0.5] [+2.5, -0.5] [+3.5, -0.5]
+        // [-3.5, -1.5] [-2.5, -1.5] [-1.5, -1.5] [-0.5, -1.5] [+0.5, -1.5] [+1.5, -1.5] [+2.5, -1.5] [+3.5, -1.5]
+        // [-3.5, -2.5] [-2.5, -2.5] [-1.5, -2.5] [-0.5, -2.5] [+0.5, -2.5] [+1.5, -2.5] [+2.5, -2.5] [+3.5, -2.5]
+        // [-3.5, -3.5] [-2.5, -3.5] [-1.5, -3.5] [-0.5, -3.5] [+0.5, -3.5] [+1.5, -3.5] [+2.5, -3.5] [+3.5, -3.5]
+
+        // Mathf.Round() + 0.5;  used to snap to our grid
+        //cant leave the grid
     }
 
     private void getPathing(GameObject target)
@@ -51,11 +61,11 @@ public class UnitPathing : MonoBehaviour
 
     void getClosestTargrt()
     {
-
+        //TODO: 
     }
 
     private void moveAlongPath()
     {
-
+        //TODO: 
     }
 }
