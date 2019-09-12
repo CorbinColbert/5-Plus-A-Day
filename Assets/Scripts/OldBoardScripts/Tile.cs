@@ -4,28 +4,61 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public static float hoverDistance = 0.6f;
+    private bool selectable;
 
     public int xTilePos;
     public int yTilePos;
-    private Material tileMaterial;
+    
+    public Material unselectedTileMaterial;
+    public Material selectedTileMaterial;
 
+    private bool selected;
+    public Unit unit;
 
     // Start is called before the first frame update
     void Start()
     {
-        tileMaterial = gameObject.GetComponent<Renderer>().material;
+        unselectedTileMaterial = gameObject.GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }   
+
+    public void SetSelected(bool state) {
+        selected = state;
+
+        if (selected) {
+            gameObject.GetComponent<Renderer>().material = selectedTileMaterial;
+        } else {
+            gameObject.GetComponent<Renderer>().material = unselectedTileMaterial;
+        }
+    }
+
+    public void SetUnit(Unit unit) {
+        this.unit = unit;
+    }
+
+    public bool HasUnit() {
+        return unit != null;
     }
 
     public void selectedHelper()
     {
 
     }
+
+    public bool IsSelectable() {
+        return selectable;
+    }
+
+    public void SetSelectable(bool selectable) {
+       this.selectable = selectable;
+    }
+
     //private void OnMouseEnter()
     //{
     //    gameObject.GetComponent<Renderer>().material = selectedTile;

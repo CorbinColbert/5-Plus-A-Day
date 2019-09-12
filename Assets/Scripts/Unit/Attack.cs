@@ -20,11 +20,10 @@ public class Attack
     }
 
     public int calculateDamage() {
-        return (int)(damage * criticalHitModifier);
+        return criticalHit ? (int)(damage * criticalHitModifier) : damage;
     }
 
     public bool isCrit() {
         return criticalHit;
     }
-
 }

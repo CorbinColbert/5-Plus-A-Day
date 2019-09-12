@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    public Loyalty loyalty;
     public Stats stats;
-    protected Pair position;
-    //protected Board board;
-    protected ItemSlot itemSlot;
-    public Unit target;
+    private Tile tile;
+    private Unit target;
 
     void Start() {
         stats = new Stats(100, 100);
@@ -19,16 +18,17 @@ public class Unit : MonoBehaviour
 
     }
 
-    public Pair getBoardPosition() {
-        return this.position;
+    public Tile GetTile() {
+        return tile;
     }
 
-    public Item getItem() {
-        return itemSlot.getItem();
+    public void placeOnBoard(Tile tile) {
+        this.tile = tile;
+        tile.SetUnit(this);
     }
+}
 
-    //public void placeOnBoard(Board board, Pair position) {
-    //    this.board = board;
-    //    this.position = position;
-    //}
+public enum Loyalty {
+    ALLY,
+    ENEMY
 }
