@@ -2,29 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//this class is for the creation af a path from one location to another
-//this class is a modified version of Sebastian Lague pathfinding class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
-public class Pathfinding : MonoBehaviour
+public class UnitPathfinding : MonoBehaviour
 {
     //public Transform pathingUnit, target;
 
+    PathManager pathManager;
     NodeGrid grid;
 
     private void Awake()
     {
         grid = GetComponent<NodeGrid>();
+        pathManager = GetComponent<PathManager>();
     }
-    public List<Node> FindPath(GameObject pathingUnit, GameObject targetUnit)
+    public void TryFindPath(GameObject pathingUnit, GameObject targetUnit)
+    {
+        StartCoroutine(FindPath(pathingUnit, targetUnit));
+    }
+    IEnumerator FindPath(GameObject pathingUnit, GameObject targetUnit)
     {
         Vector3 start = pathingUnit.transform.position;
         Vector3 target = targetUnit.transform.position;
-
         Node startNode = grid.getNodeFromWorld(start);
         Node targetNode = grid.getNodeFromWorld(target);
-
         Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
         HashSet<Node> closedSet = new HashSet<Node>();
         openSet.Add(startNode);
+        bool successful = false;
+        List<Node> path = null;
 
         while (openSet.Count > 0)
         {
@@ -33,8 +37,8 @@ public class Pathfinding : MonoBehaviour
 
             if (currentNode == targetNode)
             {
-                List<Node> path = TraceNodePath(startNode, targetNode);
-                return path;
+                TraceNodePath(startNode, targetNode);
+                successful = true;
             }
 
             foreach (Node ajacentNode in grid.getAjacentNodes(currentNode))
@@ -48,6 +52,7 @@ public class Pathfinding : MonoBehaviour
                 }
 
                 int newMovementCostToAjacentNode = currentNode.gCost + getDistance(currentNode, ajacentNode);
+
                 if (newMovementCostToAjacentNode < ajacentNode.gCost || !openSet.Contains(ajacentNode))
                 {
                     ajacentNode.gCost = newMovementCostToAjacentNode;
@@ -61,7 +66,12 @@ public class Pathfinding : MonoBehaviour
                 }
             }
         }
-        return null;
+        yield return null;
+        if (successful)
+        {
+            path = TraceNodePath(startNode, targetNode);
+        }
+        pathManager.pathRequestDone(path, successful);
     }
 
     List<Node> TraceNodePath(Node startNode, Node endNode)
@@ -74,9 +84,11 @@ public class Pathfinding : MonoBehaviour
             path.Add(currentNode);
             currentNode = currentNode.parent;
         }
-        path.Reverse();
-        path.Remove(endNode); // so we dont get the node directly under the target
 
+        path.Reverse();
+        path.Remove(endNode); // so we dont get the node directly below the target
+
+        grid.path = path;
         return path;
     }
 
