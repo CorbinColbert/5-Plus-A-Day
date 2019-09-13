@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool isPaused = false;
+    public static bool isPaused = false; //Variable to check if paused
 
-    public GameObject PauseMenuUI;
+    public GameObject PauseMenuUI;//The game object for the Pause Menu
 
     // Update is called once per frame
-    void Update()
+    void Update()//Checks if player has pressed ESC to go to Pause Menu
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -25,28 +25,28 @@ public class PauseMenu : MonoBehaviour
         }
     }
     
-    public void Resume()
+    public void Resume()//Resumes the active game 
     {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //Game speed is normal rate
         isPaused = false;
     }
 
-    void Pause()
+    void Pause()//Pauses the active game
     {
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f; //Freezes game
         isPaused = true;
     }
 
-    public void LoadMenu()
+    public void LoadMenu()//Loads the main menus
     {
         SceneManager.LoadScene("Menus");//Create a variable for the MainMenu scene
         Time.timeScale = 1f; //Game speed is normal rate
         Debug.Log("Loading Menu...");
     }
 
-    public void QuitGame()
+    public void QuitGame()//Exits the game
     {
         Debug.Log("Quitting Game...");
         Application.Quit();

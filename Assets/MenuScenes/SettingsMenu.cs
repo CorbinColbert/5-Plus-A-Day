@@ -7,9 +7,9 @@ using UnityEngine.Audio;
 public class SettingsMenu : MonoBehaviour
 {
     //public Text slider;
-    public AudioMixer audioMixer;
+    public AudioMixer audioMixer;//For the music
 
-    public void SetVolume(float volume)
+    public void SetVolume(float volume)//Sets the volume of the music for the game
     {
         audioMixer.SetFloat("Volume", volume);
 
@@ -18,12 +18,12 @@ public class SettingsMenu : MonoBehaviour
         //Update(volume);
     }
 
-    public void SetQuality(int qualityCount)
+    public void SetQuality(int qualityCount)//Sets the quality of the game graphics
     {
         QualitySettings.SetQualityLevel(qualityCount);
     }
 
-    public void SetFullscreen(bool setFull)
+    public void SetFullscreen(bool setFull)//Makes the screen either fullscreen or not
     {
         Screen.fullScreen = setFull;
     }
