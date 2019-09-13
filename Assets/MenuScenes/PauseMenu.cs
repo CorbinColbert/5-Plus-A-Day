@@ -46,6 +46,26 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Loading Menu...");
     }
 
+    //Testing, need to add save method 
+    public void SaveLoadMenu()//Needs to be fixed with save method
+    {
+        //Need save method
+        Debug.Log("Saving Game Data...");
+
+        SceneManager.LoadScene("Menus");//Create a variable for the MainMenu scene
+        Time.timeScale = 1f; //Game speed is normal rate
+        Debug.Log("Loading Menu...");
+    }
+
+    public void SaveQuitGame()//Exits the game
+    {
+        //Need save method
+        Debug.Log("Saving Game Data...");
+
+        Debug.Log("Quitting Game...");
+        Application.Quit();
+    }
+
     public void QuitGame()//Exits the game
     {
         Debug.Log("Quitting Game...");
