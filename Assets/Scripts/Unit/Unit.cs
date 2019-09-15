@@ -87,7 +87,7 @@ public class Unit : MonoBehaviour
         }
 
         Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
-        rigidBody.AddForce(new Vector3(Random.Range(-100.0f, 100.0f), Random.Range(100.0f, 200.0f), Random.Range(-100.0f, 100.0f)));
+        rigidBody.AddForce(new Vector3(Random.Range(-200.0f, 200.0f), Random.Range(100.0f, 200.0f), Random.Range(-200.0f, 200.0f)));
         Collider collider;
         if (gameObject.TryGetComponent<Collider>(out collider)) {
             Destroy(collider, 2.0f);

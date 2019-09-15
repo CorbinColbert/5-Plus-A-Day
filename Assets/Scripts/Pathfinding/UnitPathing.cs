@@ -59,13 +59,13 @@ public class UnitPathing : MonoBehaviour
         path = grid.GetComponent<Pathfinding>().FindPath(gameObject, target);
     }
 
-    void getClosestTargrt()
+    void getClosestTarget()
     {
-        //TODO: 
+        //TODO: return a target
     }
 
     private void moveAlongPath()
     {
-        //TODO: 
+        //TODO: return the next square to move to?
     }
 }
