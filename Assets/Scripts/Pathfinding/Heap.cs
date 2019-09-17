@@ -5,7 +5,7 @@ using System;
 
 //this class is a generic implementation of aw heap data structure
 //this class was used with permision from Sebastian Lague under the MIT licence
-public class Heap<T> where T : IHeapItem<T>
+public class Heap<T> where T : ItemHeapIndex<T>
 {
     T[] items;
     int currentItemCount;
@@ -114,7 +114,7 @@ public class Heap<T> where T : IHeapItem<T>
     }
 }
 
-public interface IHeapItem<T> : IComparable<T>
+public interface ItemHeapIndex<T> : IComparable<T>
 {
     int HeapIndex
     {

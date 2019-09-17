@@ -6,8 +6,6 @@ using UnityEngine;
 //this class is a modified version of Sebastian Lague pathfinding class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
 public class Pathfinding : MonoBehaviour
 {
-    //public Transform pathingUnit, target;
-
     NodeGrid grid;
 
     private void Awake()
@@ -91,5 +89,22 @@ public class Pathfinding : MonoBehaviour
         }
 
         return 14 * distanceX + 10 * (distanceY - distanceX);
+    }
+
+    Vector3[] PathToVectors(List<Node> path)
+    {
+        int pathSize = path.Count;
+        Vector3 tempVector;
+        Vector3[] vectorPath = new Vector3[pathSize];
+        int index = 0;
+
+        foreach (Node node in path)
+        {
+            tempVector = node.worldPosition;
+            vectorPath.SetValue(tempVector, index);
+            index++;
+        }
+
+        return vectorPath;
     }
 }
