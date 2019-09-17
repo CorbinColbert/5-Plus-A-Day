@@ -23,6 +23,8 @@ public class Unit : MonoBehaviour
     void Start() {
         health = healthMax;
 
+        
+
         //TODO : Remove later when target can be found from code
         if (target != null) {
             SetTarget(target);
