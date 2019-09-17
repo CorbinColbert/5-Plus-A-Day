@@ -401,9 +401,9 @@ TextureImporter:
       name: uipack_rpg_sheet_11
       rect:
         serializedVersion: 2
-        x: 289
+        x: 291
         y: 327
-        width: 46
+        width: 44
         height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
