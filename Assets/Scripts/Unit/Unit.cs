@@ -71,7 +71,7 @@ public class Unit : MonoBehaviour
         tile.SetUnit(this);
     }
 
-    private void OnDeath(Attack finalBlow) {
+    private void OnDeath(Attack finalBlow) {        
         Unit unit = null;
         UnitPathing pathing = null;
         finalBlow.attacker.TryGetComponent<Unit>(out unit);
@@ -94,6 +94,7 @@ public class Unit : MonoBehaviour
         }
         Destroy(this, 0.0f);
     }
+
 }
 
 public enum Loyalty {
