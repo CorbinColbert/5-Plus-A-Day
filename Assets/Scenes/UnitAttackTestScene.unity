@@ -188,7 +188,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &522501074
 MonoBehaviour:
@@ -323,15 +323,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loyalty: 0
-  target: {fileID: 671744224}
-  maximumHP: 2000
-  currentHP: 0
-  maximumMP: 0
-  currentMP: 0
-  attackDamage: 10
-  criticalStrikeChance: 0.1
-  specialAttackDamage: 0
-  specialCriticalStrikeChance: 0
+  domain: {fileID: 0}
+  target: {fileID: 671744218}
+  healthMax: 10000
+  health: 0
+  healthRegen: 1
+  damageMin: 2
+  damageMax: 4
+  critChance: 0
+  critDamageModifier: 2
 --- !u!1 &671744218
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &671744224
 MonoBehaviour:
@@ -453,15 +453,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loyalty: 1
-  target: {fileID: 659603177}
-  maximumHP: 2000
-  currentHP: 0
-  maximumMP: 0
-  currentMP: 0
-  attackDamage: 10
-  criticalStrikeChance: 0.1
-  specialAttackDamage: 0
-  specialCriticalStrikeChance: 0
+  domain: {fileID: 0}
+  target: {fileID: 659603171}
+  healthMax: 10000
+  health: 0
+  healthRegen: 1
+  damageMin: 2
+  damageMax: 4
+  critChance: 0
+  critDamageModifier: 2
 --- !u!1 &787103836
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,15 +670,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loyalty: 0
-  target: {fileID: 671744224}
-  maximumHP: 2000
-  currentHP: 0
-  maximumMP: 0
-  currentMP: 0
-  attackDamage: 10
-  criticalStrikeChance: 0.1
-  specialAttackDamage: 0
-  specialCriticalStrikeChance: 0
+  domain: {fileID: 0}
+  target: {fileID: 0}
+  healthMax: 100
+  health: 0
+  healthRegen: 1
+  damageMin: 2
+  damageMax: 4
+  critChance: 0
+  critDamageModifier: 2
 --- !u!114 &1498310671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,7 +764,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061812116
 GameObject:
@@ -963,7 +963,7 @@ PrefabInstance:
     - target: {fileID: 6173980094447778432, guid: 8898bed3dcf41db40a303062c03492e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6173980094447778432, guid: 8898bed3dcf41db40a303062c03492e0,
         type: 3}
