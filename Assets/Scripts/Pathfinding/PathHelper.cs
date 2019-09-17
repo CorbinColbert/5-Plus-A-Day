@@ -8,7 +8,7 @@ public class PathHelper : MonoBehaviour
     Queue<PathRequest> pathRequests = new Queue<PathRequest>();
     PathRequest tempPathRequest;
     bool requesting = false;
-    static PathHelper pathHelper;
+    PathHelper pathHelper;
     Pathfinding pathfinder;
 
     private void Awake()
@@ -16,12 +16,12 @@ public class PathHelper : MonoBehaviour
         pathHelper = this;
         pathfinder = GetComponent<Pathfinding>();
     }
-    public static void RequestAPath(GameObject targetTroop, GameObject pathRequester, Action<List<Node>, bool> requestResponce)
+    public void RequestAPath(GameObject targetTroop, GameObject pathRequester, Action<List<Node>, bool> requestResponce)
     {
         PathRequest request = new PathRequest(targetTroop, pathRequester, requestResponce);
     }
 
-    void PathRequestFinished(List<Node> path, bool sucessful)
+    public void PathRequestFinished(List<Node> path, bool sucessful)
     {
 
     }

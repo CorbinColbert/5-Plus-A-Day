@@ -1,93 +1,100 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    public event Action onDeathEvent;
     public Loyalty loyalty;
-    public Unit target;
+    public GameObject domain;
+    public GameObject target;
 
-    public int maximumHP;
-    public int currentHP;
-    public int maximumMP;
-    public int currentMP;
-    public int attackDamage;
-    public double criticalStrikeChance;
-    public int specialAttackDamage;
-    public double specialCriticalStrikeChance;
+    public float healthMax = 100.0f;
+    public float health;
+    public float healthRegen = 1.0f;
+    public float damageMin = 2.0f;
+    public float damageMax = 4.0f;
 
-    public void setAttackDamage(int attackDamage) {
-        this.attackDamage = attackDamage;
-    }
+    private int attackCounter = 0;
+    private int attackOnCount = 50;
 
-    public void setCriticalStrikeChance(double criticalStrikeChance) {
-        this.criticalStrikeChance = criticalStrikeChance;
-    }
-
-    public void setSpecialAttackDamage(int specialAttackDamage) {
-        this.specialAttackDamage = specialAttackDamage;
-    }
-
-    public void setSpecialCriticalStrikeChance(double specialCriticalStrikeChance) {
-        this.specialCriticalStrikeChance = specialCriticalStrikeChance;
-    }
+    public float critChance = 0.0f;
+    public float critDamageModifier = 2.0f;
+    public Item item;
 
     void Start() {
-        this.currentHP = maximumHP;
-        this.currentMP = maximumMP;
+        health = healthMax;
+
+        //TODO : Remove later when target can be found from code
+        if (target != null) {
+            SetTarget(target);
+        }
     }
 
-    //Called once per frame
-    void Update() {
-        AttackTarget();
+    void FixedUpdate() {
+        if (health <= 0) {
+            if (onDeathEvent != null) {
+                onDeathEvent.Invoke();
+            }    
+            OnDeath();
+        } else {
+            Attack();
+            Heal();
+        }       
+    }
+
+    void Awake() {
+        
+    }
+
+    private void Heal() {
+        if ()
+    }
+
+    // void Metod() {
+    //     domain.GetComponent<PathHelper>().RequestAPath(target.gameObject, gameObject, MetodTwo)
+
+    // }
+
+    // void MetodTwo(List<Node> path, bool successful) {
+    //     domain.GetComponent<PathHelper>().PathRequestFinished(path, successful);
+    // }
+
+    private void Attack() {
+        if (target != null) {
+            Attack attack = new Attack(this);
+            target.GetComponent<Unit>().RecieveAttack(attack);
+        }
     }
 
     public void RecieveAttack(Attack attack) {
-        currentHP -= attack.calculateDamage();
-        if (currentHP <= 0) {
-            OnDeath(attack);
-        }
+        health -= attack.damage;
     }
 
-    private void AttackTarget() {
-        if (target != null) {
-            Attack attack = new Attack(attackDamage, criticalStrikeChance, gameObject);
-            target.RecieveAttack(attack);
-        }
+    private void OnDeath() {
+        Destroy(this, 3.0f);
     }
 
-    //Call this when the target dies
-    public void RemoveTarget() {
+    private void OnTargetDeath() {
+        print("Triggered death event on unit "+gameObject.name);
         target = null;
     }
 
-    private void OnDeath(Attack finalBlow) {        
-        Unit unit = null;
-        UnitPathing pathing = null;
-        finalBlow.attacker.TryGetComponent<Unit>(out unit);
-
-        gameObject.TryGetComponent<UnitPathing>(out pathing);
-        if (pathing != null) {
-            print("Destroying pathing from "+name);
-            Destroy(pathing, 0.0f);
-        }
-
-        if (unit != null) {
-            unit.RemoveTarget();
-        }
-
-        Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
-        rigidBody.AddForce(new Vector3(Random.Range(-200.0f, 200.0f), Random.Range(100.0f, 200.0f), Random.Range(-200.0f, 200.0f)));
-        Collider collider;
-        if (gameObject.TryGetComponent<Collider>(out collider)) {
-            Destroy(collider, 2.0f);
-        }
-        Destroy(this, 0.0f);
+    public void SetTarget(GameObject target) {
+        this.target = target;
+        target.GetComponent<Unit>().onDeathEvent += OnTargetDeath;
     }
 
+    public Item Equip(Item item) {
+        Item itemHolder = item;
+        this.item = item;
+        
+        return itemHolder;
+    }
 }
 
 public enum Loyalty {
-    ALLY,
+    PLAYER,
     ENEMY
 }
