@@ -56,7 +56,7 @@ public class UnitPathing : MonoBehaviour
 
     private void getPathing(GameObject target)
     {
-        path = grid.GetComponent<Pathfinding>().FindPath(gameObject, target);
+        //path = grid.GetComponent<Pathfinding>().FindPath(gameObject, target);
     }
 
     void getClosestTarget()

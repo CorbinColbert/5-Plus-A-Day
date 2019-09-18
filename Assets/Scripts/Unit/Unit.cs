@@ -44,13 +44,37 @@ public class Unit : MonoBehaviour
             }    
             OnDeath();
         } else {
-            TryAttack();
-            TryRegen();
+            if (target == null) {
+                FindTarget();
+            } else {
+                TryAttack();
+                TryRegen();
+            }
         }       
     }
 
     void Awake() {
         
+    }
+
+    private void FindTarget() {
+        GameObject[] objects = null;
+        if (CompareTag("EnemyTroop")) {
+            objects = GameObject.FindGameObjectsWithTag("PlayerTroop");
+        }
+        if (CompareTag("PlayerTroop")) {
+            objects = GameObject.FindGameObjectsWithTag("EnemyTroop");
+        }
+
+        if (objects != null) {
+            int size = objects.Length;
+            if (size == 0) {
+                print("Victory!");
+            } else {
+                SetTarget(objects[UnityEngine.Random.Range(0, size + 1)]);
+            }
+            
+        }
     }
 
     private void TryRegen() {
