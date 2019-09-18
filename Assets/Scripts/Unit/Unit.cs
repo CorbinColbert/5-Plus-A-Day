@@ -6,17 +6,22 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public event Action onDeathEvent;
-    public Loyalty loyalty;
     public GameObject domain;
     public GameObject target;
 
     public float healthMax = 100.0f;
     public float health;
+
     public float healthRegen = 1.0f;
+    private bool regenReady = false;
+    private int regenCounter = 0;
+    private int regenOnCount = 100;
+
     public float damageMin = 2.0f;
     public float damageMax = 4.0f;
-
+    private bool attackReady = false;
     private int attackCounter = 0;
+    [SerializeField]
     private int attackOnCount = 50;
 
     public float critChance = 0.0f;
@@ -35,12 +40,12 @@ public class Unit : MonoBehaviour
     void FixedUpdate() {
         if (health <= 0) {
             if (onDeathEvent != null) {
-                onDeathEvent.Invoke();
+                onDeathEvent();
             }    
             OnDeath();
         } else {
-            Attack();
-            Heal();
+            TryAttack();
+            TryRegen();
         }       
     }
 
@@ -48,23 +53,51 @@ public class Unit : MonoBehaviour
         
     }
 
-    private void Heal() {
-        if ()
+    private void TryRegen() {
+        if (regenCounter >= regenOnCount) {
+            regenReady = true;
+        } else {
+            regenCounter++;
+        }
+        if (regenReady) {
+            Regen();
+        }
     }
 
-    // void Metod() {
-    //     domain.GetComponent<PathHelper>().RequestAPath(target.gameObject, gameObject, MetodTwo)
+    private void Regen() {
+        if (health + healthRegen > healthMax) {
+            health = healthMax;
+        } else {
+            health += healthRegen;
+        }
+        regenReady = false;
+        regenCounter = 0;
+        
+    }
 
-    // }
+    private void TryAttack() {
+        if (!attackReady) {
+            if (attackCounter >= attackOnCount) {
+                attackReady = true;
+            } else {
+                attackCounter++;
+            }
+        }
+        if (attackReady) {
+            Attack();
+        }
+    }
 
-    // void MetodTwo(List<Node> path, bool successful) {
-    //     domain.GetComponent<PathHelper>().PathRequestFinished(path, successful);
-    // }
-
-    private void Attack() {
-        if (target != null) {
+    private void Attack()
+    {
+        if (target != null)
+        {
             Attack attack = new Attack(this);
             target.GetComponent<Unit>().RecieveAttack(attack);
+            attackCounter = 0;
+            attackReady = false;
+            Rigidbody body = gameObject.GetComponent<Rigidbody>();
+            body.AddForce(new Vector3(0, 100, 0));
         }
     }
 
@@ -73,11 +106,25 @@ public class Unit : MonoBehaviour
     }
 
     private void OnDeath() {
-        Destroy(this, 3.0f);
+        Rigidbody body = gameObject.GetComponent<Rigidbody>();
+
+        float xForce = UnityEngine.Random.Range(200,-200);
+        float yForce = UnityEngine.Random.Range(100, 400);
+        float zForce = UnityEngine.Random.Range(200,-200);
+        Vector3 randomForce = new Vector3(xForce, yForce, zForce);
+
+        body.AddForce(randomForce);
+
+        Destroy(gameObject.GetComponent<UnitPathing>());
+
+        Destroy(this);
+
+        Destroy(gameObject.GetComponent<Collider>(), 4.0f);
+
+        Destroy(gameObject, 5.0f);
     }
 
     private void OnTargetDeath() {
-        print("Triggered death event on unit "+gameObject.name);
         target = null;
     }
 
@@ -92,9 +139,4 @@ public class Unit : MonoBehaviour
         
         return itemHolder;
     }
-}
-
-public enum Loyalty {
-    PLAYER,
-    ENEMY
 }
