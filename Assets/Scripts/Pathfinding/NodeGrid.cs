@@ -6,7 +6,7 @@ using UnityEngine;
 //this class is a modified version of Sebastian Lague Grid class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
 public class NodeGrid : MonoBehaviour
 { 
-    public bool displayPathOnly;
+    //public bool displayPathOnly;
     public LayerMask viabilityMask;
     public LayerMask occupiedMask;
     public Vector2 gridSize;
@@ -14,11 +14,8 @@ public class NodeGrid : MonoBehaviour
     Node[,] grid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
-    public List<Node> path;// only for visual debuging
+    //public List<Node> path; // only for visual debuging
     public int MaxSize{ get{return gridSizeX * gridSizeY;} }
-    public List<GameObject> playerTroopsOnGrid;
-    public List<GameObject> enemyTroopsOnGrid;
-
 
     private void Start()
     {
@@ -27,6 +24,7 @@ public class NodeGrid : MonoBehaviour
         gridSizeY = Mathf.RoundToInt(gridSize.y / nodeDiameter);
         CreateGrid();
     }
+
     void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
@@ -43,6 +41,7 @@ public class NodeGrid : MonoBehaviour
             }
         }
     }
+
     public Node getNodeFromWorld(Vector3 worldPosition)
     {
         float percentX = (worldPosition.x + gridSize.x/2) / gridSize.x;
@@ -53,6 +52,7 @@ public class NodeGrid : MonoBehaviour
         int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
         return grid[x,y];
     }
+
     public List<Node> getAjacentNodes(Node node)
     {
         List<Node> ajacentNodes = new List<Node>();
@@ -76,38 +76,38 @@ public class NodeGrid : MonoBehaviour
         }
         return ajacentNodes;
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x,1,gridSize.y));
-        if (displayPathOnly)
-        {
-            if (path != null)
-            {
-                foreach (Node node in path)
-                {
-                    Gizmos.color = Color.yellow;
-                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
-            }
-        }
-        else
-        {
-            if (grid != null)
-            {
-                foreach (Node node in grid)
-                {
-                    Gizmos.color = (node.viableNode) ? Color.white : Color.red;
-                    Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
-                    if (path != null)
-                    {
-                        if (path.Contains(node))
-                        {
-                            Gizmos.color = Color.yellow;
-                        }
-                    }
-                    Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                }
-            }
-        }
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x,1,gridSize.y));
+    //    if (displayPathOnly)
+    //    {
+    //        if (path != null)
+    //        {
+    //            foreach (Node node in path)
+    //            {
+    //                Gizmos.color = Color.yellow;
+    //                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+    //            }
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (grid != null)
+    //        {
+    //            foreach (Node node in grid)
+    //            {
+    //                Gizmos.color = (node.viableNode) ? Color.white : Color.red;
+    //                Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
+    //                if (path != null)
+    //                {
+    //                    if (path.Contains(node))
+    //                    {
+    //                        Gizmos.color = Color.yellow;
+    //                    }
+    //                }
+    //                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+    //            }
+    //        }
+    //    }
+    //}
 }

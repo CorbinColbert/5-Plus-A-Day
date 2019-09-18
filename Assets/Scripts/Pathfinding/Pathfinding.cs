@@ -109,7 +109,7 @@ public class Pathfinding : MonoBehaviour
         return 14 * distanceX + 10 * (distanceY - distanceX);
     }
 
-    Vector3[] PathToVectors(List<Node> path)
+    public static Vector3[] PathToVectors(List<Node> path)
     {
         int pathSize = path.Count;
         Vector3 tempVector;
