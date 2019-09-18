@@ -35,6 +35,10 @@ public class Unit : MonoBehaviour
         if (target != null) {
             SetTarget(target);
         }
+
+        Rigidbody body = gameObject.GetComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+        body.freezeRotation = true;
     }
 
     void FixedUpdate() {
@@ -71,7 +75,7 @@ public class Unit : MonoBehaviour
             if (size == 0) {
                 print("Victory!");
             } else {
-                SetTarget(objects[UnityEngine.Random.Range(0, size + 1)]);
+                SetTarget(objects[UnityEngine.Random.Range(0, size)]);
             }
             
         }
@@ -117,11 +121,19 @@ public class Unit : MonoBehaviour
         if (target != null)
         {
             Attack attack = new Attack(this);
-            target.GetComponent<Unit>().RecieveAttack(attack);
-            attackCounter = 0;
-            attackReady = false;
-            Rigidbody body = gameObject.GetComponent<Rigidbody>();
-            body.AddForce(new Vector3(0, 100, 0));
+            Unit other;
+            if (target.TryGetComponent<Unit>(out other))
+            {
+                other.RecieveAttack(attack);
+                attackCounter = 0;
+                attackReady = false;
+                Rigidbody body = gameObject.GetComponent<Rigidbody>();
+                if (body != null) {
+                    body.AddForce(new Vector3(0, 100, 0));
+                }
+            }
+
+            
         }
     }
 
@@ -133,9 +145,12 @@ public class Unit : MonoBehaviour
         Rigidbody body = gameObject.GetComponent<Rigidbody>();
 
         float xForce = UnityEngine.Random.Range(200,-200);
-        float yForce = UnityEngine.Random.Range(100, 400);
+        float yForce = UnityEngine.Random.Range(100, 200);
         float zForce = UnityEngine.Random.Range(200,-200);
         Vector3 randomForce = new Vector3(xForce, yForce, zForce);
+
+        body.constraints = RigidbodyConstraints.None;
+        body.freezeRotation = false;
 
         body.AddForce(randomForce);
 
@@ -154,7 +169,10 @@ public class Unit : MonoBehaviour
 
     public void SetTarget(GameObject target) {
         this.target = target;
-        target.GetComponent<Unit>().onDeathEvent += OnTargetDeath;
+        Unit unit;
+        if (target.TryGetComponent<Unit>(out unit)) {
+            unit.onDeathEvent += OnTargetDeath;
+        }
     }
 
     public Item Equip(Item item) {
