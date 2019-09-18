@@ -25,6 +25,8 @@ public class PathHelper : MonoBehaviour
     public void PathRequestFinished(List<Node> path, bool sucessful)
     {
         tempPathRequest.response(path, sucessful);
+        requesting = false;
+        nextInQueue();
     }
 
     void nextInQueue()
@@ -33,6 +35,8 @@ public class PathHelper : MonoBehaviour
         {
             //process next path request
             tempPathRequest = pathRequests.Dequeue();
+            requesting = true;
+            pathfinder.PathRequest(tempPathRequest);
         }
     }
 }
