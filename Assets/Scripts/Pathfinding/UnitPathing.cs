@@ -14,6 +14,7 @@ public class UnitPathing : MonoBehaviour
     public float moveSpeed;
     Vector3 tempStartPos;
     int index = 1;
+    public KeyCode key;
 
     private void FixedUpdate()
     {
@@ -41,7 +42,7 @@ public class UnitPathing : MonoBehaviour
             tempNode.unitOnTop = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(key))
         {
             GetPathing(target);
         }
@@ -85,6 +86,7 @@ public class UnitPathing : MonoBehaviour
         if (!hasPathToFollow)
         {
             grid.GetComponent<PathHelper>().RequestAPath(target, gameObject, doStuffWithPath);
+            //PathHelper.RequestAPath(target, gameObject, doStuffWithPath);
         }
         // wait for current path to finish
     }

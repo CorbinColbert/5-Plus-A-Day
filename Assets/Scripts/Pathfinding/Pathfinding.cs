@@ -92,7 +92,7 @@ public class Pathfinding : MonoBehaviour
         }
         path.Reverse();
         path.Remove(endNode); // so we dont get the node directly under the target
-
+        endNode.parent.unitOnTop = false;
         return path;
     }
 

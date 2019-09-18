@@ -76,38 +76,19 @@ public class NodeGrid : MonoBehaviour
         }
         return ajacentNodes;
     }
-    //private void OnDrawGizmos()
-    //{
-    //    Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x,1,gridSize.y));
-    //    if (displayPathOnly)
-    //    {
-    //        if (path != null)
-    //        {
-    //            foreach (Node node in path)
-    //            {
-    //                Gizmos.color = Color.yellow;
-    //                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
-    //            }
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if (grid != null)
-    //        {
-    //            foreach (Node node in grid)
-    //            {
-    //                Gizmos.color = (node.viableNode) ? Color.white : Color.red;
-    //                Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
-    //                if (path != null)
-    //                {
-    //                    if (path.Contains(node))
-    //                    {
-    //                        Gizmos.color = Color.yellow;
-    //                    }
-    //                }
-    //                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
-    //            }
-    //        }
-    //    }
-    //}
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
+        
+        if (grid != null)
+        {
+            foreach (Node node in grid)
+            {
+                Gizmos.color = (node.viableNode) ? Color.white : Color.red;
+                Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
+                Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
+            }
+        }
+        
+    }
 }
