@@ -7,12 +7,20 @@ using UnityEngine;
 public class Pathfinding : MonoBehaviour
 {
     NodeGrid grid;
+    PathHelper pathhelper; 
 
     private void Awake()
     {
         grid = GetComponent<NodeGrid>();
+        pathhelper = GetComponent<PathHelper>();
     }
-    public List<Node> FindPath(GameObject pathingUnit, GameObject targetUnit)
+
+    public void PathRequest(PathRequest request)
+    {
+        StartCoroutine(FindPath(request.pathingUnit, request.targetUnit));
+    }
+
+    IEnumerator FindPath(GameObject pathingUnit, GameObject targetUnit)
     {
         Vector3 start = pathingUnit.transform.position;
         Vector3 target = targetUnit.transform.position;
@@ -23,6 +31,8 @@ public class Pathfinding : MonoBehaviour
         Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
         HashSet<Node> closedSet = new HashSet<Node>();
         openSet.Add(startNode);
+        bool isSucessful = false;
+        List<Node> path = null;
 
         while (openSet.Count > 0)
         {
@@ -31,8 +41,8 @@ public class Pathfinding : MonoBehaviour
 
             if (currentNode == targetNode)
             {
-                List<Node> path = TraceNodePath(startNode, targetNode);
-                return path;
+                isSucessful = true;
+                break;
             }
 
             foreach (Node ajacentNode in grid.getAjacentNodes(currentNode))
@@ -59,7 +69,15 @@ public class Pathfinding : MonoBehaviour
                 }
             }
         }
-        return null;
+
+        yield return null;
+
+        if (isSucessful)
+        {
+            path = TraceNodePath(startNode, targetNode);
+        }
+
+        pathhelper.PathRequestFinished(path, isSucessful);
     }
 
     List<Node> TraceNodePath(Node startNode, Node endNode)

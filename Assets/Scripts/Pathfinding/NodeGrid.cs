@@ -106,11 +106,8 @@ public class NodeGrid : MonoBehaviour
                         }
                     }
                     Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
-                    //Gizmos.DrawSphere(node.worldPosition, 0.05f);
                 }
             }
         }
     }
-
-    
 }
