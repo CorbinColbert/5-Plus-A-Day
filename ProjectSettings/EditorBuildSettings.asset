@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MenuScenes/Menus.unity
+    path: Assets/MenuScenes/Scenes/Menus.unity
     guid: d83682892fe2e9d48a1d507a73c6ca81
   - enabled: 1
-    path: Assets/MenuScenes/DialogueVersionOne.unity
+    path: Assets/MenuScenes/Scenes/DialogueVersionOne.unity
     guid: 4b384f7b61bedff46b552704da5b2aec
   - enabled: 1
-    path: Assets/MenuScenes/DialogueTutorial.unity
+    path: Assets/MenuScenes/Scenes/DialogueTutorial.unity
     guid: db7068f6aac62504f99caf4a0df842c4
   - enabled: 1
-    path: Assets/MenuScenes/PauseMenu.unity
+    path: Assets/MenuScenes/Scenes/PauseMenu.unity
     guid: 50c77cd6aad91d048b2582c24eb0875c
   m_configObjects: {}
