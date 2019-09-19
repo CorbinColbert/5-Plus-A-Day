@@ -66,6 +66,10 @@ public class Pathfinding : MonoBehaviour
                     {
                         openSet.Add(ajacentNode);
                     }
+                    else
+                    {
+                        openSet.UpdateItem(ajacentNode);
+                    }
                 }
             }
         }
