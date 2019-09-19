@@ -28,6 +28,11 @@ public class Unit : MonoBehaviour
     public float critDamageModifier = 2.0f;
     public Item item;
 
+    //@Cameron this is the reference to the node the unit is on top of
+    private Node nodeUnitOnTopOf;
+    //this is the reference to the grid - needs to be set in the unity inspector
+    public GameObject grid;
+
     void Start() {
         health = healthMax;
 
@@ -42,6 +47,33 @@ public class Unit : MonoBehaviour
     }
 
     void FixedUpdate() {
+
+        //start of the loop to update what node the unit is currently on top of
+        Node tempNode;
+
+        if (nodeUnitOnTopOf == null)
+        {
+            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
+            tempNode = nodeUnitOnTopOf;
+        }
+        else
+        {
+            tempNode = nodeUnitOnTopOf;
+            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
+        }
+
+        if (nodeUnitOnTopOf == tempNode)
+        {
+            tempNode.unitOnTop = false;
+        }
+        else
+        {
+            tempNode.unitOnTop = true;
+            tempNode = nodeUnitOnTopOf;
+            tempNode.unitOnTop = false;
+        }
+        //end of node update loop
+
         if (health <= 0) {
             if (onDeathEvent != null) {
                 onDeathEvent();
@@ -55,10 +87,6 @@ public class Unit : MonoBehaviour
                 TryRegen();
             }
         }       
-    }
-
-    void Awake() {
-        
     }
 
     private void FindTarget() {

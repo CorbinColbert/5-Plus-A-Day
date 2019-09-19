@@ -7,7 +7,6 @@ public class UnitPathing : MonoBehaviour
 {
     public Node[] path;
     public GameObject grid;
-    private Node nodeUnitOnTopOf;
     public GameObject target;
     bool hasPathToFollow = false;
     float timer = 0;
@@ -18,30 +17,6 @@ public class UnitPathing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Node tempNode;
-
-        if (nodeUnitOnTopOf == null)
-        {
-            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-            tempNode = nodeUnitOnTopOf;
-        }
-        else
-        {
-            tempNode = nodeUnitOnTopOf;
-            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-        }
-
-        if (nodeUnitOnTopOf == tempNode)
-        {
-            tempNode.unitOnTop = false;
-        }
-        else
-        {
-            tempNode.unitOnTop = true;
-            tempNode = nodeUnitOnTopOf;
-            tempNode.unitOnTop = false;
-        }
-
         if (Input.GetKeyDown(key))
         {
             GetPathing(target);
@@ -61,7 +36,7 @@ public class UnitPathing : MonoBehaviour
 
             timer += Time.deltaTime * moveSpeed;
 
-            //at end turn hasPathToFollow to false and index and timer back to 0
+            //at end, turn hasPathToFollow to false and index and timer back to 0
             if (transform.position == path[path.Length - 1].worldPosition)
             {
                 hasPathToFollow = false;
@@ -80,28 +55,32 @@ public class UnitPathing : MonoBehaviour
         tempStartPos = transform.position;
     }
 
-    
-    public void GetPathing(GameObject target)
+    //call this to get a path
+    public void GetPathing(GameObject target) 
     {
         if (!hasPathToFollow)
         {
             grid.GetComponent<PathHelper>().RequestAPath(target, gameObject, doStuffWithPath);
             //PathHelper.RequestAPath(target, gameObject, doStuffWithPath);
         }
-        // wait for current path to finish
+        else
+        {
+            throw new System.InvalidOperationException("There is alredy a path being processed!!");
+        }
     }
 
+    //callback method from getPathing
     public void doStuffWithPath(List<Node> path , bool wasSuccessfull)
     {
         if (wasSuccessfull)
         {
-            print("the path request returned successfull");
+            //print("the path request returned successfull");
             this.path = path.ToArray();
             hasPathToFollow = true;
         }
         else
         {
-            print("the path request did not return successfull");
+            //print("the path request did not return successfull");
             //pathing failed
         }
     }
