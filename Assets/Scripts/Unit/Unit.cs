@@ -77,12 +77,14 @@ public class Unit : MonoBehaviour
         UnitPathing pathing;
         if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
             try {
-                pathing.GetPathing(target);
+                if (target != null) {
+                    pathing.GetPathing(target);
+                }
             } catch (InvalidOperationException e) {
                 print("eeeee:  "+e);
             }
         } else {
-            
+
         }
         
         if (health <= 0) {
