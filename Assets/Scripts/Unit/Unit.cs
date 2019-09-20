@@ -81,6 +81,8 @@ public class Unit : MonoBehaviour
             } catch (InvalidOperationException e) {
                 print("eeeee:  "+e);
             }
+        } else {
+            
         }
         
         if (health <= 0) {

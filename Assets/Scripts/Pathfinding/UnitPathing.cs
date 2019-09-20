@@ -18,11 +18,11 @@ public class UnitPathing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // debug
-        //if (Input.GetKeyDown(key))
-        //{
+
+        // if (Input.GetKeyDown(key))
+        // {
         //    GetPathing(target);
-        //}
+        // }
 
         if (hasPathToFollow)
         {
