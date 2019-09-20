@@ -8,7 +8,6 @@ namespace Tests
 {
     public class AttackTests
     {
-<<<<<<< HEAD
         // A Test behaves as an ordinary method
         [Test]
         public void AttackTestsSimplePasses()
@@ -25,8 +24,5 @@ namespace Tests
             // Use yield to skip a frame.
             yield return null;
         }
-=======
-        
->>>>>>> 8dd9f808c7aae9e79d4b22cf8c5255f3458d6e3e
     }
 }

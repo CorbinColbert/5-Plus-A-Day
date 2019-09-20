@@ -8,7 +8,6 @@ namespace Tests
 {
     public class UnitTests
     {
-<<<<<<< HEAD
         [UnityTest]
         public IEnumerator HealthStartsAtMax()
         {
@@ -27,8 +26,5 @@ namespace Tests
 
             Assert.True(unit == null);
         }
-=======
-        
->>>>>>> 8dd9f808c7aae9e79d4b22cf8c5255f3458d6e3e
     }
 }
