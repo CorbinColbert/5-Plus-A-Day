@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 0}
+  hasPathToFollow: 0
   moveSpeed: 1
 --- !u!114 &1121176737585070464
 MonoBehaviour:
