@@ -24,4 +24,17 @@ public class GameManager : MonoBehaviour
         gridManagerInstance = FindObjectOfType<GridManager>();
     }
 
+
+
+    //placeholder
+    public void saveGame()
+    {
+
+    }
+
+    //placeholder
+    public void loadGame()
+    {
+
+    }
 }
