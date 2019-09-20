@@ -145,8 +145,13 @@ public class Unit : MonoBehaviour
     }
 
     private void TryAttack() {
-        int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - target.GetComponent<Unit>().nodeUnitOnTopOf.gridX);
-        int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - target.GetComponent<Unit>().nodeUnitOnTopOf.gridY);
+        Unit targetUnit;
+        if (!target.TryGetComponent<Unit>(out targetUnit)) {
+            return;
+        }
+
+        int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - targetUnit.nodeUnitOnTopOf.gridX);
+        int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - targetUnit.nodeUnitOnTopOf.gridY);
 
         int distance = 0;
         if (distanceX > distanceY)
@@ -196,6 +201,8 @@ public class Unit : MonoBehaviour
     }
 
     private void OnDeath() {
+        nodeUnitOnTopOf.unitOnTop = false;
+
         Rigidbody body = gameObject.GetComponent<Rigidbody>();
 
         float xForce = UnityEngine.Random.Range(200,-200);
@@ -205,7 +212,6 @@ public class Unit : MonoBehaviour
 
         body.constraints = RigidbodyConstraints.None;
         body.freezeRotation = false;
-
         body.AddForce(randomForce);
 
         Destroy(gameObject.GetComponent<UnitPathing>());
