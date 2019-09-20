@@ -563,9 +563,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 1524300342367201367, guid: 41a945e5e56885742b4d68a3b44b6f0f,
+  m_Sprite: {fileID: 7051932668790233799, guid: 41a945e5e56885742b4d68a3b44b6f0f,
     type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -915,9 +915,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 1524300342367201367, guid: 41a945e5e56885742b4d68a3b44b6f0f,
+  m_Sprite: {fileID: 7051932668790233799, guid: 41a945e5e56885742b4d68a3b44b6f0f,
     type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2258,8 +2258,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'To go to other options for your army hit the escape key.
 
-    To Command the troops place them on the board with ...
 
+    To Command the troops place them on the board with ...
 
 
     Control Tutorial Coming Soon'
