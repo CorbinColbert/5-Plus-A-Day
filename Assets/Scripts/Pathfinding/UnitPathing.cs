@@ -12,7 +12,7 @@ public class UnitPathing : MonoBehaviour
     float timer = 0;
     public float moveSpeed;
     Vector3 tempStartPos;
-    int index = 1;
+    int index = 0;
     // debug
     //public KeyCode key;
 
