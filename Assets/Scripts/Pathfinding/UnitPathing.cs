@@ -13,14 +13,16 @@ public class UnitPathing : MonoBehaviour
     public float moveSpeed;
     Vector3 tempStartPos;
     int index = 1;
-    public KeyCode key;
+    // debug
+    //public KeyCode key;
 
     private void FixedUpdate()
     {
-        if (Input.GetKeyDown(key))
-        {
-            GetPathing(target);
-        }
+        // debug
+        //if (Input.GetKeyDown(key))
+        //{
+        //    GetPathing(target);
+        //}
 
         if (hasPathToFollow)
         {
