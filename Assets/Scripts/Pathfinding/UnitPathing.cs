@@ -8,7 +8,7 @@ public class UnitPathing : MonoBehaviour
     public Node[] path;
     public GameObject grid;
     //public GameObject target;
-    bool hasPathToFollow = false;
+    public bool hasPathToFollow = false;
     float timer = 0;
     public float moveSpeed;
     Vector3 tempStartPos;

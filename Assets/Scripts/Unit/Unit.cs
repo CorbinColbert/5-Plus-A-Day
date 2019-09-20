@@ -24,7 +24,7 @@ public class Unit : MonoBehaviour
     [SerializeField]
     private int attackOnCount = 50;
     public int attackRange = 14;
-
+    private bool inRange;
     public float critChance = 0.0f;
     public float critDamageModifier = 2.0f;
     public Item item;
@@ -77,7 +77,7 @@ public class Unit : MonoBehaviour
         UnitPathing pathing;
         if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
             try {
-                if (target != null) {
+                if (target != null && !pathing.hasPathToFollow && !inRange) {
                     pathing.GetPathing(target);
                 }
             } catch (InvalidOperationException e) {
@@ -163,7 +163,9 @@ public class Unit : MonoBehaviour
                 attackCounter++;
             }
         }
-        if (attackReady && distance <= attackRange) {
+
+        inRange = distance <= attackRange;
+        if (attackReady && inRange) {
             Attack();
         }
     }
