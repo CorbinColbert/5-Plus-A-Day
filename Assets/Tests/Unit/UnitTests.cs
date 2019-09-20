@@ -8,21 +8,23 @@ namespace Tests
 {
     public class UnitTests
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void UnitTestsSimplePasses()
+        [UnityTest]
+        public IEnumerator HealthStartsAtMax()
         {
-            // Use the Assert class to test conditions
+            var unit = new GameObject().AddComponent<Unit>();
+            yield return null;
+            Assert.IsTrue(unit.health == unit.healthMax);          
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
         [UnityTest]
-        public IEnumerator UnitTestsWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+        public IEnumerator UnitDestroyedOnDeath() {
+            var unit = new GameObject().AddComponent<Unit>();
+
+            unit.OnDeath();
+
+            yield return new WaitForSecondsRealtime(2);
+
+            Assert.True(unit == null);
         }
     }
 }

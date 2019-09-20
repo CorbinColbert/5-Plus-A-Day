@@ -31,48 +31,47 @@ public class Unit : MonoBehaviour
 
     //@Cameron this is the reference to the node the unit is on top of
     public Node nodeUnitOnTopOf;
-    //this is the reference to the grid - needs to be set in the unity inspector
 
     void Start() {
         health = healthMax;
+        AddRigidBody();
+    }
 
-        //TODO : Remove later when target can be found from code
-        if (target != null) {
-            SetTarget(target);
+    void AddRigidBody() {
+        Rigidbody body;
+        if (gameObject.TryGetComponent<Rigidbody>(out body)) {
+            body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            body.freezeRotation = true;
+        } else { 
+            body = gameObject.AddComponent<Rigidbody>();
+            body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            body.freezeRotation = true;
         }
-
-        Rigidbody body = gameObject.GetComponent<Rigidbody>();
-        body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
-        body.freezeRotation = true;
     }
 
     void FixedUpdate() {
 
         //start of the loop to update what node the unit is currently on top of
         Node tempNode;
+        NodeGrid nodeGrid; 
 
-        if (nodeUnitOnTopOf == null)
-        {
-            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-            tempNode = nodeUnitOnTopOf;
+        if (grid.TryGetComponent<NodeGrid>(out nodeGrid)) {
+            if (nodeUnitOnTopOf == null) {
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                tempNode = nodeUnitOnTopOf;
+            } else {
+                tempNode = nodeUnitOnTopOf;
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+            }
+            if (nodeUnitOnTopOf == tempNode) {
+                tempNode.unitOnTop = false;
+            } else {
+                tempNode.unitOnTop = true;
+                tempNode = nodeUnitOnTopOf;
+                tempNode.unitOnTop = false;
+            }
         }
-        else
-        {
-            tempNode = nodeUnitOnTopOf;
-            nodeUnitOnTopOf = grid.GetComponent<NodeGrid>().getNodeFromWorld(gameObject.transform.position);
-        }
-
-        if (nodeUnitOnTopOf == tempNode)
-        {
-            tempNode.unitOnTop = false;
-        }
-        else
-        {
-            tempNode.unitOnTop = true;
-            tempNode = nodeUnitOnTopOf;
-            tempNode.unitOnTop = false;
-        }
-        //end of node update loop
+        //end of node update
 
         UnitPathing pathing;
         if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
@@ -81,10 +80,8 @@ public class Unit : MonoBehaviour
                     pathing.GetPathing(target);
                 }
             } catch (InvalidOperationException e) {
-                print("eeeee:  "+e);
+                print("Path already present: "+e);
             }
-        } else {
-
         }
         
         if (health <= 0) {
@@ -150,15 +147,18 @@ public class Unit : MonoBehaviour
             return;
         }
 
-        int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - targetUnit.nodeUnitOnTopOf.gridX);
-        int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - targetUnit.nodeUnitOnTopOf.gridY);
+        if (nodeUnitOnTopOf != null && targetUnit.nodeUnitOnTopOf != null) {
+            int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - targetUnit.nodeUnitOnTopOf.gridX);
+            int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - targetUnit.nodeUnitOnTopOf.gridY);
 
-        int distance = 0;
-        if (distanceX > distanceY)
-        {
-           distance = 14 * distanceY + 10 * (distanceX - distanceY);
-        } else {
-           distance = 14 * distanceX + 10 * (distanceY - distanceX);
+            int distance = 0;
+            if (distanceX > distanceY)
+            {
+            distance = 14 * distanceY + 10 * (distanceX - distanceY);
+            } else {
+            distance = 14 * distanceX + 10 * (distanceY - distanceX);
+            }
+            inRange = distance <= attackRange;
         }
 
         if (!attackReady) {
@@ -169,7 +169,6 @@ public class Unit : MonoBehaviour
             }
         }
 
-        inRange = distance <= attackRange;
         if (attackReady && inRange) {
             Attack();
         }
@@ -200,31 +199,48 @@ public class Unit : MonoBehaviour
         health -= attack.damage;
     }
 
-    private void OnDeath() {
-        nodeUnitOnTopOf.unitOnTop = false;
+    public void FlingUnit() {
+        Rigidbody body;
+        if (gameObject.TryGetComponent<Rigidbody>(out body)) {
+            float xForce = UnityEngine.Random.Range(-200,200);
+            float yForce = UnityEngine.Random.Range(-100,200);
+            float zForce = UnityEngine.Random.Range(-200,200);
 
-        Rigidbody body = gameObject.GetComponent<Rigidbody>();
+            Vector3 randomForce = new Vector3(xForce, yForce, zForce);
 
-        float xForce = UnityEngine.Random.Range(200,-200);
-        float yForce = UnityEngine.Random.Range(100, 200);
-        float zForce = UnityEngine.Random.Range(200,-200);
-        Vector3 randomForce = new Vector3(xForce, yForce, zForce);
+            float xRot = UnityEngine.Random.Range(-50, 50);
+            float yRot = UnityEngine.Random.Range(-50, 50);
+            float zRot = UnityEngine.Random.Range(-50, 50);
 
-        body.constraints = RigidbodyConstraints.None;
-        body.freezeRotation = false;
-        body.AddForce(randomForce);
+            Vector3 randomRotation = new Vector3(xRot, yRot, zRot);
 
-        Destroy(gameObject.GetComponent<UnitPathing>());
+            body.constraints = RigidbodyConstraints.None;
+            body.freezeRotation = false;
 
-        Destroy(this);
+            body.AddRelativeTorque(randomRotation);
+            body.AddForce(randomForce);
+        }
+    }
 
-        Destroy(gameObject.GetComponent<Collider>(), 4.0f);
+    public void OnDeath() {
+        if (nodeUnitOnTopOf != null) {
+            nodeUnitOnTopOf.unitOnTop = false;
+        }
 
+        FlingUnit();
+
+        if (gameObject.TryGetComponent<UnitPathing>(out var pathing)) {
+            Destroy(pathing);
+        }
+        if (gameObject.TryGetComponent<Unit>(out var unit)) {
+            Destroy(unit);
+        }
+        if (gameObject.TryGetComponent<Collider>(out var collider)) {
+            Destroy(collider, 2.0f);
+        }
         if (CompareTag("EnemyTroop")) {
             GameManager.currency += 10;
         }
-
-        Destroy(gameObject, 5.0f);
     }
 
     private void OnTargetDeath() {
