@@ -10,19 +10,52 @@ namespace Tests
     {
         // A Test behaves as an ordinary method
         [Test]
-        public void NodeTestsSimplePasses()
+        public void CompareToGreaterThanTest()
         {
-            // Use the Assert class to test conditions
+            int expectedValue = 1;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            nodeA.gCost = 10;
+            nodeA.hCost = 10;
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+            nodeB.gCost = 20;
+            nodeB.hCost = 20;
+
+            int actualValue = nodeA.CompareTo(nodeB);
+
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator NodeTestsWithEnumeratorPasses()
+        [Test]
+        public void CompareToLessThanTest()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            int expectedValue = -1;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            nodeA.gCost = 20;
+            nodeA.hCost = 20;
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+            nodeB.gCost = 10;
+            nodeB.hCost = 10;
+
+            int actualValue = nodeA.CompareTo(nodeB);
+
+            Assert.AreEqual(expectedValue, actualValue);
+        }
+
+
+        [Test]
+        public void CompareToEqualTest()
+        {
+            int expectedValue = 0;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            nodeA.gCost = 10;
+            nodeA.hCost = 10;
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+            nodeB.gCost = 10;
+            nodeB.hCost = 10;
+
+            int actualValue = nodeA.CompareTo(nodeB);
+
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 }

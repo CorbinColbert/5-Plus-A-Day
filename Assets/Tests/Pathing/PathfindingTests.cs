@@ -7,22 +7,29 @@ using UnityEngine.TestTools;
 namespace Tests
 {
     public class PathingfindingTests
-    {
-        // A Test behaves as an ordinary method
+    {  
         [Test]
-        public void PathingfindingTestsSimplePasses()
+        public void GetDistanceTest()
         {
-            // Use the Assert class to test conditions
+            int expectedValue = 10;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+
+            int actualValue = Pathfinding.getDistance(nodeA, nodeB);
+
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator PathingfindingTestsWithEnumeratorPasses()
+        [Test]
+        public void GetDistanceDiagonalTest()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            int expectedValue = 14;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 1);
+
+            int actualValue = Pathfinding.getDistance(nodeA, nodeB);
+
+            Assert.AreEqual(expectedValue, actualValue);
         }
     }
 }

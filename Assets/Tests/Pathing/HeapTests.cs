@@ -8,29 +8,57 @@ namespace Tests
 {
     public class HeapTests
     {
+
+        Heap<Node> testHeap;
+
+
         [SetUp]
         public void SetUp()
         {
-
+            testHeap = new Heap<Node>(64);
         }
 
-        // A Test behaves as an ordinary method
         [Test]
-        public void HeapTestsSimplePasses()
+        public void SwapTest()
         {
-            // Use the Assert class to test conditions
+            int expectedValue = 0;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            nodeA.gCost = 10;
+            nodeA.hCost = 10;
+            testHeap.Add(nodeA);
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+            nodeB.gCost = 20;
+            nodeB.hCost = 20;
+            testHeap.Add(nodeB);
+
+            testHeap.swap(nodeA, nodeB);
+
+            int actualValue = nodeB.HeapIndex;
+
+            Assert.AreEqual(expectedValue, actualValue);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator HeapTestsWithEnumeratorPasses()
+        [Test]
+        public void UpdateItemTest()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
-        }
+            int expectedValue = 0;
+            Node nodeA = new Node(true, true, new Vector3(0, 0, 0), 0, 0);
+            nodeA.gCost = 10;
+            nodeA.hCost = 10;
+            testHeap.Add(nodeA);
+            Node nodeB = new Node(true, true, new Vector3(1, 0, 0), 1, 0);
+            nodeB.gCost = 20;
+            nodeB.hCost = 20;
+            testHeap.Add(nodeB);
 
-        
+            nodeB.gCost = 5;
+            nodeB.hCost = 5;
+
+            testHeap.UpdateItem(nodeB);
+
+            int actualValue = nodeB.HeapIndex;
+
+            Assert.AreEqual(expectedValue, actualValue);
+        }
     }
 }

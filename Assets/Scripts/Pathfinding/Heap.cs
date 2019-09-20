@@ -71,7 +71,7 @@ public class Heap<T> where T : ItemHeapIndex<T>
                 }
                 if (item.CompareTo(items[swapIndex]) < 0)
                 {
-                    Swap(item, items[swapIndex]);
+                    swap(item, items[swapIndex]);
                 }
                 else
                 {
@@ -93,7 +93,7 @@ public class Heap<T> where T : ItemHeapIndex<T>
             T parentItem = items[parentIndex];
             if (item.CompareTo(parentItem) > 0)
             {
-                Swap(item, parentItem);
+                swap(item, parentItem);
             }
             else
             {
@@ -104,7 +104,7 @@ public class Heap<T> where T : ItemHeapIndex<T>
         }
     }
 
-    void Swap(T itemA, T itemB)
+    public void swap(T itemA, T itemB)
     {
         items[itemA.HeapIndex] = itemB;
         items[itemB.HeapIndex] = itemA;
