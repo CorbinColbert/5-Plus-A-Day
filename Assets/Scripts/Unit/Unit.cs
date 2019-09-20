@@ -6,7 +6,7 @@ using UnityEngine;
 public class Unit : MonoBehaviour
 {
     public event Action onDeathEvent;
-    public GameObject domain;
+    public GameObject grid;
     public GameObject target;
 
     public float healthMax = 100.0f;
@@ -23,15 +23,15 @@ public class Unit : MonoBehaviour
     private int attackCounter = 0;
     [SerializeField]
     private int attackOnCount = 50;
+    public int attackRange = 14;
 
     public float critChance = 0.0f;
     public float critDamageModifier = 2.0f;
     public Item item;
 
     //@Cameron this is the reference to the node the unit is on top of
-    private Node nodeUnitOnTopOf;
+    public Node nodeUnitOnTopOf;
     //this is the reference to the grid - needs to be set in the unity inspector
-    public GameObject grid;
 
     void Start() {
         health = healthMax;
@@ -74,6 +74,15 @@ public class Unit : MonoBehaviour
         }
         //end of node update loop
 
+        UnitPathing pathing;
+        if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
+            try {
+                pathing.GetPathing(target);
+            } catch (InvalidOperationException e) {
+                print("eeeee:  "+e);
+            }
+        }
+        
         if (health <= 0) {
             if (onDeathEvent != null) {
                 onDeathEvent();
@@ -132,6 +141,17 @@ public class Unit : MonoBehaviour
     }
 
     private void TryAttack() {
+        int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - target.GetComponent<Unit>().nodeUnitOnTopOf.gridX);
+        int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - target.GetComponent<Unit>().nodeUnitOnTopOf.gridY);
+
+        int distance = 0;
+        if (distanceX > distanceY)
+        {
+           distance = 14 * distanceY + 10 * (distanceX - distanceY);
+        } else {
+           distance = 14 * distanceX + 10 * (distanceY - distanceX);
+        }
+
         if (!attackReady) {
             if (attackCounter >= attackOnCount) {
                 attackReady = true;
@@ -139,7 +159,7 @@ public class Unit : MonoBehaviour
                 attackCounter++;
             }
         }
-        if (attackReady) {
+        if (attackReady && distance <= attackRange) {
             Attack();
         }
     }
@@ -187,6 +207,10 @@ public class Unit : MonoBehaviour
         Destroy(this);
 
         Destroy(gameObject.GetComponent<Collider>(), 4.0f);
+
+        if (CompareTag("EnemyTroop")) {
+            GameManager.currency += 10;
+        }
 
         Destroy(gameObject, 5.0f);
     }

@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singletonGameManagerInstance = null;
     public PathHelper pathHelperInstance;
     public GridManager gridManagerInstance;
+    public static int currency; 
 
     private void Awake()
     {
@@ -23,8 +24,6 @@ public class GameManager : MonoBehaviour
         pathHelperInstance = FindObjectOfType<PathHelper>();
         gridManagerInstance = FindObjectOfType<GridManager>();
     }
-
-
 
     //placeholder
     public void saveGame()
