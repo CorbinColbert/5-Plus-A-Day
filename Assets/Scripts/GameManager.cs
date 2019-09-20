@@ -18,8 +18,10 @@ public class GameManager : MonoBehaviour
         {
             singletonGameManagerInstance = this;
         }
+        DontDestroyOnLoad(gameObject);
 
-        pathHelperInstance = gameObject.GetComponent<PathHelper>();
-        gridManagerInstance = gameObject.GetComponent<GridManager>();
+        pathHelperInstance = FindObjectOfType<PathHelper>();
+        gridManagerInstance = FindObjectOfType<GridManager>();
     }
+
 }
