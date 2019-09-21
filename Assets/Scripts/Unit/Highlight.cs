@@ -5,29 +5,21 @@ using UnityEngine;
 public class Highlight : MonoBehaviour
 {
     private Material originalMaterial;
-    private float counter;
-    private float duration;
-    private bool running;
+    private Material highlightMaterial;
 
-    void Start() {
-        running = false;
+    public void PerformHighlight(Material original, Material highlight, float delay) {
+        this.originalMaterial = original;
+        this.highlightMaterial = highlight;
+
+        gameObject.GetComponent<Renderer>().material = highlightMaterial;
+
+        Invoke("RevertHighlight", delay);
+
+        Destroy(this, delay+0.5f);
     }
 
-    void Update()
-    {
-        if (running) {
-            counter = counter + Time.deltaTime;
-            if (counter >= duration) {
-                //Return material to original
-                gameObject.GetComponent<Renderer>().material = originalMaterial;
-            }
-        }
-        
-    }
-
-    public void PerformHighlight(Material material, float duration) {
-        originalMaterial = gameObject.GetComponent<Renderer>().material;
-
-        running = true;
+    void RevertHighlight() {
+        print("Reverting");
+        gameObject.GetComponent<Renderer>().material = originalMaterial;
     }
 }

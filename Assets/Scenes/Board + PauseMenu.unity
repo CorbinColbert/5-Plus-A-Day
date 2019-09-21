@@ -3611,25 +3611,6 @@ RectTransform:
   m_AnchoredPosition: {x: 30, y: -180}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &434025135 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1121176737585070474, guid: 410c84a86ec64194789adad13a8399ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 718150784}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &434025136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434025135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d151dedd48e10604e9457668d04a4f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: 5fde1d41d19b42748903c30fe40e8372, type: 2}
 --- !u!1 &446028386
 GameObject:
   m_ObjectHideFlags: 0
@@ -9770,6 +9751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1112047094}
+  - component: {fileID: 1112047095}
   m_Layer: 0
   m_Name: UnitHighlighter
   m_TagString: Untagged
@@ -9791,6 +9773,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1112047095
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112047093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d151dedd48e10604e9457668d04a4f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlightMaterial: {fileID: 2100000, guid: 5fde1d41d19b42748903c30fe40e8372, type: 2}
 --- !u!1 &1117042582
 GameObject:
   m_ObjectHideFlags: 0
@@ -13692,25 +13687,6 @@ RectTransform:
   m_AnchoredPosition: {x: 180, y: -30}
   m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1510477574 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3486980594939173046, guid: 58363511de858024f86c8cdd9457e9b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1371127882}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1510477575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510477574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d151dedd48e10604e9457668d04a4f34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highlightMaterial: {fileID: 2100000, guid: 5fde1d41d19b42748903c30fe40e8372, type: 2}
 --- !u!1 &1513626612
 GameObject:
   m_ObjectHideFlags: 0
