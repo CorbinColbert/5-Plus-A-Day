@@ -7,23 +7,14 @@ public class UnitPathing : MonoBehaviour
 {
     public Node[] path;
     public GameObject grid;
-    //public GameObject target;
     public bool hasPathToFollow = false;
     float timer = 0;
     public float moveSpeed;
     Vector3 tempStartPos;
     int index = 0;
-    // debug
-    //public KeyCode key;
 
     private void FixedUpdate()
     {
-
-        // if (Input.GetKeyDown(key))
-        // {
-        //    GetPathing(target);
-        // }
-
         if (hasPathToFollow)
         {
             //follow the path
