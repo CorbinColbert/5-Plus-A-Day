@@ -46,8 +46,8 @@ public class NodeGrid : MonoBehaviour
     {
         float percentX = (worldPosition.x + gridSize.x/2) / gridSize.x;
         float percentY = (worldPosition.z + gridSize.y/2) / gridSize.y;
-        percentX = Mathf.Clamp01(percentX);
-        percentY = Mathf.Clamp01(percentY);
+        percentX = Mathf.Clamp01(Mathf.Abs(percentX));
+        percentY = Mathf.Clamp01(Mathf.Abs(percentY));
         int x = Mathf.RoundToInt((gridSizeX-1) * percentX);
         int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
         return grid[x,y];
@@ -79,7 +79,7 @@ public class NodeGrid : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
-        
+
         if (grid != null)
         {
             foreach (Node node in grid)

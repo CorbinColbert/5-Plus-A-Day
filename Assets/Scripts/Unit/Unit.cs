@@ -5,39 +5,38 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    private GameObject grid;
     public event Action onDeathEvent;
-    public GameObject grid;
     public GameObject target;
 
-    public float healthMax = 100.0f;
-    public float health;
+    public float healthMax;
+    public float healthCurrent;
+    public float healthRegen;
+    public float healthRegenRate;
 
-    public float healthRegen = 1.0f;
-    private bool regenReady = false;
-    private int regenCounter = 0;
-    private int regenOnCount = 100;
-
-    public float damageMin = 2.0f;
-    public float damageMax = 4.0f;
-    private bool attackReady = false;
-    private int attackCounter = 0;
-    [SerializeField]
-    private int attackOnCount = 50;
+    public float damageMin;
+    public float damageMax;
+    public float attackSpeed = 1.0f;
     public int attackRange = 14;
     private bool inRange;
     public float critChance = 0.0f;
     public float critDamageModifier = 2.0f;
     public Item item;
-
-    //@Cameron this is the reference to the node the unit is on top of
     public Node nodeUnitOnTopOf;
 
     void Start() {
-        health = healthMax;
-        AddRigidBody();
+        healthCurrent = healthMax;
+        
+        grid = FindObjectOfType<NodeGrid>().gameObject;
+
+        ConfigureRigidBody();
+
+        Regen();
+
+        TryAttack();
     }
 
-    void AddRigidBody() {
+    void ConfigureRigidBody() {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
             body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
@@ -50,31 +49,16 @@ public class Unit : MonoBehaviour
     }
 
     void FixedUpdate() {
-
-        //start of the loop to update what node the unit is currently on top of
-        Node tempNode;
-        NodeGrid nodeGrid; 
-
-        if (grid.TryGetComponent<NodeGrid>(out nodeGrid)) {
-            if (nodeUnitOnTopOf == null) {
-                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
-                tempNode = nodeUnitOnTopOf;
-            } else {
-                tempNode = nodeUnitOnTopOf;
-                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
-            }
-            if (nodeUnitOnTopOf == tempNode) {
-                tempNode.unitOnTop = false;
-            } else {
-                tempNode.unitOnTop = true;
-                tempNode = nodeUnitOnTopOf;
-                tempNode.unitOnTop = false;
-            }
+        if (healthCurrent <= 0) {
+            if (onDeathEvent != null) {
+                onDeathEvent();
+            }    
+            OnDeath();
+            return;
         }
-        //end of node update
+        UpdateNodePosition();
 
-        UnitPathing pathing;
-        if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
+        if (gameObject.TryGetComponent<UnitPathing>(out UnitPathing pathing)) {
             try {
                 if (target != null && !pathing.hasPathToFollow && !inRange) {
                     pathing.GetPathing(target);
@@ -83,23 +67,37 @@ public class Unit : MonoBehaviour
                 print("Path already present: "+e);
             }
         }
-        
-        if (health <= 0) {
-            if (onDeathEvent != null) {
-                onDeathEvent();
-            }    
-            OnDeath();
-        } else {
-            if (target == null) {
-                FindTarget();
-            } else {
-                TryAttack();
-                TryRegen();
-            }
-        }       
     }
 
-    private void FindTarget() {
+    void UpdateNodePosition() {
+        print("Node position being updated");
+        Node oldNode;
+        if (grid.TryGetComponent<NodeGrid>(out NodeGrid nodeGrid)) {
+            if (nodeUnitOnTopOf == null) {
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                oldNode = nodeUnitOnTopOf;
+            } else {
+                oldNode = nodeUnitOnTopOf;
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+            }
+
+            print("I'm at x: "+nodeUnitOnTopOf.gridX+" y: "+nodeUnitOnTopOf.gridY);
+
+            if (nodeUnitOnTopOf == oldNode) {
+                oldNode.unitOnTop = false;
+            } else {
+                oldNode.unitOnTop = true;
+                oldNode = nodeUnitOnTopOf;
+                oldNode.unitOnTop = false;
+            }
+        }
+    }
+
+    void Update() {
+        print("Update");
+    }
+
+    void FindTarget() {
         GameObject[] objects = null;
         if (CompareTag("EnemyTroop")) {
             objects = GameObject.FindGameObjectsWithTag("PlayerTroop");
@@ -111,95 +109,70 @@ public class Unit : MonoBehaviour
         if (objects != null) {
             int size = objects.Length;
             if (size == 0) {
-                print("Victory!");
+                print("Victory! for "+gameObject.tag+" team");
             } else {
                 SetTarget(objects[UnityEngine.Random.Range(0, size)]);
             }
-            
         }
     }
 
-    private void TryRegen() {
-        if (regenCounter >= regenOnCount) {
-            regenReady = true;
+    void Regen() {
+        if (healthCurrent + healthRegen > healthMax) {
+            healthCurrent = healthMax;
         } else {
-            regenCounter++;
+            healthCurrent += healthRegen;
         }
-        if (regenReady) {
-            Regen();
-        }
+        Invoke("Regen", 1.0f/healthRegenRate);
     }
 
-    private void Regen() {
-        if (health + healthRegen > healthMax) {
-            health = healthMax;
-        } else {
-            health += healthRegen;
-        }
-        regenReady = false;
-        regenCounter = 0;
-        
-    }
+    void TryAttack() {
+        Invoke("TryAttack", 1.0f/attackSpeed);
 
-    private void TryAttack() {
-        Unit targetUnit;
-        if (!target.TryGetComponent<Unit>(out targetUnit)) {
+        if (target == null) {
+            FindTarget();
             return;
         }
+
+        Unit targetUnit = target.GetComponent<Unit>();
 
         if (nodeUnitOnTopOf != null && targetUnit.nodeUnitOnTopOf != null) {
             int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - targetUnit.nodeUnitOnTopOf.gridX);
             int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - targetUnit.nodeUnitOnTopOf.gridY);
 
-            int distance = 0;
-            if (distanceX > distanceY)
-            {
-            distance = 14 * distanceY + 10 * (distanceX - distanceY);
-            } else {
-            distance = 14 * distanceX + 10 * (distanceY - distanceX);
-            }
+            int distance = (distanceX > distanceY) ?
+                14 * distanceY + 10 * (distanceX - distanceY) :
+                14 * distanceX + 10 * (distanceY - distanceX);
+
             inRange = distance <= attackRange;
         }
 
-        if (!attackReady) {
-            if (attackCounter >= attackOnCount) {
-                attackReady = true;
-            } else {
-                attackCounter++;
-            }
-        }
-
-        if (attackReady && inRange) {
+        if (inRange) {
+            gameObject.GetComponent<UnitPathing>().Reset();
             Attack();
         }
+
+        
     }
 
-    private void Attack()
+    void Attack()
     {
-        if (target != null)
+        Attack attack = new Attack(this);
+        Unit other;
+        if (target.TryGetComponent<Unit>(out other))
         {
-            Attack attack = new Attack(this);
-            Unit other;
-            if (target.TryGetComponent<Unit>(out other))
-            {
-                other.RecieveAttack(attack);
-                attackCounter = 0;
-                attackReady = false;
-                Rigidbody body = gameObject.GetComponent<Rigidbody>();
-                if (body != null) {
-                    body.AddForce(new Vector3(0, 100, 0));
-                }
+            other.RecieveAttack(attack);
+            Rigidbody body = gameObject.GetComponent<Rigidbody>();
+            if (body != null) {
+                body.AddForce(new Vector3(0, 100, 0));
             }
-
-            
         }
     }
 
     public void RecieveAttack(Attack attack) {
-        health -= attack.damage;
+        healthCurrent -= attack.damage;
     }
 
-    public void FlingUnit() {
+    void FlingUnit() {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
             float xForce = UnityEngine.Random.Range(-200,200);
@@ -222,7 +195,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void OnDeath() {
+    void OnDeath() {
         if (nodeUnitOnTopOf != null) {
             nodeUnitOnTopOf.unitOnTop = false;
         }
@@ -243,14 +216,13 @@ public class Unit : MonoBehaviour
         }
     }
 
-    private void OnTargetDeath() {
+    void OnTargetDeath() {
         target = null;
     }
 
-    public void SetTarget(GameObject target) {
+    void SetTarget(GameObject target) {
         this.target = target;
-        Unit unit;
-        if (target.TryGetComponent<Unit>(out unit)) {
+        if (target.TryGetComponent<Unit>(out Unit unit)) {
             unit.onDeathEvent += OnTargetDeath;
         }
     }

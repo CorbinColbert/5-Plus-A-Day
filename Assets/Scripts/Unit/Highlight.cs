@@ -19,7 +19,6 @@ public class Highlight : MonoBehaviour
     }
 
     void RevertHighlight() {
-        print("Reverting");
         gameObject.GetComponent<Renderer>().material = originalMaterial;
     }
 }

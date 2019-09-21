@@ -32,15 +32,17 @@ public class UnitPathing : MonoBehaviour
             //at end, turn hasPathToFollow to false and index and timer back to 0
             if (transform.position == path[path.Length - 1].worldPosition)
             {
-                hasPathToFollow = false;
-                timer = 0;
-                index = 0;
-                path = null;
+                Reset();
             }
         }
     }
 
-
+    public void Reset() {
+        hasPathToFollow = false;
+        timer = 0;
+        index = 0;
+        path = null;
+    }
 
     private void Start()
     {
