@@ -1186,7 +1186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 159922846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 930891670}
@@ -6252,7 +6252,7 @@ PrefabInstance:
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -2.57
       objectReference: {fileID: 0}
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
@@ -6262,7 +6262,7 @@ PrefabInstance:
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.44
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
@@ -6313,6 +6313,11 @@ PrefabInstance:
         type: 3}
       propertyPath: grid
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121176737585070464, guid: 410c84a86ec64194789adad13a8399ff,
+        type: 3}
+      propertyPath: healthRegenRate
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410c84a86ec64194789adad13a8399ff, type: 3}
@@ -12785,6 +12790,11 @@ PrefabInstance:
       propertyPath: grid
       value: 
       objectReference: {fileID: 522501070}
+    - target: {fileID: 3486980594939173044, guid: 58363511de858024f86c8cdd9457e9b8,
+        type: 3}
+      propertyPath: healthRegenRate
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58363511de858024f86c8cdd9457e9b8, type: 3}
 --- !u!1 &1381051028

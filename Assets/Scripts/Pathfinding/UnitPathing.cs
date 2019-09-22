@@ -13,6 +13,12 @@ public class UnitPathing : MonoBehaviour
     Vector3 tempStartPos;
     int index = 0;
 
+    private void Start()
+    {
+        //get position at start of object
+        tempStartPos = transform.position;
+    }
+
     private void FixedUpdate()
     {
         if (hasPathToFollow)
@@ -28,7 +34,7 @@ public class UnitPathing : MonoBehaviour
             }
 
             timer += Time.deltaTime * moveSpeed;
-
+            
             //at end, turn hasPathToFollow to false and index and timer back to 0
             if (transform.position == path[path.Length - 1].worldPosition)
             {
@@ -44,11 +50,7 @@ public class UnitPathing : MonoBehaviour
         path = null;
     }
 
-    private void Start()
-    {
-        //get position at start of object
-        tempStartPos = transform.position;
-    }
+
 
     //call this to get a path
     public void GetPathing(GameObject target) 

@@ -12,7 +12,7 @@ public class Unit : MonoBehaviour
     public float healthMax;
     public float healthCurrent;
     public float healthRegen;
-    public float healthRegenRate;
+    public float healthRegenRate = 1.0f;
 
     public float damageMin;
     public float damageMax;
@@ -117,6 +117,7 @@ public class Unit : MonoBehaviour
     }
 
     void Regen() {
+        print("Regen called");
         if (healthCurrent + healthRegen > healthMax) {
             healthCurrent = healthMax;
         } else {
