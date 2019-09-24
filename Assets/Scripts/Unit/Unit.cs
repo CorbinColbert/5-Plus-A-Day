@@ -148,7 +148,7 @@ public class Unit : MonoBehaviour
         }
 
         if (inRange) {
-            gameObject.GetComponent<UnitPathing>().Reset();
+            //gameObject.GetComponent<UnitPathing>().Reset();
             Attack();
         }
 

@@ -24,26 +24,29 @@ public class UnitPathing : MonoBehaviour
         if (hasPathToFollow)
         {
             //follow the path
-            transform.position = Vector3.Lerp(tempStartPos, path[index].worldPosition, timer);
-
-            if (transform.position == path[index].worldPosition)
+            if (path.Length > 0)
             {
-                index++;
-                timer = 0;
-                tempStartPos = transform.position;
-            }
+                transform.position = Vector3.Lerp(tempStartPos, path[index].worldPosition, timer);
 
-            timer += Time.deltaTime * moveSpeed;
-            
-            //at end, turn hasPathToFollow to false and index and timer back to 0
-            if (transform.position == path[path.Length - 1].worldPosition)
-            {
-                Reset();
+                if (transform.position == path[index].worldPosition)
+                {
+                    index++;
+                    timer = 0;
+                    tempStartPos = transform.position;
+                }
+
+                timer += Time.deltaTime * moveSpeed;
+
+                //at end, turn hasPathToFollow to false and index and timer back to 0
+                if (transform.position == path[path.Length - 1].worldPosition)
+                {
+                    Reset();
+                }
             }
         }
     }
 
-    public void Reset() {
+    private void Reset() {
         hasPathToFollow = false;
         timer = 0;
         index = 0;
