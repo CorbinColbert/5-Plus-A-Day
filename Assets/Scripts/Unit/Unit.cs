@@ -60,7 +60,7 @@ public class Unit : MonoBehaviour
 
         if (gameObject.TryGetComponent<UnitPathing>(out UnitPathing pathing)) {
             try {
-                if (target != null && !pathing.hasPathToFollow && !inRange) {
+                if (target != null && !inRange) {
                     pathing.GetPathing(target);
                 }
             } catch (InvalidOperationException e) {
