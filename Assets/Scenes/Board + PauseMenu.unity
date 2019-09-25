@@ -6252,7 +6252,7 @@ PrefabInstance:
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
@@ -6262,7 +6262,7 @@ PrefabInstance:
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1121176737585070465, guid: 410c84a86ec64194789adad13a8399ff,
         type: 3}
@@ -6318,6 +6318,26 @@ PrefabInstance:
         type: 3}
       propertyPath: healthRegenRate
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121176737585070464, guid: 410c84a86ec64194789adad13a8399ff,
+        type: 3}
+      propertyPath: healthMax
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121176737585070464, guid: 410c84a86ec64194789adad13a8399ff,
+        type: 3}
+      propertyPath: critChance
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121176737585070464, guid: 410c84a86ec64194789adad13a8399ff,
+        type: 3}
+      propertyPath: damageMin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121176737585070464, guid: 410c84a86ec64194789adad13a8399ff,
+        type: 3}
+      propertyPath: damageMax
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 410c84a86ec64194789adad13a8399ff, type: 3}
@@ -12703,12 +12723,12 @@ PrefabInstance:
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
@@ -12718,22 +12738,22 @@ PrefabInstance:
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3486980594939173711, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
@@ -12808,7 +12828,17 @@ PrefabInstance:
     - target: {fileID: 3486980594939173044, guid: 58363511de858024f86c8cdd9457e9b8,
         type: 3}
       propertyPath: attackSpeed
-      value: 1.8
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486980594939173044, guid: 58363511de858024f86c8cdd9457e9b8,
+        type: 3}
+      propertyPath: damageMin
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3486980594939173044, guid: 58363511de858024f86c8cdd9457e9b8,
+        type: 3}
+      propertyPath: damageMax
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58363511de858024f86c8cdd9457e9b8, type: 3}
