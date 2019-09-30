@@ -83,6 +83,9 @@ TextureImporter:
   - first:
       213: 6820419671717645171
     second: uipack_rpg_sheet_26
+  - first:
+      213: 2941223241447806785
+    second: uipack_rpg_sheet_27
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -365,7 +368,7 @@ TextureImporter:
         height: 100
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -424,11 +427,11 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 230
-        width: 187
+        width: 190
         height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 7, z: 7, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -554,7 +557,7 @@ TextureImporter:
         height: 101
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 10, y: 10, z: 10, w: 10}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -659,7 +662,7 @@ TextureImporter:
         height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 9, z: 6, w: 5}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -729,6 +732,27 @@ TextureImporter:
       bones: []
       spriteID: a558e91240cbffb41a8facbde43b0d2a
       internalID: 6820419671717645171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: uipack_rpg_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 192
+        width: 120
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00f0d3d2ababb994588914e723acb757
+      internalID: 2941223241447806785
       vertices: []
       indices: 
       edges: []
