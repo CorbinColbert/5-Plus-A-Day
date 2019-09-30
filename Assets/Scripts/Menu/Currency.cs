@@ -12,9 +12,8 @@ public class Currency : MonoBehaviour
         gameText = GetComponent<Text>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        gameText.text = "Currency: $" + GameManager.currency;
+        gameText.text = ""+GameManager.currency;
     }
 }
