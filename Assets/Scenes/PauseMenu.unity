@@ -454,6 +454,8 @@ GameObject:
   - component: {fileID: 76782934}
   - component: {fileID: 76782933}
   - component: {fileID: 76782932}
+  - component: {fileID: 76782936}
+  - component: {fileID: 76782935}
   m_Layer: 5
   m_Name: ShopOrangeButton
   m_TagString: Untagged
@@ -565,6 +567,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 76782930}
   m_CullTransparentMesh: 0
+--- !u!114 &76782935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76782930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &76782936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76782930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 76782935}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 76782935}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &76988844
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,6 +800,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 82113995}
   m_CullTransparentMesh: 0
+--- !u!1 &91819748
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 91819749}
+  m_Layer: 5
+  m_Name: Managers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &91819749
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91819748}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.065, y: 1.065, z: 1.065}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.6449776, y: 2.4686458}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &92919713
 GameObject:
   m_ObjectHideFlags: 0
@@ -1108,10 +1204,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 7
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 355031646}
-  cost: 0
+  stock: 2
+  cost: 14
 --- !u!1 &112242674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,10 +1764,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 10
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 496120492}
-  cost: 0
+  stock: 3
+  cost: 7
 --- !u!1 &181882338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2435,6 +2531,8 @@ GameObject:
   - component: {fileID: 256582655}
   - component: {fileID: 256582654}
   - component: {fileID: 256582653}
+  - component: {fileID: 256582658}
+  - component: {fileID: 256582656}
   m_Layer: 5
   m_Name: ShopCarrotButton
   m_TagString: Untagged
@@ -2454,8 +2552,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 819074698}
-  - {fileID: 755086075}
-  - {fileID: 395328918}
   m_Father: {fileID: 828423546}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2548,6 +2644,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 256582651}
   m_CullTransparentMesh: 0
+--- !u!114 &256582656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256582651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &256582658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256582651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 256582656}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 256582656}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &257856360
 GameObject:
   m_ObjectHideFlags: 0
@@ -3312,6 +3467,8 @@ GameObject:
   - component: {fileID: 354466104}
   - component: {fileID: 354466103}
   - component: {fileID: 354466102}
+  - component: {fileID: 354466106}
+  - component: {fileID: 354466105}
   m_Layer: 5
   m_Name: ShopCakeButton
   m_TagString: Untagged
@@ -3423,6 +3580,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 354466100}
   m_CullTransparentMesh: 0
+--- !u!114 &354466105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354466100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &354466106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354466100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 354466105}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 354466105}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &355031646
 GameObject:
   m_ObjectHideFlags: 0
@@ -4171,12 +4387,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
-  m_Father: {fileID: 256582652}
+  m_Father: {fileID: 828423546}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0000705719, y: -0.0012817383}
   m_SizeDelta: {x: 156, y: 164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &395328919
@@ -4804,10 +5020,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 6
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 1686565875}
-  cost: 0
+  stock: 12
+  cost: 4
 --- !u!1 &437415098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5901,7 +6117,7 @@ RectTransform:
   m_LocalScale: {x: 1.065, y: 1.065, z: 1.065}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6040,8 +6256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000091086, y: -7.3}
-  m_SizeDelta: {x: 74.95, y: 45.81}
+  m_AnchoredPosition: {x: -0.092489, y: -7.3}
+  m_SizeDelta: {x: 136.65, y: 45.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514670575
 MonoBehaviour:
@@ -6716,10 +6932,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
-  stock: 1
+  troopType: 0
   stockTextObject: {fileID: 1098032634}
-  cost: 0
+  stock: 8
+  cost: 4
 --- !u!1 &555601398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7280,6 +7496,8 @@ GameObject:
   - component: {fileID: 582914123}
   - component: {fileID: 582914122}
   - component: {fileID: 582914121}
+  - component: {fileID: 582914125}
+  - component: {fileID: 582914124}
   m_Layer: 5
   m_Name: ShopCherryButton
   m_TagString: Untagged
@@ -7391,6 +7609,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582914119}
   m_CullTransparentMesh: 0
+--- !u!114 &582914124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582914119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &582914125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582914119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 582914124}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 582914124}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &599497257
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,6 +7883,8 @@ GameObject:
   - component: {fileID: 633653793}
   - component: {fileID: 633653792}
   - component: {fileID: 633653791}
+  - component: {fileID: 633653795}
+  - component: {fileID: 633653794}
   m_Layer: 5
   m_Name: ShopPearButton
   m_TagString: Untagged
@@ -7717,6 +7996,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633653789}
   m_CullTransparentMesh: 0
+--- !u!114 &633653794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633653789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &633653795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633653789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 633653794}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 633653794}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &644161993
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,10 +9592,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 4
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 1021968033}
-  cost: 0
+  stock: 6
+  cost: 8
 --- !u!1 &746674118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9359,16 +9697,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 755086074}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 256582652}
+  m_Father: {fileID: 828423546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0000705719, y: -0.0012817383}
   m_SizeDelta: {x: 20, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &755086076
@@ -10123,7 +10461,7 @@ GameObject:
   - component: {fileID: 819074699}
   - component: {fileID: 819074701}
   m_Layer: 5
-  m_Name: ShopCarrotIcon
+  m_Name: Carrot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10306,6 +10644,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 256582652}
+  - {fileID: 755086075}
+  - {fileID: 395328918}
   m_Father: {fileID: 1889595498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10326,10 +10666,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 395328917}
-  cost: 0
+  stock: 12
+  cost: 2
 --- !u!1 &830590299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11061,7 +11401,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000053420663, y: -0.00000047683716}
+  m_AnchoredPosition: {x: -0.0000053420663, y: -0.000069249}
   m_SizeDelta: {x: 213.12, y: 123.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865233232
@@ -13371,6 +13711,8 @@ GameObject:
   - component: {fileID: 1117042586}
   - component: {fileID: 1117042585}
   - component: {fileID: 1117042584}
+  - component: {fileID: 1117042588}
+  - component: {fileID: 1117042587}
   m_Layer: 5
   m_Name: ShopRadishButton
   m_TagString: Untagged
@@ -13482,6 +13824,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1117042582}
   m_CullTransparentMesh: 0
+--- !u!114 &1117042587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117042582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1117042588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1117042582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1117042587}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1117042587}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1133515506
 GameObject:
   m_ObjectHideFlags: 0
@@ -13783,6 +14184,8 @@ GameObject:
   - component: {fileID: 1143012942}
   - component: {fileID: 1143012941}
   - component: {fileID: 1143012940}
+  - component: {fileID: 1143012944}
+  - component: {fileID: 1143012943}
   m_Layer: 5
   m_Name: ShopGrapeButton
   m_TagString: Untagged
@@ -13894,6 +14297,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143012938}
   m_CullTransparentMesh: 0
+--- !u!114 &1143012943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143012938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1143012944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1143012938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1143012943}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1143012943}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1147801470
 GameObject:
   m_ObjectHideFlags: 0
@@ -14829,7 +15291,7 @@ RectTransform:
   m_Children:
   - {fileID: 1359174714}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14913,10 +15375,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 5
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 1102918448}
-  cost: 0
+  stock: 32
+  cost: 1
 --- !u!1 &1184939156
 GameObject:
   m_ObjectHideFlags: 0
@@ -15826,6 +16288,8 @@ GameObject:
   - component: {fileID: 1258240861}
   - component: {fileID: 1258240860}
   - component: {fileID: 1258240859}
+  - component: {fileID: 1258240863}
+  - component: {fileID: 1258240862}
   m_Layer: 5
   m_Name: ShopTangerineButton
   m_TagString: Untagged
@@ -15937,6 +16401,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258240857}
   m_CullTransparentMesh: 0
+--- !u!114 &1258240862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258240857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1258240863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258240857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1258240862}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1258240862}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1260147305
 GameObject:
   m_ObjectHideFlags: 0
@@ -15988,10 +16511,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 9
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 1251740362}
-  cost: 0
+  stock: 2
+  cost: 24
 --- !u!1 &1280208733
 GameObject:
   m_ObjectHideFlags: 0
@@ -16095,6 +16618,8 @@ GameObject:
   - component: {fileID: 1280511326}
   - component: {fileID: 1280511325}
   - component: {fileID: 1280511324}
+  - component: {fileID: 1280511328}
+  - component: {fileID: 1280511327}
   m_Layer: 5
   m_Name: ShopLemonButton
   m_TagString: Untagged
@@ -16206,6 +16731,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280511322}
   m_CullTransparentMesh: 0
+--- !u!114 &1280511327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280511322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1280511328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280511322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1280511327}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1280511327}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1282103098
 GameObject:
   m_ObjectHideFlags: 0
@@ -16257,10 +16841,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 3
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 447485249}
-  cost: 0
+  stock: 5
+  cost: 5
 --- !u!1 &1304565163
 GameObject:
   m_ObjectHideFlags: 0
@@ -16450,8 +17034,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: 5.2}
-  m_SizeDelta: {x: 74.95, y: 45.81}
+  m_AnchoredPosition: {x: 0.000034671, y: 5.2}
+  m_SizeDelta: {x: 136.06, y: 97.578}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333230186
 MonoBehaviour:
@@ -16501,7 +17085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: COST
+  m_Text: Value
 --- !u!222 &1333230188
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17684,6 +18268,8 @@ GameObject:
   - component: {fileID: 1427692819}
   - component: {fileID: 1427692818}
   - component: {fileID: 1427692817}
+  - component: {fileID: 1427692821}
+  - component: {fileID: 1427692820}
   m_Layer: 5
   m_Name: ShopPepperButton
   m_TagString: Untagged
@@ -17795,6 +18381,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1427692815}
   m_CullTransparentMesh: 0
+--- !u!114 &1427692820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427692815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1427692821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427692815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1427692820}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1427692820}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1428182061
 GameObject:
   m_ObjectHideFlags: 0
@@ -18468,10 +19113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 2
-  stock: 6
+  troopType: 0
   stockTextObject: {fileID: 1497916225}
-  cost: 0
+  stock: 3
+  cost: 5
 --- !u!1 &1510448682
 GameObject:
   m_ObjectHideFlags: 0
@@ -20701,10 +21346,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 11
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 1670097480}
-  cost: 0
+  stock: 1
+  cost: 99
 --- !u!1 &1651762393
 GameObject:
   m_ObjectHideFlags: 0
@@ -20756,10 +21401,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 8
-  stock: 0
+  troopType: 0
   stockTextObject: {fileID: 2007719482}
-  cost: 0
+  stock: 10
+  cost: 12
 --- !u!1 &1655524935
 GameObject:
   m_ObjectHideFlags: 0
@@ -20930,6 +21575,8 @@ GameObject:
   - component: {fileID: 1681802868}
   - component: {fileID: 1681802867}
   - component: {fileID: 1681802866}
+  - component: {fileID: 1681802870}
+  - component: {fileID: 1681802869}
   m_Layer: 5
   m_Name: ShopBananaButton
   m_TagString: Untagged
@@ -21041,6 +21688,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681802864}
   m_CullTransparentMesh: 0
+--- !u!114 &1681802869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681802864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1681802870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681802864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1681802869}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1681802869}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &1686565875
 GameObject:
   m_ObjectHideFlags: 0
@@ -22469,6 +23175,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1889595498}
   - component: {fileID: 1889595499}
+  - component: {fileID: 1889595500}
+  - component: {fileID: 1889595501}
   m_Layer: 5
   m_Name: ShopLayout
   m_TagString: Untagged
@@ -22531,6 +23239,43 @@ MonoBehaviour:
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &1889595500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889595497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e409d7763a4a5214aa279ffd545d784f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  products:
+  - {fileID: 828423548}
+  - {fileID: 540856658}
+  - {fileID: 1509910400}
+  - {fileID: 1282103100}
+  - {fileID: 742754468}
+  - {fileID: 1182097799}
+  - {fileID: 429968543}
+  - {fileID: 103819683}
+  - {fileID: 1651762395}
+  - {fileID: 1260147307}
+  - {fileID: 175355214}
+  - {fileID: 1646493976}
+--- !u!114 &1889595501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1889595497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1890017466
 GameObject:
   m_ObjectHideFlags: 0
@@ -24228,6 +24973,8 @@ GameObject:
   - component: {fileID: 2090203317}
   - component: {fileID: 2090203316}
   - component: {fileID: 2090203315}
+  - component: {fileID: 2090203319}
+  - component: {fileID: 2090203318}
   m_Layer: 5
   m_Name: ShopPeachButton
   m_TagString: Untagged
@@ -24339,6 +25086,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2090203313}
   m_CullTransparentMesh: 0
+--- !u!114 &2090203318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090203313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2090203319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090203313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2090203318}
+          m_MethodName: OnEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2090203318}
+          m_MethodName: OnExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &2090537266
 GameObject:
   m_ObjectHideFlags: 0

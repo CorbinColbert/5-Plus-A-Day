@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShopSlot : MonoBehaviour
+public class Slot : MonoBehaviour
 {
-    public TroopType Type;
-    public int stock;
+    public TroopType troopType;
     public GameObject stockTextObject;
+    public int stock;
     public int cost;
 
     private void Start()
@@ -18,12 +18,16 @@ public class ShopSlot : MonoBehaviour
 
     public void Buy()
     {
-        print("Pressed buy on " + Type.ToString());
-        if (stock > 0)
+        print("Buy");
+
+        if (GameManager.currency - cost < 0 || stock < 1)
         {
-            stock--;
-            UpdateStockText();
+            return;
         }
+
+        stock--;
+        GameManager.currency -= cost;
+        UpdateStockText();
     }
 
     public void Restock(int amount)
@@ -32,11 +36,11 @@ public class ShopSlot : MonoBehaviour
         UpdateStockText();
     }
 
-    private void UpdateStockText()
+    void UpdateStockText()
     {
         if (stockTextObject.TryGetComponent<Text>(out Text text))
         {
-            text.text = ""+stock;
+            text.text = "" + stock;
         }
     }
 }

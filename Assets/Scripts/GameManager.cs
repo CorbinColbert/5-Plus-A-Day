@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager singletonGameManagerInstance = null;
     public PathHelper pathHelperInstance;
     public GridManager gridManagerInstance;
-    public static int currency; 
+    public static int currency = 100; 
 
     private void Awake()
     {

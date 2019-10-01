@@ -4,15 +4,5 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
-    ShopSlot[] slots;
-
-    void FillDefaultShopStock()
-    {
-
-    }
-
-    void Start()
-    {
-        FillDefaultShopStock();
-    }
+    public Slot[] products;
 }
