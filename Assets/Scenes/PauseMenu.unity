@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 14116207}
   - component: {fileID: 14116206}
   m_Layer: 5
-  m_Name: CherryStockText
+  m_Name: InventoryCherryStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 28818251}
   - component: {fileID: 28818250}
   m_Layer: 5
-  m_Name: CarrotStock
+  m_Name: InventoryCarrotStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -286,6 +286,7 @@ GameObject:
   - component: {fileID: 54721036}
   - component: {fileID: 54721038}
   - component: {fileID: 54721037}
+  - component: {fileID: 54721039}
   m_Layer: 5
   m_Name: CurrencySymbol 2
   m_TagString: Untagged
@@ -350,6 +351,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54721035}
   m_CullTransparentMesh: 0
+--- !u!114 &54721039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54721035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &69832671
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +455,7 @@ GameObject:
   - component: {fileID: 76782933}
   - component: {fileID: 76782932}
   m_Layer: 5
-  m_Name: OrangeButton
+  m_Name: ShopOrangeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -735,7 +751,7 @@ GameObject:
   - component: {fileID: 92919716}
   - component: {fileID: 92919715}
   m_Layer: 5
-  m_Name: BananaStock
+  m_Name: InventoryBananaStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1050,8 +1066,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103819682}
+  - component: {fileID: 103819683}
   m_Layer: 5
-  m_Name: LemonSlot
+  m_Name: ShopLemonSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1079,6 +1096,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &103819683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 103819681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 7
+  stock: 0
+  stockTextObject: {fileID: 355031646}
+  cost: 0
 --- !u!1 &112242674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1215,7 @@ GameObject:
   - component: {fileID: 116780552}
   - component: {fileID: 116780551}
   m_Layer: 5
-  m_Name: GrapeStockText
+  m_Name: InventoryGrapeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1593,8 +1626,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 175355213}
+  - component: {fileID: 175355214}
   m_Layer: 5
-  m_Name: PepperSlot
+  m_Name: ShopPepperSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1622,6 +1656,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &175355214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 175355212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 10
+  stock: 0
+  stockTextObject: {fileID: 496120492}
+  cost: 0
 --- !u!1 &181882338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1715,7 +1765,7 @@ GameObject:
   - component: {fileID: 193538406}
   - component: {fileID: 193538405}
   m_Layer: 5
-  m_Name: PearButton
+  m_Name: InventoryPearButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2211,7 +2261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251576384}
   m_Layer: 5
-  m_Name: GrapeSlot
+  m_Name: InventoryGrapeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2321,7 +2371,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 618373331}
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2386,7 +2436,7 @@ GameObject:
   - component: {fileID: 256582654}
   - component: {fileID: 256582653}
   m_Layer: 5
-  m_Name: CarrotButton
+  m_Name: ShopCarrotButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2685,14 +2735,14 @@ RectTransform:
   m_GameObject: {fileID: 267363622}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children: []
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 1
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038146973, y: 202.1}
+  m_AnchoredPosition: {x: -0, y: 58.78807}
   m_SizeDelta: {x: 391.56, y: 71.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &267363624
@@ -2780,14 +2830,14 @@ RectTransform:
   m_GameObject: {fileID: 302805679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children: []
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 2
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -191, y: 123.53}
+  m_AnchoredPosition: {x: -59.73, y: 35.936}
   m_SizeDelta: {x: 162.01, y: 33.074}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302805681
@@ -2859,6 +2909,7 @@ GameObject:
   - component: {fileID: 306692718}
   - component: {fileID: 306692717}
   - component: {fileID: 306692716}
+  - component: {fileID: 306692719}
   m_Layer: 5
   m_Name: CurrencyText
   m_TagString: Untagged
@@ -2939,6 +2990,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306692714}
   m_CullTransparentMesh: 0
+--- !u!114 &306692719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306692714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 6, y: -6}
+  m_UseGraphicAlpha: 1
 --- !u!1 &308582901
 GameObject:
   m_ObjectHideFlags: 0
@@ -3024,7 +3090,7 @@ GameObject:
   m_Component:
   - component: {fileID: 313251606}
   m_Layer: 5
-  m_Name: PeachSlot
+  m_Name: InventoryPeachSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3247,7 +3313,7 @@ GameObject:
   - component: {fileID: 354466103}
   - component: {fileID: 354466102}
   m_Layer: 5
-  m_Name: CakeButton
+  m_Name: ShopCakeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3369,7 +3435,7 @@ GameObject:
   - component: {fileID: 355031649}
   - component: {fileID: 355031648}
   m_Layer: 5
-  m_Name: LemonStockText
+  m_Name: ShopLemonStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3592,7 +3658,7 @@ GameObject:
   - component: {fileID: 356794705}
   - component: {fileID: 356794704}
   m_Layer: 5
-  m_Name: RadishStock
+  m_Name: InventoryRadishStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3763,7 +3829,7 @@ GameObject:
   - component: {fileID: 361404841}
   - component: {fileID: 361404840}
   m_Layer: 5
-  m_Name: CakeStockText
+  m_Name: InventoryCakeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4088,7 +4154,7 @@ GameObject:
   - component: {fileID: 395328920}
   - component: {fileID: 395328919}
   m_Layer: 5
-  m_Name: CarrotStockText
+  m_Name: ShopCarrotStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4167,7 +4233,7 @@ GameObject:
   - component: {fileID: 411269721}
   - component: {fileID: 411269720}
   m_Layer: 5
-  m_Name: LemonStockText
+  m_Name: InventoryLemonStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4339,7 +4405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 415780592}
   m_Layer: 5
-  m_Name: RadishSlot
+  m_Name: InventoryRadishSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4696,8 +4762,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429968542}
+  - component: {fileID: 429968543}
   m_Layer: 5
-  m_Name: CherrySlot
+  m_Name: ShopCherrySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4725,6 +4792,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &429968543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 429968541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 6
+  stock: 0
+  stockTextObject: {fileID: 1686565875}
+  cost: 0
 --- !u!1 &437415098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4895,108 +4978,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 443381482}
   m_CullTransparentMesh: 0
---- !u!1 &446028386
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 446028387}
-  - component: {fileID: 446028390}
-  - component: {fileID: 446028389}
-  - component: {fileID: 446028388}
-  m_Layer: 5
-  m_Name: Shop
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &446028387
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446028386}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 865233231}
-  - {fileID: 267363623}
-  - {fileID: 302805680}
-  - {fileID: 1637894032}
-  - {fileID: 706973630}
-  - {fileID: 1889595498}
-  - {fileID: 483257669}
-  m_Father: {fileID: 1359174714}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2.225006}
-  m_SizeDelta: {x: -0.000029861927, y: 4.45}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &446028388
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446028386}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e8a6c5cb91be8f74cb7d3cced61d1b16, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &446028389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446028386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &446028390
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 446028386}
-  m_CullTransparentMesh: 0
 --- !u!1 &447485249
 GameObject:
   m_ObjectHideFlags: 0
@@ -5009,7 +4990,7 @@ GameObject:
   - component: {fileID: 447485252}
   - component: {fileID: 447485251}
   m_Layer: 5
-  m_Name: OrangeStockText
+  m_Name: ShopOrangeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5351,7 +5332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477324795}
   m_Layer: 5
-  m_Name: BananaSlot
+  m_Name: InventoryBananaSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5405,7 +5386,7 @@ RectTransform:
   m_GameObject: {fileID: 483257668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children:
   - {fileID: 377203844}
   - {fileID: 887795262}
@@ -5419,12 +5400,12 @@ RectTransform:
   - {fileID: 736420045}
   - {fileID: 870488169}
   - {fileID: 1697814997}
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 6
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -190.99994, y: -34.99699}
+  m_AnchoredPosition: {x: -59.73001, y: -10.18013}
   m_SizeDelta: {x: 216.8, y: 283.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &483257670
@@ -5464,7 +5445,7 @@ GameObject:
   - component: {fileID: 494425991}
   - component: {fileID: 494425990}
   m_Layer: 5
-  m_Name: RadishButton
+  m_Name: InventoryRadishButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5586,7 +5567,7 @@ GameObject:
   - component: {fileID: 496120495}
   - component: {fileID: 496120494}
   m_Layer: 5
-  m_Name: PepperStockText
+  m_Name: ShopPepperStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5663,7 +5644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 504617477}
   m_Layer: 5
-  m_Name: CarrotSlot
+  m_Name: InventoryCarrotSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5849,7 +5830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.2, y: -6.7}
+  m_AnchoredPosition: {x: 7.199951, y: -6.700012}
   m_SizeDelta: {x: 115.95001, y: 40.630005}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &510100033
@@ -6037,7 +6018,7 @@ GameObject:
   - component: {fileID: 514670576}
   - component: {fileID: 514670575}
   m_Layer: 5
-  m_Name: ShopCostLabel
+  m_Name: ShopCost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6059,7 +6040,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012398, y: -6}
+  m_AnchoredPosition: {x: -0.0000091086, y: -7.3}
   m_SizeDelta: {x: 74.95, y: 45.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514670575
@@ -6693,8 +6674,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540856657}
+  - component: {fileID: 540856658}
   m_Layer: 5
-  m_Name: PearSlot
+  m_Name: ShopPearSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6722,6 +6704,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &540856658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540856656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  stock: 1
+  stockTextObject: {fileID: 1098032634}
+  cost: 0
 --- !u!1 &555601398
 GameObject:
   m_ObjectHideFlags: 0
@@ -6857,7 +6855,7 @@ GameObject:
   - component: {fileID: 555720372}
   - component: {fileID: 555720371}
   m_Layer: 5
-  m_Name: RadishStock
+  m_Name: ShopRadishStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7098,7 +7096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 572479475}
   m_Layer: 5
-  m_Name: CherrySlot
+  m_Name: InventoryCherrySlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7283,7 +7281,7 @@ GameObject:
   - component: {fileID: 582914122}
   - component: {fileID: 582914121}
   m_Layer: 5
-  m_Name: CherryButton
+  m_Name: ShopCherryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7405,7 +7403,7 @@ GameObject:
   - component: {fileID: 599497260}
   - component: {fileID: 599497259}
   m_Layer: 5
-  m_Name: LemonStock
+  m_Name: InventoryLemonStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7505,51 +7503,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
---- !u!1 &618373331
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 618373332}
-  - component: {fileID: 618373333}
-  m_Layer: 5
-  m_Name: Inventory
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &618373332
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618373331}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 845208290}
-  m_Father: {fileID: 1359174714}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 141.73, y: 203.73}
-  m_SizeDelta: {x: 261.4, y: 386.64}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &618373333
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618373331}
-  m_CullTransparentMesh: 0
 --- !u!1 &619077111
 GameObject:
   m_ObjectHideFlags: 0
@@ -7654,7 +7607,7 @@ GameObject:
   - component: {fileID: 633653792}
   - component: {fileID: 633653791}
   m_Layer: 5
-  m_Name: PearButton
+  m_Name: ShopPearButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7963,7 +7916,7 @@ GameObject:
   - component: {fileID: 651487587}
   - component: {fileID: 651487586}
   m_Layer: 5
-  m_Name: CherryButton
+  m_Name: InventoryCherryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8085,7 +8038,7 @@ GameObject:
   - component: {fileID: 671217908}
   - component: {fileID: 671217907}
   m_Layer: 5
-  m_Name: OrangeStockText
+  m_Name: InventoryOrangeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8335,7 +8288,7 @@ GameObject:
   - component: {fileID: 682157352}
   - component: {fileID: 682157351}
   m_Layer: 5
-  m_Name: PearStock
+  m_Name: ShopPearStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8488,7 +8441,7 @@ GameObject:
   - component: {fileID: 692050252}
   - component: {fileID: 692050251}
   m_Layer: 5
-  m_Name: BananaButton
+  m_Name: InventoryBananaButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8624,17 +8577,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706973629}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children:
   - {fileID: 679432715}
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 4
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000026226, y: -147.6}
+  m_AnchoredPosition: {x: -0, y: -42.9348}
   m_SizeDelta: {x: 93.67, y: 40.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706973631
@@ -8691,7 +8644,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 446028386}
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -9002,7 +8955,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735324728}
   m_Layer: 5
-  m_Name: CakeSlot
+  m_Name: InventoryCakeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9259,8 +9212,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742754467}
+  - component: {fileID: 742754468}
   m_Layer: 5
-  m_Name: BananaSlot
+  m_Name: ShopBananaSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9288,6 +9242,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &742754468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742754466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 4
+  stock: 0
+  stockTextObject: {fileID: 1021968033}
+  cost: 0
 --- !u!1 &746674118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9300,7 +9270,7 @@ GameObject:
   - component: {fileID: 746674121}
   - component: {fileID: 746674120}
   m_Layer: 5
-  m_Name: GrapeStock
+  m_Name: InventoryGrapeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9376,7 +9346,7 @@ GameObject:
   - component: {fileID: 755086077}
   - component: {fileID: 755086076}
   m_Layer: 5
-  m_Name: CarrotStock
+  m_Name: ShopCarrotStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10153,7 +10123,7 @@ GameObject:
   - component: {fileID: 819074699}
   - component: {fileID: 819074701}
   m_Layer: 5
-  m_Name: CarrotIcon
+  m_Name: ShopCarrotIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10243,7 +10213,7 @@ GameObject:
   - component: {fileID: 821311697}
   - component: {fileID: 821311696}
   m_Layer: 5
-  m_Name: PeachStock
+  m_Name: InventoryPeachStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10316,8 +10286,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828423546}
+  - component: {fileID: 828423548}
   m_Layer: 5
-  m_Name: CarrotSlot
+  m_Name: ShopCarrotSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10343,6 +10314,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &828423548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828423545}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  stock: 0
+  stockTextObject: {fileID: 395328917}
+  cost: 0
 --- !u!1 &830590299
 GameObject:
   m_ObjectHideFlags: 0
@@ -10450,7 +10437,7 @@ GameObject:
   - component: {fileID: 832162971}
   - component: {fileID: 832162970}
   m_Layer: 5
-  m_Name: CakeStock
+  m_Name: InventoryCakeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10526,7 +10513,7 @@ GameObject:
   - component: {fileID: 843231387}
   - component: {fileID: 843231386}
   m_Layer: 5
-  m_Name: PearStock
+  m_Name: InventoryPearStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10860,7 +10847,7 @@ GameObject:
   - component: {fileID: 845208292}
   - component: {fileID: 845208291}
   m_Layer: 5
-  m_Name: InventoryPanel
+  m_Name: Inventory
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10873,20 +10860,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845208289}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 940092400}
   - {fileID: 781025149}
   - {fileID: 254284013}
-  m_Father: {fileID: 618373332}
-  m_RootOrder: 0
+  m_Father: {fileID: 1359174714}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000015258789, y: 2.869995}
-  m_SizeDelta: {x: 0, y: 5.74}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 141.6, y: 213.05}
+  m_SizeDelta: {x: 261.14, y: 405.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845208291
 MonoBehaviour:
@@ -10937,7 +10924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859135858}
   m_Layer: 5
-  m_Name: PepperSlot
+  m_Name: InventoryPepperSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11043,7 +11030,7 @@ GameObject:
   - component: {fileID: 865233233}
   - component: {fileID: 865233232}
   m_Layer: 5
-  m_Name: ShopBackground
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11058,17 +11045,23 @@ RectTransform:
   m_GameObject: {fileID: 865233230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1977217, y: 3.4377716, z: 1}
+  m_LocalScale: {x: 3.1977217, y: 3.4377713, z: 1}
   m_Children:
   - {fileID: 1519260265}
   - {fileID: 514670574}
   - {fileID: 1333230185}
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 0
+  - {fileID: 267363623}
+  - {fileID: 302805680}
+  - {fileID: 1637894032}
+  - {fileID: 706973630}
+  - {fileID: 1889595498}
+  - {fileID: 483257669}
+  m_Father: {fileID: 1359174714}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0000053420663, y: -0.00000047683716}
   m_SizeDelta: {x: 213.12, y: 123.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865233232
@@ -11160,7 +11153,7 @@ GameObject:
   - component: {fileID: 874572701}
   - component: {fileID: 874572700}
   m_Layer: 5
-  m_Name: PearStockText
+  m_Name: InventoryPearStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11854,7 +11847,7 @@ GameObject:
   - component: {fileID: 984010602}
   - component: {fileID: 984010601}
   m_Layer: 5
-  m_Name: RadishStockText
+  m_Name: InventoryRadishStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12028,7 +12021,7 @@ GameObject:
   - component: {fileID: 993931483}
   - component: {fileID: 993931482}
   m_Layer: 5
-  m_Name: PeachStock
+  m_Name: ShopPeachStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12275,7 +12268,7 @@ GameObject:
   - component: {fileID: 1011904677}
   - component: {fileID: 1011904676}
   m_Layer: 5
-  m_Name: CherryStock
+  m_Name: ShopCherryStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12426,7 +12419,7 @@ GameObject:
   - component: {fileID: 1017505730}
   - component: {fileID: 1017505729}
   m_Layer: 5
-  m_Name: GrapeStock
+  m_Name: ShopGrapeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12502,7 +12495,7 @@ GameObject:
   - component: {fileID: 1021968036}
   - component: {fileID: 1021968035}
   m_Layer: 5
-  m_Name: BananaStockText
+  m_Name: ShopBananaStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12848,7 +12841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064025106}
   m_Layer: 5
-  m_Name: TangerineSlot
+  m_Name: InventoryTangerineSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13087,7 +13080,7 @@ GameObject:
   - component: {fileID: 1098032637}
   - component: {fileID: 1098032636}
   m_Layer: 5
-  m_Name: PearStockText
+  m_Name: ShopPearStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13261,7 +13254,7 @@ GameObject:
   - component: {fileID: 1102918451}
   - component: {fileID: 1102918450}
   m_Layer: 5
-  m_Name: GrapeStockText
+  m_Name: ShopGrapeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13338,7 +13331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1109729957}
   m_Layer: 5
-  m_Name: PearSlot
+  m_Name: InventoryPearSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13379,7 +13372,7 @@ GameObject:
   - component: {fileID: 1117042585}
   - component: {fileID: 1117042584}
   m_Layer: 5
-  m_Name: RadishButton
+  m_Name: ShopRadishButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13501,7 +13494,7 @@ GameObject:
   - component: {fileID: 1133515509}
   - component: {fileID: 1133515508}
   m_Layer: 5
-  m_Name: PepperStockText
+  m_Name: InventoryPepperStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13650,7 +13643,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 446028386}
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -13791,7 +13784,7 @@ GameObject:
   - component: {fileID: 1143012941}
   - component: {fileID: 1143012940}
   m_Layer: 5
-  m_Name: GrapeButton
+  m_Name: ShopGrapeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13993,7 +13986,7 @@ GameObject:
   - component: {fileID: 1153568039}
   - component: {fileID: 1153568038}
   m_Layer: 5
-  m_Name: CarrotIcon
+  m_Name: InventoryCarrotIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14194,7 +14187,7 @@ GameObject:
   - component: {fileID: 1157540451}
   - component: {fileID: 1157540450}
   m_Layer: 5
-  m_Name: PeachButton
+  m_Name: InventoryPeachButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14317,7 +14310,7 @@ GameObject:
   - component: {fileID: 1158007429}
   - component: {fileID: 1158007428}
   m_Layer: 5
-  m_Name: LemonButton
+  m_Name: InventoryLemonButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14632,7 +14625,7 @@ GameObject:
   - component: {fileID: 1164983346}
   - component: {fileID: 1164983345}
   m_Layer: 5
-  m_Name: GrapeButton
+  m_Name: InventoryGrapeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14878,8 +14871,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1182097798}
+  - component: {fileID: 1182097799}
   m_Layer: 5
-  m_Name: GrapeSlot
+  m_Name: ShopGrapeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14907,6 +14901,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1182097799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182097797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 5
+  stock: 0
+  stockTextObject: {fileID: 1102918448}
+  cost: 0
 --- !u!1 &1184939156
 GameObject:
   m_ObjectHideFlags: 0
@@ -14920,7 +14930,7 @@ GameObject:
   - component: {fileID: 1184939158}
   - component: {fileID: 1184939160}
   m_Layer: 5
-  m_Name: CloseInventoryButtonText
+  m_Name: InventoryBackButtonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15014,7 +15024,7 @@ GameObject:
   - component: {fileID: 1195068967}
   - component: {fileID: 1195068966}
   m_Layer: 5
-  m_Name: CherryStock
+  m_Name: InventoryCherryStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15737,7 +15747,7 @@ GameObject:
   - component: {fileID: 1251740365}
   - component: {fileID: 1251740364}
   m_Layer: 5
-  m_Name: RadishStockText
+  m_Name: ShopRadishStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15817,7 +15827,7 @@ GameObject:
   - component: {fileID: 1258240860}
   - component: {fileID: 1258240859}
   m_Layer: 5
-  m_Name: TangerineButton
+  m_Name: ShopTangerineButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15936,8 +15946,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1260147306}
+  - component: {fileID: 1260147307}
   m_Layer: 5
-  m_Name: RadishSlot
+  m_Name: ShopRadishSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15965,6 +15976,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1260147307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1260147305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 9
+  stock: 0
+  stockTextObject: {fileID: 1251740362}
+  cost: 0
 --- !u!1 &1280208733
 GameObject:
   m_ObjectHideFlags: 0
@@ -16069,7 +16096,7 @@ GameObject:
   - component: {fileID: 1280511325}
   - component: {fileID: 1280511324}
   m_Layer: 5
-  m_Name: LemonButton
+  m_Name: ShopLemonButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16188,8 +16215,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1282103099}
+  - component: {fileID: 1282103100}
   m_Layer: 5
-  m_Name: OrangeSlot
+  m_Name: ShopOrangeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16217,6 +16245,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1282103100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282103098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 3
+  stock: 0
+  stockTextObject: {fileID: 447485249}
+  cost: 0
 --- !u!1 &1304565163
 GameObject:
   m_ObjectHideFlags: 0
@@ -16229,7 +16273,7 @@ GameObject:
   - component: {fileID: 1304565166}
   - component: {fileID: 1304565165}
   m_Layer: 5
-  m_Name: PepperStock
+  m_Name: ShopPepperStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16907,8 +16951,8 @@ RectTransform:
   - {fileID: 510100032}
   - {fileID: 1525964667}
   - {fileID: 1135047690}
-  - {fileID: 618373332}
-  - {fileID: 446028387}
+  - {fileID: 865233231}
+  - {fileID: 845208290}
   - {fileID: 1386349366}
   - {fileID: 1157347252}
   - {fileID: 527922142}
@@ -16940,7 +16984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1382903059}
   m_Layer: 5
-  m_Name: LemonSlot
+  m_Name: InventoryLemonSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17090,7 +17134,7 @@ GameObject:
   - component: {fileID: 1393221599}
   - component: {fileID: 1393221598}
   m_Layer: 5
-  m_Name: TangerineStock
+  m_Name: InventoryTangerineStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17241,7 +17285,7 @@ GameObject:
   - component: {fileID: 1415082256}
   - component: {fileID: 1415082255}
   m_Layer: 5
-  m_Name: PepperButton
+  m_Name: InventoryPepperButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17564,7 +17608,7 @@ GameObject:
   - component: {fileID: 1427154680}
   - component: {fileID: 1427154679}
   m_Layer: 5
-  m_Name: OrangeStock
+  m_Name: ShopOrangeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17641,7 +17685,7 @@ GameObject:
   - component: {fileID: 1427692818}
   - component: {fileID: 1427692817}
   m_Layer: 5
-  m_Name: PepperButton
+  m_Name: ShopPepperButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18028,7 +18072,7 @@ GameObject:
   - component: {fileID: 1447353158}
   - component: {fileID: 1447353157}
   m_Layer: 5
-  m_Name: BananaStock
+  m_Name: ShopBananaStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18227,7 +18271,7 @@ GameObject:
   - component: {fileID: 1497916228}
   - component: {fileID: 1497916227}
   m_Layer: 5
-  m_Name: TangerineStockText
+  m_Name: ShopTangerineStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18382,8 +18426,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1509910399}
+  - component: {fileID: 1509910400}
   m_Layer: 5
-  m_Name: TangerineSlot
+  m_Name: ShopTangerineSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18411,6 +18456,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1509910400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509910398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  stock: 6
+  stockTextObject: {fileID: 1497916225}
+  cost: 0
 --- !u!1 &1510448682
 GameObject:
   m_ObjectHideFlags: 0
@@ -18830,7 +18891,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 618373331}
+      - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -18970,7 +19031,7 @@ GameObject:
   - component: {fileID: 1542291352}
   - component: {fileID: 1542291351}
   m_Layer: 5
-  m_Name: TangerineStock
+  m_Name: ShopTangerineStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19441,6 +19502,7 @@ GameObject:
   - component: {fileID: 1557484869}
   - component: {fileID: 1557484871}
   - component: {fileID: 1557484870}
+  - component: {fileID: 1557484872}
   m_Layer: 5
   m_Name: CurrencySymbol
   m_TagString: Untagged
@@ -19505,6 +19567,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557484868}
   m_CullTransparentMesh: 0
+--- !u!114 &1557484872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557484868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1573859515
 GameObject:
   m_ObjectHideFlags: 0
@@ -19518,7 +19595,7 @@ GameObject:
   - component: {fileID: 1573859518}
   - component: {fileID: 1573859517}
   m_Layer: 5
-  m_Name: CakeButton
+  m_Name: InventoryCakeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19824,7 +19901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593763130}
   m_Layer: 5
-  m_Name: OrangeSlot
+  m_Name: InventoryOrangeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20415,14 +20492,14 @@ RectTransform:
   m_GameObject: {fileID: 1637894031}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children: []
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 3
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 123.54}
+  m_AnchoredPosition: {x: 62.544495, y: 35.936066}
   m_SizeDelta: {x: 100.09, y: 33.088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637894033
@@ -20582,8 +20659,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646493975}
+  - component: {fileID: 1646493976}
   m_Layer: 5
-  m_Name: CakeSlot
+  m_Name: ShopCakeSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20611,6 +20689,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1646493976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646493974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 11
+  stock: 0
+  stockTextObject: {fileID: 1670097480}
+  cost: 0
 --- !u!1 &1651762393
 GameObject:
   m_ObjectHideFlags: 0
@@ -20620,8 +20714,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1651762394}
+  - component: {fileID: 1651762395}
   m_Layer: 5
-  m_Name: PeachSlot
+  m_Name: ShopPeachSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20649,6 +20744,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1651762395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1651762393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 8
+  stock: 0
+  stockTextObject: {fileID: 2007719482}
+  cost: 0
 --- !u!1 &1655524935
 GameObject:
   m_ObjectHideFlags: 0
@@ -20661,7 +20772,7 @@ GameObject:
   - component: {fileID: 1655524938}
   - component: {fileID: 1655524937}
   m_Layer: 5
-  m_Name: BananaStockText
+  m_Name: InventoryBananaStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20740,7 +20851,7 @@ GameObject:
   - component: {fileID: 1670097483}
   - component: {fileID: 1670097482}
   m_Layer: 5
-  m_Name: CakeStockText
+  m_Name: ShopCakeStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20820,7 +20931,7 @@ GameObject:
   - component: {fileID: 1681802867}
   - component: {fileID: 1681802866}
   m_Layer: 5
-  m_Name: BananaButton
+  m_Name: ShopBananaButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20942,7 +21053,7 @@ GameObject:
   - component: {fileID: 1686565878}
   - component: {fileID: 1686565877}
   m_Layer: 5
-  m_Name: CherryStockText
+  m_Name: ShopCherryStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21021,7 +21132,7 @@ GameObject:
   - component: {fileID: 1687969854}
   - component: {fileID: 1687969853}
   m_Layer: 5
-  m_Name: PeachStockText
+  m_Name: InventoryPeachStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21267,7 +21378,7 @@ GameObject:
   - component: {fileID: 1752551107}
   - component: {fileID: 1752551106}
   m_Layer: 5
-  m_Name: CarrotStockText
+  m_Name: InventoryCarrotStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21346,7 +21457,7 @@ GameObject:
   - component: {fileID: 1754469185}
   - component: {fileID: 1754469184}
   m_Layer: 5
-  m_Name: OrangeStock
+  m_Name: InventoryOrangeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21719,7 +21830,7 @@ GameObject:
   - component: {fileID: 1806022972}
   - component: {fileID: 1806022971}
   m_Layer: 5
-  m_Name: TangerineButton
+  m_Name: InventoryTangerineButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22359,7 +22470,7 @@ GameObject:
   - component: {fileID: 1889595498}
   - component: {fileID: 1889595499}
   m_Layer: 5
-  m_Name: ShopStockLayout
+  m_Name: ShopLayout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22374,7 +22485,7 @@ RectTransform:
   m_GameObject: {fileID: 1889595497}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.31272265, y: 0.2908861, z: 1}
   m_Children:
   - {fileID: 828423546}
   - {fileID: 540856657}
@@ -22388,12 +22499,12 @@ RectTransform:
   - {fileID: 1260147306}
   - {fileID: 175355213}
   - {fileID: 1646493975}
-  m_Father: {fileID: 446028387}
-  m_RootOrder: 5
+  m_Father: {fileID: 865233231}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -34.993}
+  m_AnchoredPosition: {x: 62.544495, y: -10.178972}
   m_SizeDelta: {x: 216.8, y: 283.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1889595499
@@ -22918,7 +23029,7 @@ GameObject:
   - component: {fileID: 1935262670}
   - component: {fileID: 1935262669}
   m_Layer: 5
-  m_Name: CakeStock
+  m_Name: ShopCakeStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22995,7 +23106,7 @@ GameObject:
   - component: {fileID: 1946828942}
   - component: {fileID: 1946828941}
   m_Layer: 5
-  m_Name: OrangeButton
+  m_Name: InventoryOrangeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23196,7 +23307,7 @@ GameObject:
   - component: {fileID: 1993625571}
   - component: {fileID: 1993625570}
   m_Layer: 5
-  m_Name: CarrotButton
+  m_Name: InventoryCarrotButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23320,7 +23431,7 @@ GameObject:
   - component: {fileID: 2004855663}
   - component: {fileID: 2004855662}
   m_Layer: 5
-  m_Name: LemonStock
+  m_Name: ShopLemonStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23396,7 +23507,7 @@ GameObject:
   - component: {fileID: 2007719485}
   - component: {fileID: 2007719484}
   m_Layer: 5
-  m_Name: PeachStockText
+  m_Name: ShopPeachStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23475,7 +23586,7 @@ GameObject:
   - component: {fileID: 2007983725}
   - component: {fileID: 2007983724}
   m_Layer: 5
-  m_Name: PepperStock
+  m_Name: InventoryPepperStock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23864,7 +23975,7 @@ GameObject:
   - component: {fileID: 2036970543}
   - component: {fileID: 2036970542}
   m_Layer: 5
-  m_Name: TangerineStockText
+  m_Name: InventoryTangerineStockText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24118,7 +24229,7 @@ GameObject:
   - component: {fileID: 2090203316}
   - component: {fileID: 2090203315}
   m_Layer: 5
-  m_Name: PeachButton
+  m_Name: ShopPeachButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
