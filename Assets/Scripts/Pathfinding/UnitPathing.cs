@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//this class manages individual units pathfinding and placement
 public class UnitPathing : MonoBehaviour
 {
     public Node[] path;
@@ -13,16 +12,9 @@ public class UnitPathing : MonoBehaviour
     public float moveSpeed;
     Vector3 tempStartPos;
     int index = 0;
-    // debug
-    //public KeyCode key;
 
     private void FixedUpdate()
     {
-
-        // if (Input.GetKeyDown(key))
-        // {
-        //    GetPathing(target);
-        // }
 
         if (hasPathToFollow)
         {
@@ -63,7 +55,6 @@ public class UnitPathing : MonoBehaviour
         if (!hasPathToFollow)
         {
             grid.GetComponent<PathHelper>().RequestAPath(target, gameObject, doStuffWithPath);
-            //PathHelper.RequestAPath(target, gameObject, doStuffWithPath);
         }
         else
         {
@@ -76,14 +67,13 @@ public class UnitPathing : MonoBehaviour
     {
         if (wasSuccessfull)
         {
-            //print("the path request returned successfull");
             this.path = path.ToArray();
             hasPathToFollow = true;
         }
         else
         {
-            //print("the path request did not return successfull");
             //pathing failed
+            //TODO: stuff here
         }
     }
 }
