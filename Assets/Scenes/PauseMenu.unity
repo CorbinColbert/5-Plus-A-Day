@@ -740,7 +740,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.92211914, y: 0}
+  m_AnchoredPosition: {x: -0.921875, y: 0}
   m_SizeDelta: {x: -52.214, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82113997
@@ -910,6 +910,82 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 92919713}
+  m_CullTransparentMesh: 0
+--- !u!1 &94850165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 94850166}
+  - component: {fileID: 94850168}
+  - component: {fileID: 94850167}
+  m_Layer: 5
+  m_Name: ShopPanel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &94850166
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94850165}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 865233231}
+  m_Father: {fileID: 1359174714}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.0000075336}
+  m_SizeDelta: {x: 1280, y: 720}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &94850167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94850165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.18431373}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &94850168
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 94850165}
   m_CullTransparentMesh: 0
 --- !u!1 &96762377
 GameObject:
@@ -1187,10 +1263,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103819683
 MonoBehaviour:
@@ -1201,13 +1277,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 103819681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 355031646}
-  stock: 2
-  cost: 14
+  troopType: 7
+  amount: 7
+  value: 7
+  isInventory: 0
 --- !u!1 &112242674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,10 +1823,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175355214
 MonoBehaviour:
@@ -1761,13 +1837,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 175355212}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 0
-  stockTextObject: {fileID: 496120492}
-  stock: 3
-  cost: 7
+  amount: 5
+  value: 15
+  isInventory: 0
 --- !u!1 &181882338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1910,7 +1986,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2356,6 +2432,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 251576384}
+  - component: {fileID: 251576385}
   m_Layer: 5
   m_Name: InventoryGrapeSlot
   m_TagString: Untagged
@@ -2385,6 +2462,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &251576385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251576383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 5
+  amount: 0
 --- !u!1 &254284012
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2558,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 845208289}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2970,7 +3061,7 @@ GameObject:
   - component: {fileID: 302805682}
   - component: {fileID: 302805681}
   m_Layer: 5
-  m_Name: InventoryTitle
+  m_Name: SellTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2993,7 +3084,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -59.73, y: 35.936}
-  m_SizeDelta: {x: 162.01, y: 33.074}
+  m_SizeDelta: {x: 163.21, y: 36.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &302805681
 MonoBehaviour:
@@ -3043,7 +3134,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: BUY
 --- !u!222 &302805683
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3244,6 +3335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 313251606}
+  - component: {fileID: 313251607}
   m_Layer: 5
   m_Name: InventoryPeachSlot
   m_TagString: Untagged
@@ -3273,6 +3365,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &313251607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313251605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 8
+  amount: 0
 --- !u!1 &349651873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,7 +3415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13.800049, y: -135.1}
+  m_AnchoredPosition: {x: 13.800781, y: -135.1}
   m_SizeDelta: {x: -840.14, y: -531.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349651875
@@ -3426,6 +3532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 352908741}
+  - component: {fileID: 352908742}
   m_Layer: 5
   m_Name: GrapeSlot
   m_TagString: Untagged
@@ -3450,11 +3557,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &352908742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352908740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 5
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &354466100
 GameObject:
   m_ObjectHideFlags: 0
@@ -4216,6 +4339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 377203844}
+  - component: {fileID: 377203845}
   m_Layer: 5
   m_Name: CarrotSlot
   m_TagString: Untagged
@@ -4235,14 +4359,32 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 759116385}
+  - {fileID: 1781737968}
+  - {fileID: 1147801471}
   m_Father: {fileID: 483257669}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &377203845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377203843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 0
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &389524376
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,7 +4693,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.7631836, y: 0}
+  m_AnchoredPosition: {x: -0.76171875, y: 0}
   m_SizeDelta: {x: -47.561, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &414914071
@@ -4620,6 +4762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415780592}
+  - component: {fileID: 415780593}
   m_Layer: 5
   m_Name: InventoryRadishSlot
   m_TagString: Untagged
@@ -4649,6 +4792,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &415780593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415780591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 8
+  amount: 0
 --- !u!1 &415975303
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,7 +5135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 429968542}
-  - component: {fileID: 429968543}
+  - component: {fileID: 429968544}
   m_Layer: 5
   m_Name: ShopCherrySlot
   m_TagString: Untagged
@@ -5003,12 +5160,12 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &429968543
+--- !u!114 &429968544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5017,13 +5174,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 429968541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1686565875}
-  stock: 12
-  cost: 4
+  troopType: 6
+  amount: 4
+  value: 10
+  isInventory: 0
 --- !u!1 &437415098
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,6 +5704,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477324795}
+  - component: {fileID: 477324796}
   m_Layer: 5
   m_Name: InventoryBananaSlot
   m_TagString: Untagged
@@ -5576,6 +5734,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &477324796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477324794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 4
+  amount: 0
 --- !u!1 &483257668
 GameObject:
   m_ObjectHideFlags: 0
@@ -5710,7 +5882,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -5859,6 +6031,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 504617477}
+  - component: {fileID: 504617478}
   m_Layer: 5
   m_Name: InventoryCarrotSlot
   m_TagString: Untagged
@@ -5886,6 +6059,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &504617478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504617476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 0
+  amount: 0
 --- !u!1 &510009446
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,7 +6233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.199951, y: -6.700012}
+  m_AnchoredPosition: {x: 7.1992188, y: -6.700012}
   m_SizeDelta: {x: 115.95001, y: 40.630005}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &510100033
@@ -6915,10 +7102,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &540856658
 MonoBehaviour:
@@ -6929,13 +7116,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 540856656}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1098032634}
-  stock: 8
-  cost: 4
+  troopType: 1
+  amount: 10
+  value: 3
+  isInventory: 0
 --- !u!1 &555601398
 GameObject:
   m_ObjectHideFlags: 0
@@ -7311,6 +7498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 572479475}
+  - component: {fileID: 572479476}
   m_Layer: 5
   m_Name: InventoryCherrySlot
   m_TagString: Untagged
@@ -7340,6 +7528,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &572479476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572479474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 6
+  amount: 0
 --- !u!1 &582708439
 GameObject:
   m_ObjectHideFlags: 0
@@ -7376,7 +7578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 16.699951, y: 63}
+  m_AnchoredPosition: {x: 16.699219, y: 63}
   m_SizeDelta: {x: -574.8, y: -406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &582708441
@@ -8303,7 +8505,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -8452,6 +8654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 674158629}
+  - component: {fileID: 674158630}
   m_Layer: 5
   m_Name: OrangeSlot
   m_TagString: Untagged
@@ -8476,11 +8679,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &674158630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674158628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 3
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &677955964
 GameObject:
   m_ObjectHideFlags: 0
@@ -8490,6 +8709,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 677955965}
+  - component: {fileID: 677955966}
   m_Layer: 5
   m_Name: CherrySlot
   m_TagString: Untagged
@@ -8514,11 +8734,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &677955966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677955964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 6
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &679432714
 GameObject:
   m_ObjectHideFlags: 0
@@ -8828,7 +9064,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -8971,18 +9207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1179066303}
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 94850165}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -8992,6 +9217,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 845208289}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -9292,6 +9539,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735324728}
+  - component: {fileID: 735324729}
   m_Layer: 5
   m_Name: InventoryCakeSlot
   m_TagString: Untagged
@@ -9321,6 +9569,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &735324729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735324727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 11
+  amount: 0
 --- !u!1 &736420044
 GameObject:
   m_ObjectHideFlags: 0
@@ -9330,6 +9592,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 736420045}
+  - component: {fileID: 736420046}
   m_Layer: 5
   m_Name: RadishSlot
   m_TagString: Untagged
@@ -9354,11 +9617,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &736420046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736420044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 9
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &738503511
 GameObject:
   m_ObjectHideFlags: 0
@@ -9575,10 +9854,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &742754468
 MonoBehaviour:
@@ -9589,13 +9868,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 742754466}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1021968033}
-  stock: 6
-  cost: 8
+  troopType: 4
+  amount: 4
+  value: 8
+  isInventory: 0
 --- !u!1 &746674118
 GameObject:
   m_ObjectHideFlags: 0
@@ -9779,8 +10058,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 437415099}
-  - {fileID: 1781737968}
-  - {fileID: 1147801471}
   m_Father: {fileID: 377203844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10419,6 +10696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 815466583}
+  - component: {fileID: 815466584}
   m_Layer: 5
   m_Name: BananaSlot
   m_TagString: Untagged
@@ -10443,11 +10721,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &815466584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815466582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 4
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &819074697
 GameObject:
   m_ObjectHideFlags: 0
@@ -10624,7 +10918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 828423546}
-  - component: {fileID: 828423548}
+  - component: {fileID: 828423547}
   m_Layer: 5
   m_Name: ShopCarrotSlot
   m_TagString: Untagged
@@ -10649,12 +10943,12 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &828423548
+--- !u!114 &828423547
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10663,13 +10957,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 828423545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 0
-  stockTextObject: {fileID: 395328917}
-  stock: 12
-  cost: 2
+  amount: 12
+  value: 2
+  isInventory: 0
 --- !u!1 &830590299
 GameObject:
   m_ObjectHideFlags: 0
@@ -11186,6 +11480,7 @@ GameObject:
   - component: {fileID: 845208290}
   - component: {fileID: 845208292}
   - component: {fileID: 845208291}
+  - component: {fileID: 845208293}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -11208,11 +11503,11 @@ RectTransform:
   - {fileID: 781025149}
   - {fileID: 254284013}
   m_Father: {fileID: 1359174714}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 141.6, y: 213.05}
+  m_AnchoredPosition: {x: 141.60156, y: 213.05}
   m_SizeDelta: {x: 261.14, y: 405.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &845208291
@@ -11254,6 +11549,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845208289}
   m_CullTransparentMesh: 0
+--- !u!114 &845208293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845208289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31eb6c529a2c2f64aa4a1cc36f74f814, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventorySlots:
+  - {fileID: 504617478}
+  - {fileID: 1109729958}
+  - {fileID: 1064025107}
+  - {fileID: 1593763131}
+  - {fileID: 477324796}
+  - {fileID: 251576385}
+  - {fileID: 572479476}
+  - {fileID: 1382903060}
+  - {fileID: 313251607}
+  - {fileID: 415780593}
+  - {fileID: 859135859}
+  - {fileID: 735324729}
+  inventoryShopSlots:
+  - {fileID: 377203845}
+  - {fileID: 887795263}
+  - {fileID: 1708487646}
+  - {fileID: 674158630}
+  - {fileID: 815466584}
+  - {fileID: 352908742}
+  - {fileID: 677955966}
+  - {fileID: 1164105738}
+  - {fileID: 1410921143}
+  - {fileID: 736420046}
+  - {fileID: 870488170}
+  - {fileID: 1697814998}
+  deployed: 
+  selectedSlot: {fileID: 0}
 --- !u!1 &859135857
 GameObject:
   m_ObjectHideFlags: 0
@@ -11263,6 +11598,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 859135858}
+  - component: {fileID: 859135859}
   m_Layer: 5
   m_Name: InventoryPepperSlot
   m_TagString: Untagged
@@ -11292,6 +11628,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &859135859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859135857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 10
+  amount: 0
 --- !u!1 &861660551
 GameObject:
   m_ObjectHideFlags: 0
@@ -11369,6 +11719,7 @@ GameObject:
   - component: {fileID: 865233231}
   - component: {fileID: 865233233}
   - component: {fileID: 865233232}
+  - component: {fileID: 865233234}
   m_Layer: 5
   m_Name: Shop
   m_TagString: Untagged
@@ -11385,7 +11736,7 @@ RectTransform:
   m_GameObject: {fileID: 865233230}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1977217, y: 3.4377713, z: 1}
+  m_LocalScale: {x: 3.197722, y: 3.4377716, z: 1}
   m_Children:
   - {fileID: 1519260265}
   - {fileID: 514670574}
@@ -11396,12 +11747,12 @@ RectTransform:
   - {fileID: 706973630}
   - {fileID: 1889595498}
   - {fileID: 483257669}
-  m_Father: {fileID: 1359174714}
-  m_RootOrder: 7
+  m_Father: {fileID: 94850166}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000053420663, y: -0.000069249}
+  m_AnchoredPosition: {x: -0.000015497208, y: 0}
   m_SizeDelta: {x: 213.12, y: 123.07}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &865233232
@@ -11443,6 +11794,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865233230}
   m_CullTransparentMesh: 0
+--- !u!114 &865233234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865233230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e409d7763a4a5214aa279ffd545d784f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  products:
+  - {fileID: 828423547}
+  - {fileID: 540856658}
+  - {fileID: 1509910400}
+  - {fileID: 1282103100}
+  - {fileID: 742754468}
+  - {fileID: 1182097799}
+  - {fileID: 429968544}
+  - {fileID: 103819683}
+  - {fileID: 1651762395}
+  - {fileID: 1260147307}
+  - {fileID: 175355214}
+  - {fileID: 1646493977}
+  connectedInventory: {fileID: 845208293}
 --- !u!1 &870488168
 GameObject:
   m_ObjectHideFlags: 0
@@ -11452,6 +11829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 870488169}
+  - component: {fileID: 870488170}
   m_Layer: 5
   m_Name: PepperSlot
   m_TagString: Untagged
@@ -11476,11 +11854,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &870488170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 870488168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 10
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &874572698
 GameObject:
   m_ObjectHideFlags: 0
@@ -11664,6 +12058,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 887795262}
+  - component: {fileID: 887795263}
   m_Layer: 5
   m_Name: PearSlot
   m_TagString: Untagged
@@ -11688,11 +12083,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &887795263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887795261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 1
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &892293945
 GameObject:
   m_ObjectHideFlags: 0
@@ -13180,6 +13591,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1064025106}
+  - component: {fileID: 1064025107}
   m_Layer: 5
   m_Name: InventoryTangerineSlot
   m_TagString: Untagged
@@ -13209,6 +13621,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1064025107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064025105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 2
+  amount: 0
 --- !u!1 &1065574750
 GameObject:
   m_ObjectHideFlags: 0
@@ -13670,6 +14096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1109729957}
+  - component: {fileID: 1109729958}
   m_Layer: 5
   m_Name: InventoryPearSlot
   m_TagString: Untagged
@@ -13699,6 +14126,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1109729958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109729956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 1
+  amount: 0
 --- !u!1 &1117042582
 GameObject:
   m_ObjectHideFlags: 0
@@ -13998,7 +14439,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 82.87012, y: 30.100006}
+  m_AnchoredPosition: {x: 82.87109, y: 30.100006}
   m_SizeDelta: {x: 143.69, y: 39.380005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135047691
@@ -14022,9 +14463,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.78431374}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5882353}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.49803922}
+    m_HighlightedColor: {r: 0.8509804, g: 0.8509804, b: 0.8509804, a: 1}
+    m_PressedColor: {r: 0.63529414, g: 0.63529414, b: 0.63529414, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14044,7 +14485,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 94850165}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -14054,6 +14495,28 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 845208289}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 254284012}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -14383,14 +14846,14 @@ RectTransform:
   m_GameObject: {fileID: 1147801470}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.10000001, y: 0.10000001, z: 0.10000001}
   m_Children: []
-  m_Father: {fileID: 759116385}
+  m_Father: {fileID: 377203844}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0012454987}
   m_SizeDelta: {x: 156, y: 164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1147801472
@@ -14698,7 +15161,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -14821,7 +15284,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15045,6 +15508,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1164105737}
+  - component: {fileID: 1164105738}
   m_Layer: 5
   m_Name: LemonSlot
   m_TagString: Untagged
@@ -15069,11 +15533,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 105, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1164105738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1164105736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 6
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &1164983343
 GameObject:
   m_ObjectHideFlags: 0
@@ -15136,7 +15616,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -15358,10 +15838,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1182097799
 MonoBehaviour:
@@ -15372,13 +15852,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1182097797}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1102918448}
-  stock: 32
-  cost: 1
+  troopType: 5
+  amount: 20
+  value: 1
+  isInventory: 0
 --- !u!1 &1184939156
 GameObject:
   m_ObjectHideFlags: 0
@@ -16494,10 +16974,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1260147307
 MonoBehaviour:
@@ -16508,13 +16988,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1260147305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1251740362}
-  stock: 2
-  cost: 24
+  troopType: 9
+  amount: 7
+  value: 11
+  isInventory: 0
 --- !u!1 &1280208733
 GameObject:
   m_ObjectHideFlags: 0
@@ -16824,10 +17304,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -105}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1282103100
 MonoBehaviour:
@@ -16838,13 +17318,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1282103098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 447485249}
-  stock: 5
-  cost: 5
+  troopType: 3
+  amount: 5
+  value: 5
+  isInventory: 0
 --- !u!1 &1304565163
 GameObject:
   m_ObjectHideFlags: 0
@@ -17535,8 +18015,8 @@ RectTransform:
   - {fileID: 510100032}
   - {fileID: 1525964667}
   - {fileID: 1135047690}
-  - {fileID: 865233231}
   - {fileID: 845208290}
+  - {fileID: 94850166}
   - {fileID: 1386349366}
   - {fileID: 1157347252}
   - {fileID: 527922142}
@@ -17567,6 +18047,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1382903059}
+  - component: {fileID: 1382903060}
   m_Layer: 5
   m_Name: InventoryLemonSlot
   m_TagString: Untagged
@@ -17596,6 +18077,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1382903060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382903058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 7
+  amount: 0
 --- !u!1 &1386349361
 GameObject:
   m_ObjectHideFlags: 0
@@ -17827,6 +18322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1410921142}
+  - component: {fileID: 1410921143}
   m_Layer: 5
   m_Name: PeachSlot
   m_TagString: Untagged
@@ -17851,11 +18347,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1410921143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410921141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 8
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &1415082253
 GameObject:
   m_ObjectHideFlags: 0
@@ -17918,7 +18430,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -19096,10 +19608,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1509910400
 MonoBehaviour:
@@ -19110,13 +19622,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509910398}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1497916225}
-  stock: 3
-  cost: 5
+  troopType: 2
+  amount: 4
+  value: 4
+  isInventory: 0
 --- !u!1 &1510448682
 GameObject:
   m_ObjectHideFlags: 0
@@ -19490,7 +20002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 82.86987, y: 76.5}
+  m_AnchoredPosition: {x: 82.87109, y: 76.5}
   m_SizeDelta: {x: 143.69, y: 39.380005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525964668
@@ -19514,9 +20026,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.78431374}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.5882353}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 0.49803922}
+    m_HighlightedColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
+    m_PressedColor: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -19536,7 +20048,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 845208289}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 254284012}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -20289,7 +20812,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -20545,6 +21068,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593763130}
+  - component: {fileID: 1593763131}
   m_Layer: 5
   m_Name: InventoryOrangeSlot
   m_TagString: Untagged
@@ -20574,6 +21098,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1593763131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593763129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 3
+  amount: 0
 --- !u!1 &1599081500
 GameObject:
   m_ObjectHideFlags: 0
@@ -21144,8 +21682,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 62.544495, y: 35.936066}
-  m_SizeDelta: {x: 100.09, y: 33.088}
+  m_AnchoredPosition: {x: 63.11, y: 37.09}
+  m_SizeDelta: {x: 103.7, y: 35.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1637894033
 MonoBehaviour:
@@ -21195,7 +21733,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Shop
+  m_Text: Sell
 --- !u!222 &1637894035
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21304,7 +21842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646493975}
-  - component: {fileID: 1646493976}
+  - component: {fileID: 1646493977}
   m_Layer: 5
   m_Name: ShopCakeSlot
   m_TagString: Untagged
@@ -21329,12 +21867,12 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1646493976
+--- !u!114 &1646493977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21343,13 +21881,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1646493974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 1670097480}
-  stock: 1
-  cost: 99
+  troopType: 11
+  amount: 1
+  value: 99
+  isInventory: 0
 --- !u!1 &1651762393
 GameObject:
   m_ObjectHideFlags: 0
@@ -21384,10 +21922,10 @@ RectTransform:
   m_Father: {fileID: 1889595498}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -180}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1651762395
 MonoBehaviour:
@@ -21398,13 +21936,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1651762393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2d081bf4f6c65f429b0afa01785148e, type: 3}
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  troopType: 0
-  stockTextObject: {fileID: 2007719482}
-  stock: 10
-  cost: 12
+  troopType: 8
+  amount: 3
+  value: 20
+  isInventory: 0
 --- !u!1 &1655524935
 GameObject:
   m_ObjectHideFlags: 0
@@ -21914,6 +22452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697814997}
+  - component: {fileID: 1697814998}
   m_Layer: 5
   m_Name: CakeSlot
   m_TagString: Untagged
@@ -21938,11 +22477,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -255}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1697814998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697814996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 11
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &1708487644
 GameObject:
   m_ObjectHideFlags: 0
@@ -21952,6 +22507,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1708487645}
+  - component: {fileID: 1708487646}
   m_Layer: 5
   m_Name: TangerineSlot
   m_TagString: Untagged
@@ -21976,11 +22532,27 @@ RectTransform:
   m_Father: {fileID: 483257669}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -30}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1708487646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708487644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f5e03f845f97047a99a0115ccd5ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  troopType: 2
+  amount: 0
+  value: 0
+  isInventory: 1
 --- !u!1 &1724809633
 GameObject:
   m_ObjectHideFlags: 0
@@ -22252,16 +22824,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781737967}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 759116385}
+  m_Father: {fileID: 377203844}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.0012454987}
   m_SizeDelta: {x: 20, y: 21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781737969
@@ -22585,7 +23157,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -23124,7 +23696,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.7, y: -117}
+  m_AnchoredPosition: {x: 5.7, y: -56}
   m_SizeDelta: {x: 1741.4, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1886841883
@@ -23175,8 +23747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1889595498}
   - component: {fileID: 1889595499}
-  - component: {fileID: 1889595500}
-  - component: {fileID: 1889595501}
   m_Layer: 5
   m_Name: ShopLayout
   m_TagString: Untagged
@@ -23239,43 +23809,6 @@ MonoBehaviour:
   m_Spacing: {x: 15, y: 15}
   m_Constraint: 0
   m_ConstraintCount: 2
---- !u!114 &1889595500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889595497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e409d7763a4a5214aa279ffd545d784f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  products:
-  - {fileID: 828423548}
-  - {fileID: 540856658}
-  - {fileID: 1509910400}
-  - {fileID: 1282103100}
-  - {fileID: 742754468}
-  - {fileID: 1182097799}
-  - {fileID: 429968543}
-  - {fileID: 103819683}
-  - {fileID: 1651762395}
-  - {fileID: 1260147307}
-  - {fileID: 175355214}
-  - {fileID: 1646493976}
---- !u!114 &1889595501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1889595497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09bb538962ff4b4186b3f658d89c393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1890017466
 GameObject:
   m_ObjectHideFlags: 0
@@ -23900,7 +24433,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -24103,7 +24636,7 @@ MonoBehaviour:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6603774, g: 0.63865393, b: 0.31461376, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -25521,7 +26054,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0012207031, y: 0.000091552734}
+  m_AnchoredPosition: {x: 0, y: 0.000091552734}
   m_SizeDelta: {x: -107.3, y: -21.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140475440
