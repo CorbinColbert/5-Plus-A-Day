@@ -13,15 +13,22 @@ public class InventorySlot : MonoBehaviour
 
     private void Start()
     {
+        //Text and buttons for the price to be update for the UI are automatically found,
+        //the Slot component should be the parent of one text and one button component
         text = GetComponentInChildren<Text>();
         button = GetComponentInChildren<Button>();
+
+        //Only one inventory in the scene
         inventory = FindObjectOfType<Inventory>();
+
+        //When the button is clicked, update the amount and set selected
         button.onClick.AddListener(UpdateAmount);
         button.onClick.AddListener(SetSelected);
         UpdateAmount();
     }
 
     private void SetSelected() {
+        //Only one slot may be selected at a time
         inventory.selectedSlot = this;
     }
 

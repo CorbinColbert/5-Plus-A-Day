@@ -15,7 +15,10 @@ public class ShopSlot : MonoBehaviour
 
     private void Start()
     {
+        //Shop is singleton class
         shop = FindObjectOfType<Shop>();
+
+        //One text and button are required to be children on this gameObject
         text = GetComponentInChildren<Text>();
         button = GetComponentInChildren<Button>();
 
@@ -26,14 +29,9 @@ public class ShopSlot : MonoBehaviour
         }
     }
 
-    void Update() {
-        
-    }
-
+    //Call this when purchasing a troop from the shop
     public void Buy()
     {
-        print("Buy called on "+gameObject.name);
-
         if (GameManager.currency - value < 0 || amount < 1)
         {
             //Cannot afford the item or there are none left
@@ -46,9 +44,8 @@ public class ShopSlot : MonoBehaviour
         UpdateAmount();
     }
 
+    //Call this when selling a troop from your inventory in the shop
     public void Sell() {
-        print("Sell called on "+gameObject.name);
-
         if (amount < 1)
         {
             return;
@@ -65,6 +62,7 @@ public class ShopSlot : MonoBehaviour
         UpdateAmount();
     }
 
+    //Updates attatched text component
     public void UpdateAmount()
     {
         if (text != null)
