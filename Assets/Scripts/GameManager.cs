@@ -7,8 +7,9 @@ public class GameManager : MonoBehaviour
     public static GameManager singletonGameManagerInstance = null;
     public PathHelper pathHelperInstance;
     public GridManager gridManagerInstance;
-    public static int currency = 100; 
+    public static int currency = 100;
 
+    // Awake is called when the script instance is being loaded
     private void Awake()
     {
         if (singletonGameManagerInstance != null && singletonGameManagerInstance != this)
@@ -24,6 +25,8 @@ public class GameManager : MonoBehaviour
         pathHelperInstance = FindObjectOfType<PathHelper>();
         gridManagerInstance = FindObjectOfType<GridManager>();
     }
+
+
 
     //placeholder
     public void saveGame()

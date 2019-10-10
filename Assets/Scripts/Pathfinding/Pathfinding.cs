@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//this class is for the creation af a path from one location to another
-//this class is a modified version of Sebastian Lague pathfinding class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
+//
+//
 public class Pathfinding : MonoBehaviour
 {
     NodeGrid grid;
-    PathHelper pathhelper; 
+    PathHelper pathhelper;
 
+    // Awake is called when the script instance is being loaded.
     private void Awake()
     {
         grid = GetComponent<NodeGrid>();
         pathhelper = GetComponent<PathHelper>();
     }
 
+    //
     public void PathRequest(PathRequest request)
     {
         StartCoroutine(FindPath(request.pathingUnit, request.targetUnit));
     }
 
+    //
     IEnumerator FindPath(GameObject pathingUnit, GameObject targetUnit)
     {
         Vector3 start = pathingUnit.transform.position;
@@ -84,6 +87,8 @@ public class Pathfinding : MonoBehaviour
         pathhelper.PathRequestFinished(path, isSucessful);
     }
 
+    // This method is called from the FindPath method.
+    // It returns a List of nodes that create a path from one point to another.
     List<Node> TraceNodePath(Node startNode, Node endNode)
     {
         List<Node> path = new List<Node>();
@@ -95,11 +100,12 @@ public class Pathfinding : MonoBehaviour
             currentNode = currentNode.parent;
         }
         path.Reverse();
-        path.Remove(endNode); // so we dont get the node directly under the target
+        path.Remove(endNode);
         endNode.parent.unitOnTop = false;
         return path;
     }
 
+    // This function gets the distance between 2 nodes on a square grid.
     public static int getDistance(Node nodeA, Node nodeB)
     {
         int distanceX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
@@ -113,6 +119,7 @@ public class Pathfinding : MonoBehaviour
         return 14 * distanceX + 10 * (distanceY - distanceX);
     }
 
+    // This function converts a list of nodes to a array of Vector3's.
     public static Vector3[] PathToVectors(List<Node> path)
     {
         int pathSize = path.Count;

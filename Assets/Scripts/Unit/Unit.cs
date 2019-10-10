@@ -29,14 +29,16 @@ public class Unit : MonoBehaviour
     public float critDamageModifier = 2.0f;
     public Item item;
 
-    //@Cameron this is the reference to the node the unit is on top of
+    
     public Node nodeUnitOnTopOf;
 
+    // Start is called just before any of the Update methods is called the first time.
     void Start() {
         health = healthMax;
         AddRigidBody();
     }
 
+    // this function ?
     void AddRigidBody() {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
@@ -49,6 +51,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
     void FixedUpdate() {
 
         //start of the loop to update what node the unit is currently on top of
@@ -99,6 +102,7 @@ public class Unit : MonoBehaviour
         }       
     }
 
+    // This function finds an enemy target
     private void FindTarget() {
         GameObject[] objects = null;
         if (CompareTag("EnemyTroop")) {
@@ -119,6 +123,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     private void TryRegen() {
         if (regenCounter >= regenOnCount) {
             regenReady = true;
@@ -130,6 +135,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     private void Regen() {
         if (health + healthRegen > healthMax) {
             health = healthMax;
@@ -141,6 +147,7 @@ public class Unit : MonoBehaviour
         
     }
 
+    //
     private void TryAttack() {
         Unit targetUnit;
         if (!target.TryGetComponent<Unit>(out targetUnit)) {
@@ -174,6 +181,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     private void Attack()
     {
         if (target != null)
@@ -195,10 +203,12 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     public void RecieveAttack(Attack attack) {
         health -= attack.damage;
     }
 
+    //
     public void FlingUnit() {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
@@ -222,6 +232,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     public void OnDeath() {
         if (nodeUnitOnTopOf != null) {
             nodeUnitOnTopOf.unitOnTop = false;
@@ -243,10 +254,12 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     private void OnTargetDeath() {
         target = null;
     }
 
+    //
     public void SetTarget(GameObject target) {
         this.target = target;
         Unit unit;
@@ -255,6 +268,7 @@ public class Unit : MonoBehaviour
         }
     }
 
+    //
     public Item Equip(Item item) {
         Item itemHolder = item;
         this.item = item;
