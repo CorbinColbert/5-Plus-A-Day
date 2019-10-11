@@ -80,7 +80,8 @@ public class Unit : MonoBehaviour
             }
         }
     }
-
+    
+    // This method attempts to get a path for the unit.
     private void TryGetPathing()
     {
         if (gameObject.TryGetComponent<UnitPathing>(out UnitPathing pathing))
