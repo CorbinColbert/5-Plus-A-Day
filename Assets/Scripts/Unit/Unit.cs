@@ -8,15 +8,12 @@ public class Unit : MonoBehaviour
     public event Action onDeathEvent;
     public GameObject grid;
     public GameObject target;
-
     public float healthMax = 100.0f;
     public float health;
-
     public float healthRegen = 1.0f;
     private bool regenReady = false;
     private int regenCounter = 0;
     private int regenOnCount = 100;
-
     public float damageMin = 2.0f;
     public float damageMax = 4.0f;
     private bool attackReady = false;
@@ -28,18 +25,18 @@ public class Unit : MonoBehaviour
     public float critChance = 0.0f;
     public float critDamageModifier = 2.0f;
     public Item item;
-
-    
     public Node nodeUnitOnTopOf;
 
     // Start is called just before any of the Update methods is called the first time.
-    void Start() {
+    void Start() 
+    {
         health = healthMax;
         AddRigidBody();
     }
 
-    // this function ?
-    void AddRigidBody() {
+    // This function .
+    void AddRigidBody() 
+    {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
             body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
@@ -51,31 +48,12 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function is called every fixed framerate frame, if the MonoBehaviour is enabled
-    void FixedUpdate() {
+    // This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
+    void FixedUpdate() 
+    {
+        UnitNodeUpdate();
 
-        //start of the loop to update what node the unit is currently on top of
-        Node tempNode;
-        NodeGrid nodeGrid; 
-
-        if (grid.TryGetComponent<NodeGrid>(out nodeGrid)) {
-            if (nodeUnitOnTopOf == null) {
-                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
-                tempNode = nodeUnitOnTopOf;
-            } else {
-                tempNode = nodeUnitOnTopOf;
-                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
-            }
-            if (nodeUnitOnTopOf == tempNode) {
-                tempNode.unitOnTop = false;
-            } else {
-                tempNode.unitOnTop = true;
-                tempNode = nodeUnitOnTopOf;
-                tempNode.unitOnTop = false;
-            }
-        }
-        //end of node update
-
+        // Get a path to the target.
         UnitPathing pathing;
         if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
             try {
@@ -87,6 +65,8 @@ public class Unit : MonoBehaviour
             }
         }
         
+        // Calls OnDeath when health reaches 0.
+        // Else tries to find a target
         if (health <= 0) {
             if (onDeathEvent != null) {
                 onDeathEvent();
@@ -101,9 +81,40 @@ public class Unit : MonoBehaviour
             }
         }       
     }
+    // This function updates the node a unit is currently on top of.
+    private void UnitNodeUpdate()
+    {
+        Node tempNode;
+        NodeGrid nodeGrid;
 
-    // This function finds an enemy target
-    private void FindTarget() {
+        if (grid.TryGetComponent<NodeGrid>(out nodeGrid))
+        {
+            if (nodeUnitOnTopOf == null)
+            {
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                tempNode = nodeUnitOnTopOf;
+            }
+            else
+            {
+                tempNode = nodeUnitOnTopOf;
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+            }
+            if (nodeUnitOnTopOf == tempNode)
+            {
+                tempNode.unitOnTop = false;
+            }
+            else
+            {
+                tempNode.unitOnTop = true;
+                tempNode = nodeUnitOnTopOf;
+                tempNode.unitOnTop = false;
+            }
+        }
+    }
+
+    // This function finds an enemy target.
+    private void FindTarget() 
+    {
         GameObject[] objects = null;
         if (CompareTag("EnemyTroop")) {
             objects = GameObject.FindGameObjectsWithTag("PlayerTroop");
@@ -123,8 +134,9 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    private void TryRegen() {
+    // This function.
+    private void TryRegen() 
+    {
         if (regenCounter >= regenOnCount) {
             regenReady = true;
         } else {
@@ -135,8 +147,9 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    private void Regen() {
+    // This function regenerates the units health.
+    private void Regen() 
+    {
         if (health + healthRegen > healthMax) {
             health = healthMax;
         } else {
@@ -147,8 +160,9 @@ public class Unit : MonoBehaviour
         
     }
 
-    //
-    private void TryAttack() {
+    // This function.
+    private void TryAttack()
+    {
         Unit targetUnit;
         if (!target.TryGetComponent<Unit>(out targetUnit)) {
             return;
@@ -181,7 +195,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
+    // This function.
     private void Attack()
     {
         if (target != null)
@@ -203,13 +217,15 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    public void RecieveAttack(Attack attack) {
+    // This function.
+    public void RecieveAttack(Attack attack) 
+    {
         health -= attack.damage;
     }
 
-    //
-    public void FlingUnit() {
+    // This function.
+    public void FlingUnit() 
+    {
         Rigidbody body;
         if (gameObject.TryGetComponent<Rigidbody>(out body)) {
             float xForce = UnityEngine.Random.Range(-200,200);
@@ -232,8 +248,9 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    public void OnDeath() {
+    // This function.
+    public void OnDeath() 
+    {
         if (nodeUnitOnTopOf != null) {
             nodeUnitOnTopOf.unitOnTop = false;
         }
@@ -254,13 +271,15 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    private void OnTargetDeath() {
+    // This function.
+    private void OnTargetDeath() 
+    {
         target = null;
     }
 
-    //
-    public void SetTarget(GameObject target) {
+    // This function.
+    public void SetTarget(GameObject target) 
+    {
         this.target = target;
         Unit unit;
         if (target.TryGetComponent<Unit>(out unit)) {
@@ -268,8 +287,9 @@ public class Unit : MonoBehaviour
         }
     }
 
-    //
-    public Item Equip(Item item) {
+    // This function.
+    public Item Equip(Item item) 
+    {
         Item itemHolder = item;
         this.item = item;
         
