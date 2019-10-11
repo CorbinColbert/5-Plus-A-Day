@@ -34,7 +34,7 @@ public class Unit : MonoBehaviour
         AddRigidBody();
     }
 
-    // This function .
+    // This function adds a rigidBody component to the unit.
     void AddRigidBody() 
     {
         Rigidbody body;
@@ -66,7 +66,7 @@ public class Unit : MonoBehaviour
         }
         
         // Calls OnDeath when health reaches 0.
-        // Else tries to find a target
+        // Else checks if the unit has a target.
         if (health <= 0) {
             if (onDeathEvent != null) {
                 onDeathEvent();
@@ -81,7 +81,7 @@ public class Unit : MonoBehaviour
             }
         }       
     }
-    // This function updates the node a unit is currently on top of.
+    
     private void UnitNodeUpdate()
     {
         Node tempNode;
@@ -112,7 +112,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function finds an enemy target.
     private void FindTarget() 
     {
         GameObject[] objects = null;
@@ -134,7 +133,7 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
+    // This function checks if the unit can start Regen.
     private void TryRegen() 
     {
         if (regenCounter >= regenOnCount) {
@@ -146,8 +145,7 @@ public class Unit : MonoBehaviour
             Regen();
         }
     }
-
-    // This function regenerates the units health.
+    
     private void Regen() 
     {
         if (health + healthRegen > healthMax) {
@@ -160,7 +158,7 @@ public class Unit : MonoBehaviour
         
     }
 
-    // This function.
+    // This function checks if the unit can attack another unit.
     private void TryAttack()
     {
         Unit targetUnit;
@@ -195,7 +193,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
     private void Attack()
     {
         if (target != null)
@@ -217,13 +214,12 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
     public void RecieveAttack(Attack attack) 
     {
         health -= attack.damage;
     }
 
-    // This function.
+    // This function is called on death and causes the unit to start a death animation.
     public void FlingUnit() 
     {
         Rigidbody body;
@@ -248,7 +244,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
     public void OnDeath() 
     {
         if (nodeUnitOnTopOf != null) {
@@ -271,13 +266,11 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
     private void OnTargetDeath() 
     {
         target = null;
     }
 
-    // This function.
     public void SetTarget(GameObject target) 
     {
         this.target = target;
@@ -287,7 +280,6 @@ public class Unit : MonoBehaviour
         }
     }
 
-    // This function.
     public Item Equip(Item item) 
     {
         Item itemHolder = item;
