@@ -9,12 +9,13 @@ public class Inventory : MonoBehaviour
     public List<TroopType> deployed;
     public InventorySlot selectedSlot;
 
-    void Start() {
+    void Start()
+    {
         //List of troops which are fighting, add them back one by one after the fight
         deployed = new List<TroopType>();
     }
 
-    public void Add(TroopType troopType) 
+    public void Add(TroopType troopType)
     {
         foreach (InventorySlot slot in inventorySlots)
         {
@@ -38,7 +39,8 @@ public class Inventory : MonoBehaviour
 
     //For when troops are placed on the board
     public void RemoveTemporary(TroopType troopType)
-    {   deployed.Add(troopType);
+    {
+        deployed.Add(troopType);
         foreach (InventorySlot slot in inventorySlots)
         {
             if (slot.troopType == troopType)
@@ -61,7 +63,8 @@ public class Inventory : MonoBehaviour
 
     //For when troops are sold
     public void RemovePermanant(TroopType troopType)
-    {   foreach (InventorySlot slot in inventorySlots)
+    {
+        foreach (InventorySlot slot in inventorySlots)
         {
             if (slot.troopType == troopType)
             {
@@ -83,11 +86,12 @@ public class Inventory : MonoBehaviour
 
     //How many troops of that type do you have in the inventory
     public int Count(TroopType troopType)
-    {   int count = 0;
+    {
+        int count = 0;
         foreach (InventorySlot slot in inventorySlots)
             if (slot.troopType == troopType)
                 count++;
-        
+
         return count;
     }
 

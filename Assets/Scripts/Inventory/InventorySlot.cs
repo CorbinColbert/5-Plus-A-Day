@@ -27,7 +27,8 @@ public class InventorySlot : MonoBehaviour
         UpdateAmount();
     }
 
-    private void SetSelected() {
+    private void SetSelected()
+    {
         //Only one slot may be selected at a time
         inventory.selectedSlot = this;
     }
@@ -41,7 +42,7 @@ public class InventorySlot : MonoBehaviour
         }
         else
         {
-            print("text not found for "+gameObject.name);
+            print("text not found for " + gameObject.name);
         }
     }
 }

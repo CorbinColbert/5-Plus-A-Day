@@ -9,9 +9,10 @@ public class UnitHighlighter : MonoBehaviour
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit)) {
+        if (Physics.Raycast(ray, out hit))
+        {
             Transform objectHit = hit.transform;
-            
+
         }
     }
 }

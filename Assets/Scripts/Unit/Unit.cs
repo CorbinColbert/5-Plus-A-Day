@@ -28,20 +28,23 @@ public class Unit : MonoBehaviour
     public Node nodeUnitOnTopOf;
 
     // Start is called just before any of the Update methods is called the first time.
-    void Start() 
+    void Start()
     {
         health = healthMax;
         AddRigidBody();
     }
 
     // This function adds a rigidBody component to the unit.
-    void AddRigidBody() 
+    void AddRigidBody()
     {
         Rigidbody body;
-        if (gameObject.TryGetComponent<Rigidbody>(out body)) {
+        if (gameObject.TryGetComponent<Rigidbody>(out body))
+        {
             body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             body.freezeRotation = true;
-        } else { 
+        }
+        else
+        {
             body = gameObject.AddComponent<Rigidbody>();
             body.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             body.freezeRotation = true;
@@ -49,39 +52,53 @@ public class Unit : MonoBehaviour
     }
 
     // This function is called every fixed framerate frame, if the MonoBehaviour is enabled.
-    void FixedUpdate() 
+    void FixedUpdate()
     {
         UnitNodeUpdate();
+        TryGetPathing();
 
-        // Get a path to the target.
-        UnitPathing pathing;
-        if (gameObject.TryGetComponent<UnitPathing>(out pathing)) {
-            try {
-                if (target != null && !pathing.hasPathToFollow && !inRange) {
-                    pathing.GetPathing(target);
-                }
-            } catch (InvalidOperationException e) {
-                print("Path already present: "+e);
-            }
-        }
-        
         // Calls OnDeath when health reaches 0.
         // Else checks if the unit has a target.
-        if (health <= 0) {
-            if (onDeathEvent != null) {
+        if (health <= 0)
+        {
+            if (onDeathEvent != null)
+            {
                 onDeathEvent();
-            }    
+            }
             OnDeath();
-        } else {
-            if (target == null) {
+        }
+        else
+        {
+            if (target == null)
+            {
                 FindTarget();
-            } else {
+            }
+            else
+            {
                 TryAttack();
                 TryRegen();
             }
-        }       
+        }
     }
-    
+
+    private void TryGetPathing()
+    {
+        if (gameObject.TryGetComponent<UnitPathing>(out UnitPathing pathing))
+        {
+            try
+            {
+                if (target != null && !pathing.hasPathToFollow && !inRange)
+                {
+                    pathing.GetPathing(target);
+                }
+            }
+            catch (InvalidOperationException e)
+            {
+                print("Path already present: " + e);
+            }
+        }
+    }
+
     private void UnitNodeUpdate()
     {
         Node tempNode;
@@ -112,83 +129,108 @@ public class Unit : MonoBehaviour
         }
     }
 
-    private void FindTarget() 
+    private void FindTarget()
     {
         GameObject[] objects = null;
-        if (CompareTag("EnemyTroop")) {
+        if (CompareTag("EnemyTroop"))
+        {
             objects = GameObject.FindGameObjectsWithTag("PlayerTroop");
         }
-        if (CompareTag("PlayerTroop")) {
+        if (CompareTag("PlayerTroop"))
+        {
             objects = GameObject.FindGameObjectsWithTag("EnemyTroop");
         }
 
-        if (objects != null) {
+        if (objects != null)
+        {
             int size = objects.Length;
-            if (size == 0) {
+            if (size == 0)
+            {
                 print("Victory!");
-            } else {
+            }
+            else
+            {
                 SetTarget(objects[UnityEngine.Random.Range(0, size)]);
             }
-            
+
         }
     }
 
     // This function checks if the unit can start Regen.
-    private void TryRegen() 
+    private void TryRegen()
     {
-        if (regenCounter >= regenOnCount) {
+        if (regenCounter >= regenOnCount)
+        {
             regenReady = true;
-        } else {
+        }
+        else
+        {
             regenCounter++;
         }
-        if (regenReady) {
+        if (regenReady)
+        {
             Regen();
         }
     }
-    
-    private void Regen() 
+
+    private void Regen()
     {
-        if (health + healthRegen > healthMax) {
+        if (health + healthRegen > healthMax)
+        {
             health = healthMax;
-        } else {
+        }
+        else
+        {
             health += healthRegen;
         }
+
         regenReady = false;
         regenCounter = 0;
-        
+
     }
 
     // This function checks if the unit can attack another unit.
     private void TryAttack()
     {
         Unit targetUnit;
-        if (!target.TryGetComponent<Unit>(out targetUnit)) {
+        if (!target.TryGetComponent<Unit>(out targetUnit))
+        {
             return;
         }
 
-        if (nodeUnitOnTopOf != null && targetUnit.nodeUnitOnTopOf != null) {
+        if (nodeUnitOnTopOf != null && targetUnit.nodeUnitOnTopOf != null)
+        {
             int distanceX = Mathf.Abs(nodeUnitOnTopOf.gridX - targetUnit.nodeUnitOnTopOf.gridX);
             int distanceY = Mathf.Abs(nodeUnitOnTopOf.gridY - targetUnit.nodeUnitOnTopOf.gridY);
 
             int distance = 0;
+
             if (distanceX > distanceY)
             {
-            distance = 14 * distanceY + 10 * (distanceX - distanceY);
-            } else {
-            distance = 14 * distanceX + 10 * (distanceY - distanceX);
+                distance = 14 * distanceY + 10 * (distanceX - distanceY);
             }
+            else
+            {
+                distance = 14 * distanceX + 10 * (distanceY - distanceX);
+            }
+
             inRange = distance <= attackRange;
         }
 
-        if (!attackReady) {
-            if (attackCounter >= attackOnCount) {
+        if (!attackReady)
+        {
+            if (attackCounter >= attackOnCount)
+            {
                 attackReady = true;
-            } else {
+            }
+            else
+            {
                 attackCounter++;
             }
         }
 
-        if (attackReady && inRange) {
+        if (attackReady && inRange)
+        {
             Attack();
         }
     }
@@ -205,28 +247,30 @@ public class Unit : MonoBehaviour
                 attackCounter = 0;
                 attackReady = false;
                 Rigidbody body = gameObject.GetComponent<Rigidbody>();
-                if (body != null) {
+                if (body != null)
+                {
                     body.AddForce(new Vector3(0, 100, 0));
                 }
             }
 
-            
+
         }
     }
 
-    public void RecieveAttack(Attack attack) 
+    public void RecieveAttack(Attack attack)
     {
         health -= attack.damage;
     }
 
     // This function is called on death and causes the unit to start a death animation.
-    public void FlingUnit() 
+    public void FlingUnit()
     {
         Rigidbody body;
-        if (gameObject.TryGetComponent<Rigidbody>(out body)) {
-            float xForce = UnityEngine.Random.Range(-200,200);
-            float yForce = UnityEngine.Random.Range(-100,200);
-            float zForce = UnityEngine.Random.Range(-200,200);
+        if (gameObject.TryGetComponent<Rigidbody>(out body))
+        {
+            float xForce = UnityEngine.Random.Range(-200, 200);
+            float yForce = UnityEngine.Random.Range(-100, 200);
+            float zForce = UnityEngine.Random.Range(-200, 200);
 
             Vector3 randomForce = new Vector3(xForce, yForce, zForce);
 
@@ -244,47 +288,56 @@ public class Unit : MonoBehaviour
         }
     }
 
-    public void OnDeath() 
+    public void OnDeath()
     {
-        if (nodeUnitOnTopOf != null) {
+        if (nodeUnitOnTopOf != null)
+        {
             nodeUnitOnTopOf.unitOnTop = false;
         }
 
         FlingUnit();
 
-        if (gameObject.TryGetComponent<UnitPathing>(out var pathing)) {
+        if (gameObject.TryGetComponent<UnitPathing>(out var pathing))
+        {
             Destroy(pathing);
         }
-        if (gameObject.TryGetComponent<Unit>(out var unit)) {
+
+        if (gameObject.TryGetComponent<Unit>(out var unit))
+        {
             Destroy(unit);
         }
-        if (gameObject.TryGetComponent<Collider>(out var collider)) {
+
+        if (gameObject.TryGetComponent<Collider>(out var collider))
+        {
             Destroy(collider, 2.0f);
         }
-        if (CompareTag("EnemyTroop")) {
+
+        if (CompareTag("EnemyTroop"))
+        {
             GameManager.currency += 10;
         }
     }
 
-    private void OnTargetDeath() 
+    private void OnTargetDeath()
     {
         target = null;
     }
 
-    public void SetTarget(GameObject target) 
+    public void SetTarget(GameObject target)
     {
         this.target = target;
         Unit unit;
-        if (target.TryGetComponent<Unit>(out unit)) {
+        if (target.TryGetComponent<Unit>(out unit))
+        {
             unit.onDeathEvent += OnTargetDeath;
         }
     }
 
-    public Item Equip(Item item) 
+    public Item Equip(Item item)
     {
         Item itemHolder = item;
         this.item = item;
-        
+
         return itemHolder;
     }
 }

@@ -13,11 +13,11 @@ public class NodeGrid : MonoBehaviour
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
     public int MaxSize
-    { 
+    {
         get
         {
             return gridSizeX * gridSizeY;
-        } 
+        }
     }
 
     // Start is called just before any of the Update methods is called the first time.
@@ -40,7 +40,7 @@ public class NodeGrid : MonoBehaviour
             for (int y = 0; y < gridSizeY; y++)
             {
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
-                bool isNodeViable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius, viabilityMask)); 
+                bool isNodeViable = !(Physics.CheckSphere(nodePlacementPoint, nodeRadius, viabilityMask));
                 bool isUnitOnTop = !(Physics.CheckSphere(nodePlacementPoint, nodeRadius, occupiedMask));
                 grid[x, y] = new Node(isNodeViable, isUnitOnTop, nodePlacementPoint, x, y);
             }
@@ -50,13 +50,13 @@ public class NodeGrid : MonoBehaviour
     // This method takes in a Vector3 and returns the Node at that position.
     public Node getNodeFromWorld(Vector3 worldPosition)
     {
-        float percentX = (worldPosition.x + gridSize.x/2) / gridSize.x;
-        float percentY = (worldPosition.z + gridSize.y/2) / gridSize.y;
+        float percentX = (worldPosition.x + gridSize.x / 2) / gridSize.x;
+        float percentY = (worldPosition.z + gridSize.y / 2) / gridSize.y;
         percentX = Mathf.Clamp01(percentX);
         percentY = Mathf.Clamp01(percentY);
-        int x = Mathf.RoundToInt((gridSizeX-1) * percentX);
-        int y = Mathf.RoundToInt((gridSizeY-1) * percentY);
-        return grid[x,y];
+        int x = Mathf.RoundToInt((gridSizeX - 1) * percentX);
+        int y = Mathf.RoundToInt((gridSizeY - 1) * percentY);
+        return grid[x, y];
     }
 
     // This method takes in a Node and returns a List of all the Nodes that are ajacent to it.
@@ -88,7 +88,7 @@ public class NodeGrid : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
-        
+
         if (grid != null)
         {
             foreach (Node node in grid)
@@ -98,6 +98,6 @@ public class NodeGrid : MonoBehaviour
                 Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
-        
+
     }
 }

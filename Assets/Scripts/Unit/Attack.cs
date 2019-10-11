@@ -2,7 +2,7 @@
 
 public class Attack
 {
-    public float damage {get; private set;}
+    public float damage { get; private set; }
 
     public Attack(Unit attacker)
     {
