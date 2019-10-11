@@ -20,6 +20,7 @@ public class NodeGrid : MonoBehaviour
         } 
     }
 
+    // Start is called just before any of the Update methods is called the first time.
     private void Start()
     {
         nodeDiameter = nodeRadius * 2;
@@ -28,6 +29,7 @@ public class NodeGrid : MonoBehaviour
         CreateGrid();
     }
 
+    // This method is called from the Start method and creates a grid of Node Objects.
     void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];
@@ -45,6 +47,7 @@ public class NodeGrid : MonoBehaviour
         }
     }
 
+    // This method takes in a Vector3 and returns the Node at that position.
     public Node getNodeFromWorld(Vector3 worldPosition)
     {
         float percentX = (worldPosition.x + gridSize.x/2) / gridSize.x;
@@ -56,6 +59,7 @@ public class NodeGrid : MonoBehaviour
         return grid[x,y];
     }
 
+    // This method takes in a Node and returns a List of all the Nodes that are ajacent to it.
     public List<Node> getAjacentNodes(Node node)
     {
         List<Node> ajacentNodes = new List<Node>();
@@ -79,6 +83,8 @@ public class NodeGrid : MonoBehaviour
         }
         return ajacentNodes;
     }
+
+    // This method is used for debuging the NodeGrid visually.
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridSize.x, 1, gridSize.y));
