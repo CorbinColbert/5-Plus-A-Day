@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//this class creates a grid from Nodes
-//this class is a modified version of Sebastian Lague Grid class from his A* pathfinding series on youtube and permision to modify is given under the MIT licence
+//this class creates a grid from Nodes objects
 public class NodeGrid : MonoBehaviour
-{ 
-    //public bool displayPathOnly;
+{
     public LayerMask viabilityMask;
     public LayerMask occupiedMask;
     public Vector2 gridSize;
@@ -14,8 +12,13 @@ public class NodeGrid : MonoBehaviour
     Node[,] grid;
     private float nodeDiameter;
     private int gridSizeX, gridSizeY;
-    //public List<Node> path; // only for visual debuging
-    public int MaxSize{ get{return gridSizeX * gridSizeY;} }
+    public int MaxSize
+    { 
+        get
+        {
+            return gridSizeX * gridSizeY;
+        } 
+    }
 
     private void Start()
     {
