@@ -11,7 +11,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume)//Sets the volume of the music for the game
     {
-        audioMixer.SetFloat("Volume", Mathf.Log10(volume)*20);
+        audioMixer.SetFloat("Volume", Mathf.Log10(volume) * 20);
 
         //Debug.Log(volume);
         //slider = GetComponent<Text>();

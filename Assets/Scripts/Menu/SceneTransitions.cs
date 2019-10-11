@@ -14,7 +14,7 @@ public class SceneTransitions : MonoBehaviour
 
     private void Update()
     {
-        if(EventSystem.current.currentSelectedGameObject.name == "Start")
+        if (EventSystem.current.currentSelectedGameObject.name == "Start")
         {
             StartCoroutine(LoadScene());
         }
