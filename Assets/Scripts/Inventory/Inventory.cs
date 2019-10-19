@@ -20,13 +20,17 @@ public class Inventory : MonoBehaviour
         //Dictionary of inventory slots
         invDict = new Dictionary<TroopType, InventorySlot>();
         foreach (InventorySlot slot in inventorySlots)
+        {
             invDict.Add(slot.troopType, slot);
+        }
             
 
         //Dictionary of shop slots
         shopDict = new Dictionary<TroopType, ShopSlot>();
         foreach (ShopSlot slot in inventoryShopSlots)
+        {
             shopDict.Add(slot.troopType, slot);
+        }
             
     }
 

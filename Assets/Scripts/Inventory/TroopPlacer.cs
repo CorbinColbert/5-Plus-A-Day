@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class TroopPlacer : MonoBehaviour
@@ -21,29 +22,44 @@ public class TroopPlacer : MonoBehaviour
     public Inventory inventory; // Connected inventory
     public BattleManager manager; // TroopManager
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (inventory.selectedSlot != null)
-        {   //Cast a ray with maximum distance 100
-            Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 100.0f);
-            
-            //The object which the ray hit
-            GameObject hitObject = hit.transform.gameObject;
-
-            //Put the correct prefab onto the scene
-            TroopType type = inventory.selectedSlot.troopType;
-            GameObject troop = GetRelativePrefab(type);
-            Vector3 placementPosition = new Vector3(0, (hitObject.transform.position.y * 0.5f) + (troop.transform.localScale.y * 0.5f), 0);
-            GameObject instantiatedTroop = Instantiate(troop, placementPosition, Quaternion.identity);
-            instantiatedTroop.SetActive(true);
+        if (Input.GetMouseButtonDown(0) && inventory.selectedSlot != null)
+        {
+            Place();
         }
+    }
+
+    private void Place()
+    {
+        // Cast a ray with maximum distance 100
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 100.0f);
+
+        if (hit.transform == null)
+        {
+            // The ray did not hit anything
+            return;
+        }
+
+        // The object which the ray hit
+        GameObject hitObject = hit.transform.gameObject;
+
+        // Get the prefab that corresponds to the troop type
+        TroopType type = inventory.selectedSlot.troopType;
+        GameObject troop = GetRelativePrefab(type);
+
+        // Check that the troop type matches expected type
+        if (troop.GetComponent<Troop>().troopType != type)
+        {
+            throw new FormatException("Mismatch detected in Troop Placer, unexpected troop type");
+        }
+
+        // Place it on the scene
+        Vector3 placementPosition = new Vector3(0, (hitObject.transform.position.y * 0.5f) + (troop.transform.localScale.y * 0.5f), 0);
+        GameObject instantiatedTroop = Instantiate(troop, placementPosition, Quaternion.identity);
+        instantiatedTroop.SetActive(true);
     }
 
     //Method to get the prefab depending on the troopType
