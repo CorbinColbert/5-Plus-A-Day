@@ -6,93 +6,73 @@ public class Inventory : MonoBehaviour
 {
     public InventorySlot[] inventorySlots;
     public ShopSlot[] inventoryShopSlots;
+    
+    public Dictionary<TroopType, InventorySlot> invDict;
+    public Dictionary<TroopType, ShopSlot> shopDict;
+
     public List<TroopType> deployed;
     public InventorySlot selectedSlot;
 
-    void Start()
-    {
+    void Start() {
         //List of troops which are fighting, add them back one by one after the fight
         deployed = new List<TroopType>();
+
+        //Dictionary of inventory slots
+        invDict = new Dictionary<TroopType, InventorySlot>();
+        foreach (InventorySlot slot in inventorySlots)
+            invDict.Add(slot.troopType, slot);
+            
+
+        //Dictionary of shop slots
+        shopDict = new Dictionary<TroopType, ShopSlot>();
+        foreach (ShopSlot slot in inventoryShopSlots)
+            shopDict.Add(slot.troopType, slot);
+            
     }
 
-    public void Add(TroopType troopType)
+    public void Add(TroopType troopType) 
     {
-        foreach (InventorySlot slot in inventorySlots)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount++;
-                slot.UpdateAmount();
-                break;
-            }
-        }
-        foreach (ShopSlot slot in inventoryShopSlots)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount++;
-                slot.UpdateAmount();
-                break;
-            }
-        }
+        InventorySlot iS = invDict[troopType];
+        iS.amount++;
+        iS.UpdateAmount();
+
+        ShopSlot sS = shopDict[troopType];
+        sS.amount++;
+        sS.UpdateAmount();
     }
 
     //For when troops are placed on the board
     public void RemoveTemporary(TroopType troopType)
-    {
+    {   
         deployed.Add(troopType);
-        foreach (InventorySlot slot in inventorySlots)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount++;
-                slot.UpdateAmount();
-                break;
-            }
-        }
-        foreach (ShopSlot slot in inventoryShopSlots)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount++;
-                slot.UpdateAmount();
-                break;
-            }
-        }
+        Remove(troopType);
     }
 
     //For when troops are sold
-    public void RemovePermanant(TroopType troopType)
+    public void Remove(TroopType troopType)
     {
-        foreach (InventorySlot slot in inventorySlots)
+        InventorySlot iS = invDict[troopType];
+        iS.amount--;
+        iS.UpdateAmount();
+
+        ShopSlot sS = shopDict[troopType];
+        sS.amount--;
+        sS.UpdateAmount();
+    }
+
+    //For when a battle is over
+    public void RestoreTroops()
+    {
+        foreach (TroopType troop in deployed)
         {
-            if (slot.troopType == troopType)
-            {
-                slot.amount--;
-                slot.UpdateAmount();
-                break;
-            }
-        }
-        foreach (ShopSlot slot in inventoryShopSlots)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount--;
-                slot.UpdateAmount();
-                break;
-            }
+            Add(troop);
         }
     }
 
     //How many troops of that type do you have in the inventory
     public int Count(TroopType troopType)
     {
-        int count = 0;
-        foreach (InventorySlot slot in inventorySlots)
-            if (slot.troopType == troopType)
-                count++;
-
-        return count;
+        return invDict[troopType].amount;
     }
 
 }

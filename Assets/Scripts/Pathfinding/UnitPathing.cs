@@ -50,7 +50,7 @@ public class UnitPathing : MonoBehaviour
     }
 
     //call this to get a path
-    public void GetPathing(GameObject target)
+    public void GetPathing(GameObject target) 
     {
         if (!hasPathToFollow)
         {
@@ -63,7 +63,7 @@ public class UnitPathing : MonoBehaviour
     }
 
     //callback method from getPathing
-    public void doStuffWithPath(List<Node> path, bool wasSuccessfull)
+    public void doStuffWithPath(List<Node> path , bool wasSuccessfull)
     {
         if (wasSuccessfull)
         {

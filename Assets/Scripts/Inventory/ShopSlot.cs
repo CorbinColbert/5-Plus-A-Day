@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ShopSlot : MonoBehaviour
 {
-    public Shop shop { get; private set; }
+    public Shop shop {get; private set;}
     public TroopType troopType;
     private Text text;
     private Button button;
@@ -22,12 +22,9 @@ public class ShopSlot : MonoBehaviour
         text = GetComponentInChildren<Text>();
         button = GetComponentInChildren<Button>();
 
-        if (isInventory)
-        {
+        if (isInventory) {
             button.onClick.AddListener(Sell);
-        }
-        else
-        {
+        } else {
             button.onClick.AddListener(Buy);
         }
     }
@@ -41,28 +38,27 @@ public class ShopSlot : MonoBehaviour
             return;
         }
 
-        shop.connectedInventory.Add(troopType);
+        shop.inventory.Add(troopType);
         GameManager.currency -= shop.GetValue(troopType);
         amount--;
         UpdateAmount();
     }
 
     //Call this when selling a troop from your inventory in the shop
-    public void Sell()
-    {
+    public void Sell() {
         if (amount < 1)
         {
             return;
         }
 
-        shop.connectedInventory.RemovePermanant(troopType);
+        shop.inventory.Remove(troopType);
         shop.AddToShop(troopType);
         GameManager.currency += shop.GetValue(troopType);
         if (!isInventory)
         {
             amount++;
         }
-
+        
         UpdateAmount();
     }
 

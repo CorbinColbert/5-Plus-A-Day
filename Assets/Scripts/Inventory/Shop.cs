@@ -5,44 +5,40 @@ using UnityEngine;
 public class Shop : MonoBehaviour
 {
     public ShopSlot[] products;
-    public Inventory connectedInventory;
+    public Inventory inventory;
+    private Dictionary<TroopType, ShopSlot> shopDict;
 
-    void Start()
-    {
-        connectedInventory = FindObjectOfType<Inventory>();
-        Invoke("InitialUpdate", 0.2f);
-    }
-
-    private void InitialUpdate()
-    {
+    void Start() {
+        // Dictionary of shop slots
+        shopDict = new Dictionary<TroopType, ShopSlot>();
         foreach (ShopSlot slot in products)
         {
+            shopDict.Add(slot.troopType, slot);
+        }
+
+        Invoke("UpdateAll", 0.1f);
+    }
+
+    private void UpdateAll() {
+        foreach (ShopSlot slot in products)
+        {   // Update text
             slot.UpdateAmount();
+
+            // Sync buy and sell value for this slot
+            // Prices only set in sell slots on the editor
+            inventory.shopDict[slot.troopType].value = slot.value;
         }
     }
 
     public void AddToShop(TroopType troopType)
     {
-        foreach (ShopSlot slot in products)
-        {
-            if (slot.troopType == troopType)
-            {
-                slot.amount++;
-                slot.UpdateAmount();
-                break;
-            }
-        }
+        ShopSlot sS = shopDict[troopType];
+        sS.amount++;
+        sS.UpdateAmount();
     }
 
     public int GetValue(TroopType troopType)
     {
-        foreach (ShopSlot slot in products)
-        {
-            if (slot.troopType == troopType)
-            {
-                return slot.value;
-            }
-        }
-        return 0;
+        return shopDict[troopType].value;    
     }
 }

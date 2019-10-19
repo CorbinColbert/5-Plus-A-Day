@@ -14,6 +14,6 @@ public class Currency : MonoBehaviour
 
     void Update()
     {
-        gameText.text = "" + GameManager.currency;
+        gameText.text = ""+GameManager.currency;
     }
 }

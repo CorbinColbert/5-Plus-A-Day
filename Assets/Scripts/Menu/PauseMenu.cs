@@ -12,9 +12,9 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()//Checks if player has pressed ESC to go to Pause Menu
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isPaused)
+            if(isPaused)
             {
                 Resume();
             }
@@ -24,7 +24,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
-
+    
     public void Resume()//Resumes the active game 
     {
         PauseMenuUI.SetActive(false);
