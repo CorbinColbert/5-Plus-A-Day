@@ -65,7 +65,6 @@ public class UnitPathing : MonoBehaviour
                 }
             }
 
-
             if (nodeUnitOnTopOf == tempNode)
             {
                 tempNode.unitOnTop = true;
