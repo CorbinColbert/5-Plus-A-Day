@@ -6,15 +6,18 @@ public class UnitPathing : MonoBehaviour
 {
     public Node[] path;
     public GameObject grid;
-    //public GameObject target;
+    public Node nodeUnitOnTopOf;
     public bool hasPathToFollow = false;
-    float timer = 0;
     public float moveSpeed;
-    Vector3 tempStartPos;
-    int index = 0;
+
+    private float timer = 0;
+    private Vector3 tempStartPos;
+    private int index = 0;
+    private Node tempNode = null;
 
     private void FixedUpdate()
     {
+        UnitNodeUpdate();
 
         if (hasPathToFollow)
         {
@@ -41,16 +44,45 @@ public class UnitPathing : MonoBehaviour
         }
     }
 
+    private void UnitNodeUpdate()
+    {
+        if (grid.TryGetComponent<NodeGrid>(out NodeGrid nodeGrid))
+        {
+            if (nodeUnitOnTopOf == null)
+            {
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                tempNode = nodeUnitOnTopOf;
+            }
+            else
+            {
+                Node compareNode = nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                if (nodeUnitOnTopOf != compareNode)
+                {
+                    tempNode = nodeUnitOnTopOf;
+                    nodeUnitOnTopOf = compareNode;
+                }
+            }
 
+            if (nodeUnitOnTopOf == tempNode)
+            {
+                tempNode.unitOnTop = true;
+            }
+            else
+            {
+                tempNode.unitOnTop = false;
+                tempNode = nodeUnitOnTopOf;
+                tempNode.unitOnTop = true;
+            }
+        }
+    }
 
     private void Start()
     {
-        //get position at start of object
         tempStartPos = transform.position;
     }
 
     //call this to get a path
-    public void GetPathing(GameObject target) 
+    public void GetPathing(GameObject target)
     {
         if (!hasPathToFollow)
         {
@@ -63,7 +95,7 @@ public class UnitPathing : MonoBehaviour
     }
 
     //callback method from getPathing
-    public void doStuffWithPath(List<Node> path , bool wasSuccessfull)
+    public void doStuffWithPath(List<Node> path, bool wasSuccessfull)
     {
         if (wasSuccessfull)
         {
@@ -72,8 +104,7 @@ public class UnitPathing : MonoBehaviour
         }
         else
         {
-            //pathing failed
-            //TODO: stuff here
+            //TODO: pathing has failed. needs code to handle this.
         }
     }
 }

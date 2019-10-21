@@ -36,7 +36,7 @@ public class Node : ItemHeapIndex<Node>
     {
         get
         {
-            return heapIndex; 
+            return heapIndex;
         }
         set
         {
