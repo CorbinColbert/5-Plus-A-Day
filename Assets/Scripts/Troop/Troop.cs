@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 /*
@@ -11,11 +12,13 @@ public class Troop : MonoBehaviour
 {
     /* Troop Statistics, to be modified in editor
      ********************************************
-     * Alive (status)
+     * Alive (default true)
      * Current Health Points
      * Max Health Points
      * Min Attack Damage
      * Attack Speed (attacks per second)
+     * Attack Range (how far away a troop can attack another troop from)
+     * Movement Speed
      * Regeneration
      * Regeneration Speed (regens per second)
      * Regen Enabled (if true, regeneration occurs)
@@ -27,6 +30,8 @@ public class Troop : MonoBehaviour
     public float damageMin;
     public float damageMax;
     public float attackSpeed;
+    public float attackRange;
+    public float moveSpeed;
     public float regenAmount;
     public float regenSpeed;
     public bool regenEnabled;
@@ -37,6 +42,7 @@ public class Troop : MonoBehaviour
 
     private GameObject target; // GameObject containing a Troop script
     private BattleManager battleManager; // Utility class used while troops fight
+    private TroopState state;
 
     void Start()
     {
@@ -66,6 +72,43 @@ public class Troop : MonoBehaviour
         }
     }
 
+    // Called every second, to reassign targets
+    private void Routine()
+    {
+        // Dead troops cannot perform actions
+        if (!alive)
+        {
+            return;
+        }
+
+        if (target == null)
+        {
+            // Find a new target
+            target = FindTarget();
+        }
+        else
+        {
+            switch (state)
+            {
+                case TroopState.MOVING:
+                    float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+                    bool targetInRange = distance <= attackRange;
+
+                    if (targetInRange)
+                    {
+                        state = TroopState.ATTACKING;
+                    }
+
+                    break;
+                case TroopState.ATTACKING:
+                    break;
+                default:
+                    // Do nothing
+                    break;
+            }
+        }
+    }
+
     // Call this at the start of the fight
     public void Activate()
     {
@@ -76,6 +119,22 @@ public class Troop : MonoBehaviour
     public void TargetKilled()
     {
         target = null;
+        state = TroopState.MOVING;
+    }
+
+    public void AttackTarget()
+    {
+        Troop targetTroop = target.GetComponent<Troop>();
+        float damage = UnityEngine.Random.Range(damageMin, damageMax);
+        targetTroop.RecieveAttack(damage);
+    }
+
+    public void RecieveAttack(float damage)
+    {
+        if (alive)
+        {
+            healthCurrent -= damage;
+        }
     }
 
     // Throws exception if stats are out of expected ranges
@@ -129,7 +188,8 @@ public class Troop : MonoBehaviour
             // Test for overheal
             if (regenAmount + healthCurrent > healthMax)
             {
-                healthCurrent = healthMax;
+                // Apply healing equal to difference between current and max health
+                healthCurrent += (healthMax - healthCurrent);
             }
             else
             {
@@ -177,16 +237,12 @@ public class Troop : MonoBehaviour
     // Call this when this troop dies
     private void onDeath()
     {
+        alive = false;
+        healthCurrent = 0;
+
         if (OnDeathEvent != null)
         {
             OnDeathEvent.Invoke(); // Invoke the on death event
         }
-
-        alive = false;
-        healthCurrent = 0;
-
-
-
-        gameObject.SetActive(false);
     }
 }
