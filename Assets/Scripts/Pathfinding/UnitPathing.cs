@@ -14,8 +14,6 @@ public class UnitPathing : MonoBehaviour
     private Vector3 tempStartPos;
     private int index = 0;
     private Node tempNode = null;
-    //private bool clearedNodeUpdates = false;
-    //private List<Node> tempNodes = new List<Node>();
 
     private void FixedUpdate()
     {
