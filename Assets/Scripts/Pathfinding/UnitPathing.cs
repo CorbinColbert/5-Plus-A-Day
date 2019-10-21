@@ -6,17 +6,20 @@ public class UnitPathing : MonoBehaviour
 {
     public Node[] path;
     public GameObject grid;
-    //public GameObject target;
-    public bool hasPathToFollow = false;
-    float timer = 0;
-    public float moveSpeed;
-    Vector3 tempStartPos;
-    int index = 0;
     public Node nodeUnitOnTopOf;
+    public bool hasPathToFollow = false;
+    public float moveSpeed;
+
+    private float timer = 0;
+    private Vector3 tempStartPos;
+    private int index = 0;
+    private Node tempNode = null;
+    //private bool clearedNodeUpdates = false;
+    //private List<Node> tempNodes = new List<Node>();
 
     private void FixedUpdate()
     {
-        UnitNodeUpdate();
+        UnitNodeUpdate(hasPathToFollow);
 
         if (hasPathToFollow)
         {
@@ -43,10 +46,8 @@ public class UnitPathing : MonoBehaviour
         }
     }
 
-    private void UnitNodeUpdate()
+    private void UnitNodeUpdate(bool hasPath)
     {
-        Node tempNode;
-
         if (grid.TryGetComponent<NodeGrid>(out NodeGrid nodeGrid))
         {
             if (nodeUnitOnTopOf == null)
@@ -56,8 +57,12 @@ public class UnitPathing : MonoBehaviour
             }
             else
             {
-                tempNode = nodeUnitOnTopOf;
-                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                Node compareNode = nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                if (nodeUnitOnTopOf != compareNode)
+                {
+                    tempNode = nodeUnitOnTopOf;
+                    nodeUnitOnTopOf = compareNode;
+                }
             }
 
 
@@ -76,7 +81,6 @@ public class UnitPathing : MonoBehaviour
 
     private void Start()
     {
-        //get position at start of object
         tempStartPos = transform.position;
     }
 
@@ -103,8 +107,7 @@ public class UnitPathing : MonoBehaviour
         }
         else
         {
-            //pathing failed
-            //TODO: stuff here
+            //TODO: pathing has failed. needs code to handle this.
         }
     }
 }
