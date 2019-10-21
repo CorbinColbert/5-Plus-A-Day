@@ -94,7 +94,7 @@ public class NodeGrid : MonoBehaviour
             foreach (Node node in grid)
             {
                 Gizmos.color = (node.viableNode) ? Color.white : Color.red;
-                Gizmos.color = (node.unitOnTop) ? Color.white : Color.blue;
+                Gizmos.color = (node.unitOnTop) ? Color.blue : Color.white;
                 Gizmos.DrawCube(node.worldPosition, Vector3.one * (nodeDiameter - .1f));
             }
         }
