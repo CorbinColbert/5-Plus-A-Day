@@ -11,7 +11,7 @@ public class Troop : MonoBehaviour
 {
     /* Troop Statistics, to be modified in editor
      ********************************************
-     * Alive (status)
+     * Alive (default true)
      * Current Health Points
      * Max Health Points
      * Min Attack Damage
@@ -129,7 +129,8 @@ public class Troop : MonoBehaviour
             // Test for overheal
             if (regenAmount + healthCurrent > healthMax)
             {
-                healthCurrent = healthMax;
+                // Apply healing equal to difference between current and max health
+                healthCurrent += (healthMax - healthCurrent);
             }
             else
             {
