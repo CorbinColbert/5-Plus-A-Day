@@ -12,9 +12,11 @@ public class UnitPathing : MonoBehaviour
     public float moveSpeed;
     Vector3 tempStartPos;
     int index = 0;
+    public Node nodeUnitOnTopOf;
 
     private void FixedUpdate()
     {
+        UnitNodeUpdate();
 
         if (hasPathToFollow)
         {
@@ -41,7 +43,36 @@ public class UnitPathing : MonoBehaviour
         }
     }
 
+    private void UnitNodeUpdate()
+    {
+        Node tempNode;
 
+        if (grid.TryGetComponent<NodeGrid>(out NodeGrid nodeGrid))
+        {
+            if (nodeUnitOnTopOf == null)
+            {
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+                tempNode = nodeUnitOnTopOf;
+            }
+            else
+            {
+                tempNode = nodeUnitOnTopOf;
+                nodeUnitOnTopOf = nodeGrid.getNodeFromWorld(gameObject.transform.position);
+            }
+
+
+            if (nodeUnitOnTopOf == tempNode)
+            {
+                tempNode.unitOnTop = false;
+            }
+            else
+            {
+                tempNode.unitOnTop = true;
+                tempNode = nodeUnitOnTopOf;
+                tempNode.unitOnTop = false;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -50,7 +81,7 @@ public class UnitPathing : MonoBehaviour
     }
 
     //call this to get a path
-    public void GetPathing(GameObject target) 
+    public void GetPathing(GameObject target)
     {
         if (!hasPathToFollow)
         {
@@ -63,7 +94,7 @@ public class UnitPathing : MonoBehaviour
     }
 
     //callback method from getPathing
-    public void doStuffWithPath(List<Node> path , bool wasSuccessfull)
+    public void doStuffWithPath(List<Node> path, bool wasSuccessfull)
     {
         if (wasSuccessfull)
         {
