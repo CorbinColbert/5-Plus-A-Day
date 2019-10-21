@@ -19,7 +19,7 @@ public class UnitPathing : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UnitNodeUpdate(hasPathToFollow);
+        UnitNodeUpdate();
 
         if (hasPathToFollow)
         {
@@ -46,7 +46,7 @@ public class UnitPathing : MonoBehaviour
         }
     }
 
-    private void UnitNodeUpdate(bool hasPath)
+    private void UnitNodeUpdate()
     {
         if (grid.TryGetComponent<NodeGrid>(out NodeGrid nodeGrid))
         {
@@ -68,13 +68,13 @@ public class UnitPathing : MonoBehaviour
 
             if (nodeUnitOnTopOf == tempNode)
             {
-                tempNode.unitOnTop = false;
+                tempNode.unitOnTop = true;
             }
             else
             {
-                tempNode.unitOnTop = true;
-                tempNode = nodeUnitOnTopOf;
                 tempNode.unitOnTop = false;
+                tempNode = nodeUnitOnTopOf;
+                tempNode.unitOnTop = true;
             }
         }
     }

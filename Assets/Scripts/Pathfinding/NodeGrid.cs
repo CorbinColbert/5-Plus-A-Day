@@ -41,7 +41,7 @@ public class NodeGrid : MonoBehaviour
             {
                 Vector3 nodePlacementPoint = gridBottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.forward * (y * nodeDiameter + nodeRadius);
                 bool isNodeViable = !(Physics.CheckSphere(nodePlacementPoint,nodeRadius, viabilityMask)); 
-                bool isUnitOnTop = !(Physics.CheckSphere(nodePlacementPoint, nodeRadius, occupiedMask));
+                bool isUnitOnTop = (Physics.CheckSphere(nodePlacementPoint, nodeRadius, occupiedMask));
                 grid[x, y] = new Node(isNodeViable, isUnitOnTop, nodePlacementPoint, x, y);
             }
         }
