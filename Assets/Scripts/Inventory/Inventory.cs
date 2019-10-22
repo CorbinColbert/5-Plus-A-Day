@@ -64,6 +64,11 @@ public class Inventory : MonoBehaviour
         sS.UpdateAmount();
     }
 
+    public void ClearSelected()
+    {
+        selectedSlot = null;
+    }
+
     //For when a battle is over
     public void RestoreTroops()
     {

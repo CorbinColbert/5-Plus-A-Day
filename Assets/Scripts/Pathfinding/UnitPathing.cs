@@ -21,6 +21,12 @@ public class UnitPathing : MonoBehaviour
 
         if (hasPathToFollow)
         {
+
+            if (path.GetLength(0) == 0)
+            {
+                return;
+            }
+
             //follow the path
             transform.position = Vector3.Lerp(tempStartPos, path[index].worldPosition, timer);
 
