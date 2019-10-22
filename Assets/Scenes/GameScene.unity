@@ -5061,7 +5061,7 @@ MonoBehaviour:
     type: 3}
   prefabTangerine: {fileID: 658937499667268786, guid: c934667ed223b324c89f7ef8f80187da,
     type: 3}
-  prefabOrange: {fileID: 658937499667268786, guid: 01887386df88f9e44b64db1a336a1242,
+  prefabOrange: {fileID: 658937499667268786, guid: 26d2fea57a806564a83a67ea35efb3d1,
     type: 3}
   prefabBanana: {fileID: 658937499667268786, guid: 01887386df88f9e44b64db1a336a1242,
     type: 3}
