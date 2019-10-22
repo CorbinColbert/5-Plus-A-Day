@@ -127,7 +127,7 @@ MonoBehaviour:
   regenAmount: 0
   regenSpeed: 0
   regenEnabled: 0
-  troopType: 9
+  troopType: 10
   hasTarget: 0
   target: {fileID: 0}
   state: 0
