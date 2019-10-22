@@ -3,7 +3,12 @@ guid: bfd82aef216b6604e8ce643f357374b7
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_360
+    second: {fileID: 2100000, guid: 4c4512b7fa4f6a6439907253827c8439, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -37,7 +42,7 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
+    useSRGBMaterialColor: 0
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1

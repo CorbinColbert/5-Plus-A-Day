@@ -10,12 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 658937499667268790}
   - component: {fileID: 658937499667268784}
-  - component: {fileID: 658937499667268787}
   - component: {fileID: 658937499667268791}
   - component: {fileID: 8991630741585345337}
   - component: {fileID: 2953463644253178040}
   m_Layer: 9
-  m_Name: PlayerCarrot 7
+  m_Name: PlayerBanana
   m_TagString: PlayerTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 658937499667268786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,19 +72,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &658937499667268787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658937499667268786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &658937499667268791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +106,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658937499667268786}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2200911647707196941, guid: d31b9cc01497f25429c2361fe8569ea7, type: 3}
 --- !u!114 &2953463644253178040
 MonoBehaviour:
   m_ObjectHideFlags: 0
