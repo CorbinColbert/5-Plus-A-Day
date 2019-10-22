@@ -19,6 +19,7 @@ public class TroopPlacer : MonoBehaviour
     public GameObject prefabPepper;
     public GameObject prefabCake;
 
+    public Shop shop; // Shop
     public Inventory inventory; // Connected inventory
     public BattleManager manager; // TroopManager
 
@@ -31,8 +32,10 @@ public class TroopPlacer : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && inventory.selectedSlot != null)
         {
-            if (true) // TODO if player has enough of the selected unit
-            Place();
+            if (inventory.Count(inventory.selectedSlot.troopType) > 0)
+            {
+                Place();
+            }
         }
     }
 
@@ -65,6 +68,10 @@ public class TroopPlacer : MonoBehaviour
         {
             throw new FormatException("Mismatch detected in Troop Placer, unexpected troop type");
         }
+
+        // Decrement the slot
+        inventory.selectedSlot.amount -= 1;
+        inventory.selectedSlot.UpdateAmount();
 
         // Place it on the scene
         Transform nT = node.transform;

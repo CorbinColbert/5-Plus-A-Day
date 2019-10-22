@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 658937499667268784}
   - component: {fileID: 658937499667268791}
   - component: {fileID: 8704874050459856281}
-  - component: {fileID: 2818262821278550451}
+  - component: {fileID: 7046192910502595140}
+  - component: {fileID: 7418584448509390846}
   m_Layer: 9
   m_Name: PlayerCarrot
   m_TagString: PlayerTroop
@@ -123,8 +124,8 @@ MonoBehaviour:
   grid: {fileID: 0}
   hasPathToFollow: 0
   moveSpeed: 1
---- !u!64 &2818262821278550451
-MeshCollider:
+--- !u!136 &7046192910502595140
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,7 +134,23 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -2502514069765303117, guid: bfd82aef216b6604e8ce643f357374b7, type: 3}
+  m_Radius: 0.010276187
+  m_Height: 0.09734867
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.048674334, z: 0}
+--- !u!54 &7418584448509390846
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937499667268786}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -9,7 +9,7 @@ public class InventorySlot : MonoBehaviour
     public TroopType troopType;
     private Text text;
     private Button button;
-    public int amount;
+    public int amount { get; set; }
 
     private void Start()
     {

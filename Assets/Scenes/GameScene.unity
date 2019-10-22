@@ -2655,7 +2655,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 5
-  amount: 0
 --- !u!1 &254284012
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,7 +3660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 8
-  amount: 0
 --- !u!1 &313677723 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7195309401124751438, guid: 451d61d3a4b67684ca2f597e084d18ad,
@@ -5081,6 +5079,7 @@ MonoBehaviour:
     type: 3}
   prefabCake: {fileID: 658937499667268786, guid: 2d64c08be880c7d438a03e59c853f4fe,
     type: 3}
+  shop: {fileID: 865233234}
   inventory: {fileID: 845208293}
   manager: {fileID: 400496848}
 --- !u!1 &411269718
@@ -5327,7 +5326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 9
-  amount: 0
 --- !u!1 &415975303
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,7 +6267,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 4
-  amount: 0
 --- !u!1 &478106754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7195309402090558227, guid: 451d61d3a4b67684ca2f597e084d18ad,
@@ -6612,7 +6609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 0
-  amount: 0
 --- !u!1 &510009446
 GameObject:
   m_ObjectHideFlags: 0
@@ -8135,7 +8131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 6
-  amount: 0
 --- !u!1 &582708439
 GameObject:
   m_ObjectHideFlags: 0
@@ -10252,7 +10247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 11
-  amount: 0
 --- !u!1 &736420044
 GameObject:
   m_ObjectHideFlags: 0
@@ -12401,7 +12395,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 10
-  amount: 0
 --- !u!1 &861660551
 GameObject:
   m_ObjectHideFlags: 0
@@ -14425,6 +14418,11 @@ PrefabInstance:
       propertyPath: state
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 658937499667268784, guid: 21afb067fb94b1f49b89479e5a1d066c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21afb067fb94b1f49b89479e5a1d066c, type: 3}
 --- !u!1 &1064025105
@@ -14479,7 +14477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 2
-  amount: 0
 --- !u!1 &1065574750
 GameObject:
   m_ObjectHideFlags: 0
@@ -15020,7 +15017,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 1
-  amount: 0
 --- !u!1 &1117042582
 GameObject:
   m_ObjectHideFlags: 0
@@ -19234,7 +19230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 7
-  amount: 0
 --- !u!1 &1383484933 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7195309401678251000, guid: 451d61d3a4b67684ca2f597e084d18ad,
@@ -22381,7 +22376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   troopType: 3
-  amount: 0
 --- !u!1 &1599081500
 GameObject:
   m_ObjectHideFlags: 0
