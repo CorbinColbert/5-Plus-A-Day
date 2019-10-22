@@ -88,11 +88,11 @@ MonoBehaviour:
   alive: 1
   healthCurrent: 20
   healthMax: 20
-  damageMin: 2
-  damageMax: 2
-  attackSpeed: 0.5
+  damageMin: 1
+  damageMax: 1
+  attackSpeed: 4
   attackRange: 2
-  moveSpeed: 0
+  moveSpeed: 0.2
   regenAmount: 0
   regenSpeed: 0
   regenEnabled: 0

@@ -71,9 +71,9 @@ public class TroopPlacer : MonoBehaviour
 
         // Place it on the scene
         Transform nT = node.transform;
-        Vector3 placementPosition = new Vector3(nT.position.x, nT.position.y + 0.65f , nT.position.z);
+        Vector3 placementPosition = new Vector3(nT.position.x, nT.position.y + 1.5f , nT.position.z);
         GameObject instantiatedTroop = Instantiate(troop, placementPosition, Quaternion.identity);
-        manager.Deploy(troop);
+        manager.Deploy(instantiatedTroop);
         instantiatedTroop.SetActive(true);
     }
 
