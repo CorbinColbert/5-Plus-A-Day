@@ -36,15 +36,15 @@ public class BattleManager : MonoBehaviour
     }
 
     // Caller must provide which side they are on
-    public GameObject[] GetOpponents(bool isPlayerTroop)
+    public List<GameObject> GetOpponents(bool isPlayerTroop)
     {
         if (isPlayerTroop)
         {
-            return livingEnemyTroops.ToArray();
+            return livingEnemyTroops;
         }
         else
         {
-            return livingPlayerTroops.ToArray();
+            return livingPlayerTroops;
         }
     }
 

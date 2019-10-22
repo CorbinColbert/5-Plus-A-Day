@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 658937499667268790}
   - component: {fileID: 658937499667268784}
-  - component: {fileID: 658937499667268787}
   - component: {fileID: 658937499667268791}
   - component: {fileID: 8991630741585345337}
+  - component: {fileID: 4364886868654447900}
   m_Layer: 0
-  m_Name: EnemyCarrot
+  m_Name: Enemey
   m_TagString: PlayerTroop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,19 +72,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &658937499667268787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658937499667268786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &658937499667268791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,10 +90,15 @@ MonoBehaviour:
   damageMin: 1
   damageMax: 2
   attackSpeed: 1
+  attackRange: 0
+  moveSpeed: 0
   regenAmount: 0
   regenSpeed: 0
   regenEnabled: 0
   troopType: 0
+  hasTarget: 0
+  target: {fileID: 0}
+  state: 0
 --- !u!33 &8991630741585345337
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -115,3 +107,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658937499667268786}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &4364886868654447900
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937499667268786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

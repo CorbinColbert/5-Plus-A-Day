@@ -104,12 +104,15 @@ MonoBehaviour:
   damageMin: 7
   damageMax: 7
   attackSpeed: 1
-  attackRange: 0
+  attackRange: 2
   moveSpeed: 0
   regenAmount: 1
   regenSpeed: 2
   regenEnabled: 1
   troopType: 0
+  hasTarget: 0
+  target: {fileID: 0}
+  state: 0
 --- !u!33 &8991630741585345337
 MeshFilter:
   m_ObjectHideFlags: 0

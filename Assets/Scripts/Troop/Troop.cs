@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /*
@@ -43,10 +44,13 @@ public class Troop : MonoBehaviour
 
     public GameObject target; // GameObject containing a Troop script
     private BattleManager battleManager; // Utility class used while troops fight
-    private TroopState state;
+    public TroopState state;
 
     void Start()
     {
+        Rigidbody body = gameObject.AddComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.FreezeRotationY;
+
         CheckStatsValid(); // To ensure correct use of the troop class's statistics
         battleManager = FindObjectOfType<BattleManager>();
         if (battleManager == null)
@@ -69,10 +73,8 @@ public class Troop : MonoBehaviour
         {
             target = FindTarget();
             if (hasTarget == false) {
-                print("Found no target");
                 return;
             }
-            hasTarget = true;
             target.GetComponent<Troop>().OnDeathEvent += TargetKilled;
 
             if (!gameObject.CompareTag("EnemyTroop"))
@@ -92,11 +94,11 @@ public class Troop : MonoBehaviour
 
                     if (targetInRange)
                     {
-                        state = TroopState.ATTACKING;
+                        state = TroopState.LOCKING;
                     }
                     break;
-                case TroopState.ATTACKING:
-
+                case TroopState.LOCKING:
+                        AttackTarget();
                     break;
                 default:
                     // Do nothing
@@ -121,6 +123,7 @@ public class Troop : MonoBehaviour
 
     public void AttackTarget()
     {
+        print("Attacking");
         if (target == null)
         {
             return;
@@ -215,10 +218,12 @@ public class Troop : MonoBehaviour
     private GameObject FindTarget()
     {
         GameObject chosenEnemy = null;
-        GameObject[] enemies = battleManager.GetOpponents(gameObject.CompareTag("PlayerTroop"));
+        List<GameObject> enemies = battleManager.GetOpponents(gameObject.CompareTag("PlayerTroop"));
         float closestDistance = float.MaxValue;
 
-        if (enemies != null)
+        print(enemies.Count + ":Count");
+
+        if (enemies.Count > 0)
         {
             foreach (GameObject enemy in enemies)
             {
@@ -230,11 +235,16 @@ public class Troop : MonoBehaviour
                 {
                     closestDistance = distance;
                     chosenEnemy = enemy;
+                    print("Assigned chosen enemy");
                 }
             }
         }
 
-        
+        if (chosenEnemy != null)
+        {
+            hasTarget = true;
+        }
+
         // May be null
         return chosenEnemy;
     }
@@ -242,6 +252,7 @@ public class Troop : MonoBehaviour
     // Call this when this troop dies
     private void onDeath()
     {
+        print("On death called");
         alive = false;
         healthCurrent = 0;
 
@@ -250,6 +261,12 @@ public class Troop : MonoBehaviour
             OnDeathEvent.Invoke(); // Invoke the on death event
         }
  
+        Rigidbody body = GetComponent<Rigidbody>();
+        Vector3 force = new Vector3(UnityEngine.Random.Range(-100.0f,100.0f),
+            UnityEngine.Random.Range(100.0f, 400.0f), 
+            UnityEngine.Random.Range(-100.0f, 100.0f));
+        body.AddForce(force);
+
         Destroy(GetComponent<UnitPathing>());
         Destroy(this);
     }
