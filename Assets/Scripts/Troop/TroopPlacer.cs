@@ -22,22 +22,26 @@ public class TroopPlacer : MonoBehaviour
     public Inventory inventory; // Connected inventory
     public BattleManager manager; // TroopManager
 
-
     // Update is called once per frame
     void Update()
     {
+        if (!inventory.gameObject.activeSelf) {
+            return;
+        }
+        
         if (Input.GetMouseButtonDown(0) && inventory.selectedSlot != null)
         {
+            if (true) // TODO if player has enough of the selected unit
             Place();
         }
     }
 
     private void Place()
     {
-        // Cast a ray with maximum distance 100
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hit, 100.0f);
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (hit.transform == null)
+        if (!Physics.Raycast(ray, out hit))
         {
             // The ray did not hit anything
             return;
@@ -45,6 +49,12 @@ public class TroopPlacer : MonoBehaviour
 
         // The object which the ray hit
         GameObject hitObject = hit.transform.gameObject;
+
+        // If the object that was clicked on isn't a placeable tile
+        if (!hitObject.TryGetComponent<TroopNode>(out TroopNode node))
+        {
+            return;
+        }
 
         // Get the prefab that corresponds to the troop type
         TroopType type = inventory.selectedSlot.troopType;
@@ -56,8 +66,12 @@ public class TroopPlacer : MonoBehaviour
             throw new FormatException("Mismatch detected in Troop Placer, unexpected troop type");
         }
 
+        //Configure the troop
+        troop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+
         // Place it on the scene
-        Vector3 placementPosition = new Vector3(0, (hitObject.transform.position.y * 0.5f) + (troop.transform.localScale.y * 0.5f), 0);
+        Transform nT = node.transform;
+        Vector3 placementPosition = new Vector3(nT.position.x, nT.position.y + 0.65f , nT.position.z);
         GameObject instantiatedTroop = Instantiate(troop, placementPosition, Quaternion.identity);
         instantiatedTroop.SetActive(true);
     }

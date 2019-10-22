@@ -31,8 +31,12 @@ public class UnitPathing : MonoBehaviour
                 tempStartPos = transform.position;
             }
 
-            timer += Time.deltaTime * moveSpeed;
-
+            if (TryGetComponent<Troop>(out Troop troop)) {
+                timer += Time.deltaTime * GetComponent<Troop>().moveSpeed;
+            } else {
+                timer += Time.deltaTime * 1;
+            }
+            
             //at end, turn hasPathToFollow to false and index and timer back to 0
             if (transform.position == path[path.Length - 1].worldPosition)
             {
@@ -79,6 +83,7 @@ public class UnitPathing : MonoBehaviour
     private void Start()
     {
         tempStartPos = transform.position;
+        grid = GameObject.Find("GameManager");
     }
 
     //call this to get a path

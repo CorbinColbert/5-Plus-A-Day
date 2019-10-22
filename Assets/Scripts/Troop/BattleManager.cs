@@ -20,6 +20,19 @@ public class BattleManager : MonoBehaviour
         deadPlayerTroops = new List<GameObject>();
         livingEnemyTroops = new List<GameObject>();
         deadEnemyTroops = new List<GameObject>();
+
+        print("BattleManager Start()");
+
+        ScanSceneForEnemies();
+    }
+
+    private void ScanSceneForEnemies() {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("EnemyTroop"); 
+        foreach (GameObject obj in enemies)
+        {
+            print("Found enemy in scene");
+            livingEnemyTroops.Add(obj);
+        }
     }
 
     // Caller must provide which side they are on

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 658937499667268787}
   - component: {fileID: 658937499667268791}
   - component: {fileID: 8991630741585345337}
-  m_Layer: 0
+  - component: {fileID: 5858022209818164772}
+  m_Layer: 9
   m_Name: PlayerTangerine
   m_TagString: PlayerTroop
   m_Icon: {fileID: 0}
@@ -103,6 +104,8 @@ MonoBehaviour:
   damageMin: 7
   damageMax: 7
   attackSpeed: 1
+  attackRange: 0
+  moveSpeed: 0
   regenAmount: 1
   regenSpeed: 2
   regenEnabled: 1
@@ -115,3 +118,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658937499667268786}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &5858022209818164772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937499667268786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bf499dcc7e3007478ec6de2f15c4d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grid: {fileID: 0}
+  hasPathToFollow: 0
+  moveSpeed: 1

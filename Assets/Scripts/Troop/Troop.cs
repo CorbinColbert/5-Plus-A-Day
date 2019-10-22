@@ -36,24 +36,24 @@ public class Troop : MonoBehaviour
     public float regenSpeed;
     public bool regenEnabled;
     public TroopType troopType;
+    public bool hasTarget = false;
 
     // Attackers will subscribe to this event and are notified when this troop dies
     public event Action OnDeathEvent;
 
-    private GameObject target; // GameObject containing a Troop script
+    public GameObject target; // GameObject containing a Troop script
     private BattleManager battleManager; // Utility class used while troops fight
     private TroopState state;
 
     void Start()
     {
         CheckStatsValid(); // To ensure correct use of the troop class's statistics
-
         battleManager = FindObjectOfType<BattleManager>();
-
         if (battleManager == null)
         {
             throw new MissingComponentException("Could not find BattleManager script");
         }
+        Activate();
     }
 
     // Called 50 times per second
@@ -65,26 +65,22 @@ public class Troop : MonoBehaviour
             return;
         }
 
-        if (target == null)
+        if (hasTarget == false)
         {
             target = FindTarget();
+            if (hasTarget == false) {
+                print("Found no target");
+                return;
+            }
+            hasTarget = true;
             target.GetComponent<Troop>().OnDeathEvent += TargetKilled;
-        }
-    }
 
-    // Called every second, to reassign targets
-    private void Routine()
-    {
-        // Dead troops cannot perform actions
-        if (!alive)
-        {
-            return;
-        }
-
-        if (target == null)
-        {
-            // Find a new target
-            target = FindTarget();
+            if (!gameObject.CompareTag("EnemyTroop"))
+            {
+                // Get a path to the target
+                UnitPathing pathing = GetComponent<UnitPathing>();
+                pathing.GetPathing(target);
+            }
         }
         else
         {
@@ -98,9 +94,9 @@ public class Troop : MonoBehaviour
                     {
                         state = TroopState.ATTACKING;
                     }
-
                     break;
                 case TroopState.ATTACKING:
+
                     break;
                 default:
                     // Do nothing
@@ -119,14 +115,22 @@ public class Troop : MonoBehaviour
     public void TargetKilled()
     {
         target = null;
+        hasTarget = false;
         state = TroopState.MOVING;
     }
 
     public void AttackTarget()
     {
+        if (target == null)
+        {
+            return;
+        }
+
         Troop targetTroop = target.GetComponent<Troop>();
         float damage = UnityEngine.Random.Range(damageMin, damageMax);
         targetTroop.RecieveAttack(damage);
+
+        Invoke("AttackTarget", 1.0f / attackSpeed);
     }
 
     public void RecieveAttack(float damage)
@@ -220,7 +224,7 @@ public class Troop : MonoBehaviour
             {
                 // Calculate the distance to that enemy
                 float distance = Vector3.Distance(enemy.transform.position, transform.position);
-
+                
                 // If it is smaller than the so far closest enemy, become the target
                 if (distance < closestDistance)
                 {
@@ -230,6 +234,7 @@ public class Troop : MonoBehaviour
             }
         }
 
+        
         // May be null
         return chosenEnemy;
     }
@@ -244,5 +249,8 @@ public class Troop : MonoBehaviour
         {
             OnDeathEvent.Invoke(); // Invoke the on death event
         }
+ 
+        Destroy(GetComponent<UnitPathing>());
+        Destroy(this);
     }
 }
