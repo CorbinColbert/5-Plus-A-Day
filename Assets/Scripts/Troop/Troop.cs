@@ -123,17 +123,18 @@ public class Troop : MonoBehaviour
 
     public void AttackTarget()
     {
-        print("Attacking");
-        if (target == null)
+        state = TroopState.ATTACKING;
+        if (!hasTarget)
         {
             return;
         }
 
-        Troop targetTroop = target.GetComponent<Troop>();
-        float damage = UnityEngine.Random.Range(damageMin, damageMax);
-        targetTroop.RecieveAttack(damage);
-
-        Invoke("AttackTarget", 1.0f / attackSpeed);
+        if (target.TryGetComponent<Troop>(out Troop targetTroop)) {
+            float damage = UnityEngine.Random.Range(damageMin, damageMax);
+            targetTroop.RecieveAttack(damage);
+            GetComponent<Rigidbody>().AddForce(new Vector3(0.0f, 100.0f, 0.0f));
+            Invoke("AttackTarget", 1.0f / attackSpeed);
+        }
     }
 
     public void RecieveAttack(float damage)
@@ -221,8 +222,6 @@ public class Troop : MonoBehaviour
         List<GameObject> enemies = battleManager.GetOpponents(gameObject.CompareTag("PlayerTroop"));
         float closestDistance = float.MaxValue;
 
-        print(enemies.Count + ":Count");
-
         if (enemies.Count > 0)
         {
             foreach (GameObject enemy in enemies)
@@ -235,7 +234,6 @@ public class Troop : MonoBehaviour
                 {
                     closestDistance = distance;
                     chosenEnemy = enemy;
-                    print("Assigned chosen enemy");
                 }
             }
         }
@@ -262,6 +260,7 @@ public class Troop : MonoBehaviour
         }
  
         Rigidbody body = GetComponent<Rigidbody>();
+        body.constraints = RigidbodyConstraints.None;
         Vector3 force = new Vector3(UnityEngine.Random.Range(-100.0f,100.0f),
             UnityEngine.Random.Range(100.0f, 400.0f), 
             UnityEngine.Random.Range(-100.0f, 100.0f));
@@ -269,5 +268,7 @@ public class Troop : MonoBehaviour
 
         Destroy(GetComponent<UnitPathing>());
         Destroy(this);
+        Destroy(GetComponent<Collider>(), 4.0f);
+        Destroy(gameObject, 8.0f);
     }
 }

@@ -101,8 +101,8 @@ MonoBehaviour:
   alive: 1
   healthCurrent: 40
   healthMax: 40
-  damageMin: 1
-  damageMax: 2
+  damageMin: 4
+  damageMax: 6
   attackSpeed: 1
   attackRange: 2
   moveSpeed: 5

@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 658937499667268790}
   - component: {fileID: 658937499667268784}
-  - component: {fileID: 658937499667268787}
   - component: {fileID: 658937499667268791}
   - component: {fileID: 8991630741585345337}
   - component: {fileID: -7426525614608540148}
+  - component: {fileID: 5721055286137727969}
   m_Layer: 9
   m_Name: PlayerGrapes
   m_TagString: PlayerTroop
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 658937499667268786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.7, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -73,19 +73,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &658937499667268787
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658937499667268786}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &658937499667268791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,11 +88,11 @@ MonoBehaviour:
   alive: 1
   healthCurrent: 20
   healthMax: 20
-  damageMin: 2
-  damageMax: 2
-  attackSpeed: 0.5
+  damageMin: 1
+  damageMax: 1
+  attackSpeed: 4
   attackRange: 2
-  moveSpeed: 0
+  moveSpeed: 0.2
   regenAmount: 0
   regenSpeed: 0
   regenEnabled: 0
@@ -136,3 +123,16 @@ MonoBehaviour:
   grid: {fileID: 0}
   hasPathToFollow: 0
   moveSpeed: 1
+--- !u!135 &5721055286137727969
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658937499667268786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
