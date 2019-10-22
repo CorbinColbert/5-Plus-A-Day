@@ -92,7 +92,7 @@ MonoBehaviour:
   damageMax: 8
   attackSpeed: 1.25
   attackRange: 2
-  moveSpeed: 0
+  moveSpeed: 0.5
   regenAmount: 1
   regenSpeed: 0.2
   regenEnabled: 1

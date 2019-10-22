@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 658937499667268786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 15}
+  m_LocalScale: {x: 40, y: 20, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   damageMax: 6
   attackSpeed: 1
   attackRange: 2
-  moveSpeed: 0
+  moveSpeed: 0.5
   regenAmount: 0
   regenSpeed: 0
   regenEnabled: 0

@@ -66,9 +66,6 @@ public class TroopPlacer : MonoBehaviour
             throw new FormatException("Mismatch detected in Troop Placer, unexpected troop type");
         }
 
-        //Configure the troop
-        troop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
-
         // Place it on the scene
         Transform nT = node.transform;
         Vector3 placementPosition = new Vector3(nT.position.x, nT.position.y + 1.5f , nT.position.z);

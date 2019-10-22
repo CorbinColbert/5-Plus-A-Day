@@ -49,6 +49,7 @@ public class Troop : MonoBehaviour
     void Start()
     {
         Rigidbody body = gameObject.AddComponent<Rigidbody>();
+        body.isKinematic = true;
         body.constraints = RigidbodyConstraints.FreezeRotationY;
 
         CheckStatsValid(); // To ensure correct use of the troop class's statistics
@@ -260,6 +261,7 @@ public class Troop : MonoBehaviour
         }
  
         Rigidbody body = GetComponent<Rigidbody>();
+        body.isKinematic = false;
         body.constraints = RigidbodyConstraints.None;
         Vector3 force = new Vector3(UnityEngine.Random.Range(-100.0f,100.0f),
             UnityEngine.Random.Range(100.0f, 400.0f), 

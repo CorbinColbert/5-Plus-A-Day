@@ -5059,17 +5059,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabCarrot: {fileID: 658937499667268786, guid: f38b0f0fbbddaf541a101da44fcc79ee,
     type: 3}
-  prefabPear: {fileID: 0}
-  prefabTangerine: {fileID: 0}
-  prefabOrange: {fileID: 0}
-  prefabBanana: {fileID: 0}
-  prefabGrape: {fileID: 0}
-  prefabCherry: {fileID: 0}
-  prefabLemon: {fileID: 0}
-  prefabPeach: {fileID: 0}
-  prefabRadish: {fileID: 0}
-  prefabPepper: {fileID: 0}
-  prefabCake: {fileID: 0}
+  prefabPear: {fileID: 658937499667268786, guid: 92bd58bf5ef942743922a40c02abaa29,
+    type: 3}
+  prefabTangerine: {fileID: 658937499667268786, guid: ae7c6202848047e4db1ec88f1338c6ab,
+    type: 3}
+  prefabOrange: {fileID: 658937499667268786, guid: ae7c6202848047e4db1ec88f1338c6ab,
+    type: 3}
+  prefabBanana: {fileID: 658937499667268786, guid: 70b74ec9611cfae408fb2668f1e1705b,
+    type: 3}
+  prefabGrape: {fileID: 658937499667268786, guid: 2b04ebdf4b8a1a04a9c21f14c450cea0,
+    type: 3}
+  prefabCherry: {fileID: 658937499667268786, guid: 2b04ebdf4b8a1a04a9c21f14c450cea0,
+    type: 3}
+  prefabLemon: {fileID: 658937499667268786, guid: 7925dfa78b9dd43439920ab947df019f,
+    type: 3}
+  prefabPeach: {fileID: 658937499667268786, guid: 4f1dc7a89cffb214cb7288d176769e55,
+    type: 3}
+  prefabRadish: {fileID: 658937499667268786, guid: 0c1eac1248383a54fb30d96c78babe8e,
+    type: 3}
+  prefabPepper: {fileID: 658937499667268786, guid: c8ad810c0611e6246afdc6817e18681c,
+    type: 3}
+  prefabCake: {fileID: 658937499667268786, guid: 2d64c08be880c7d438a03e59c853f4fe,
+    type: 3}
   inventory: {fileID: 845208293}
   manager: {fileID: 400496848}
 --- !u!1 &411269718
